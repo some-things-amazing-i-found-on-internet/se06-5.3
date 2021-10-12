@@ -1,0 +1,3974 @@
+{
+    "reply": {
+        "menu_infos": [
+            {
+                "dish_type_id": 1343945,
+                "dish_type_name": "Siêu Đại Tiệc ",
+                "dishes": [
+                    {
+                        "total_order": 0,
+                        "is_deleted": false,
+                        "description": "7 suất Súp đặc biệt người lớn",
+                        "display_total_order": "0",
+                        "price": {
+                            "text": "210,000đ",
+                            "unit": "đ",
+                            "value": 210000.0
+                        },
+                        "is_active": true,
+                        "display_order": 0,
+                        "total_like": "0",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/8deae758-a407-47f5-9840-9b828dee-059f53cf-201130112926.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/8deae758-a407-47f5-9840-9b828dee-059f53cf-201130112926.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/8deae758-a407-47f5-9840-9b828dee-059f53cf-201130112926.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/8deae758-a407-47f5-9840-9b828dee-059f53cf-201130112926.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/8deae758-a407-47f5-9840-9b828dee-059f53cf-201130112926.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "168,000đ",
+                            "unit": "đ",
+                            "value": 168000.0
+                        },
+                        "id": 12588931,
+                        "is_group_discount_item": false,
+                        "name": "Combo Cả nhà"
+                    },
+                    {
+                        "total_order": 0,
+                        "is_deleted": false,
+                        "description": "7 suất Súp đặc biệt người lớn",
+                        "display_total_order": "0",
+                        "price": {
+                            "text": "210,000đ",
+                            "unit": "đ",
+                            "value": 210000.0
+                        },
+                        "is_active": true,
+                        "display_order": 0,
+                        "total_like": "0",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/adb3774a-d678-4606-b9f0-db52677f-21b9b723-201130112751.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/adb3774a-d678-4606-b9f0-db52677f-21b9b723-201130112751.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/adb3774a-d678-4606-b9f0-db52677f-21b9b723-201130112751.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/adb3774a-d678-4606-b9f0-db52677f-21b9b723-201130112751.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/adb3774a-d678-4606-b9f0-db52677f-21b9b723-201130112751.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "168,000đ",
+                            "unit": "đ",
+                            "value": 168000.0
+                        },
+                        "id": 12588908,
+                        "is_group_discount_item": false,
+                        "name": "Combo Vui vẻ"
+                    },
+                    {
+                        "total_order": 0,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "0",
+                        "price": {
+                            "text": "162,000đ",
+                            "unit": "đ",
+                            "value": 162000.0
+                        },
+                        "is_active": true,
+                        "display_order": 0,
+                        "total_like": "0",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/c06e0701-4370-4fd4-914f-2e43cd34-95235e43-210223101058.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/c06e0701-4370-4fd4-914f-2e43cd34-95235e43-210223101058.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/c06e0701-4370-4fd4-914f-2e43cd34-95235e43-210223101058.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/c06e0701-4370-4fd4-914f-2e43cd34-95235e43-210223101058.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/c06e0701-4370-4fd4-914f-2e43cd34-95235e43-210223101058.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "129,600đ",
+                            "unit": "đ",
+                            "value": 129600.0
+                        },
+                        "id": 14070976,
+                        "is_group_discount_item": false,
+                        "name": "Combo vui vui"
+                    },
+                    {
+                        "total_order": 0,
+                        "is_deleted": false,
+                        "description": "7 suất Súp đặc biệt người lớn",
+                        "display_total_order": "0",
+                        "price": {
+                            "text": "210,000đ",
+                            "unit": "đ",
+                            "value": 210000.0
+                        },
+                        "is_active": true,
+                        "display_order": 0,
+                        "total_like": "0",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/9c5e74e0-9afe-4425-9eaf-4042927d-e0cae77e-201031102556.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/9c5e74e0-9afe-4425-9eaf-4042927d-e0cae77e-201031102556.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/9c5e74e0-9afe-4425-9eaf-4042927d-e0cae77e-201031102556.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/9c5e74e0-9afe-4425-9eaf-4042927d-e0cae77e-201031102556.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/9c5e74e0-9afe-4425-9eaf-4042927d-e0cae77e-201031102556.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "168,000đ",
+                            "unit": "đ",
+                            "value": 168000.0
+                        },
+                        "id": 12260863,
+                        "is_group_discount_item": false,
+                        "name": "Combo Gia đình"
+                    },
+                    {
+                        "total_order": 1000,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "999+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 2,
+                        "total_like": "10+",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/63e0eb1d-2d15-4882-b11f-831c931d78f4.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/63e0eb1d-2d15-4882-b11f-831c931d78f4.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/63e0eb1d-2d15-4882-b11f-831c931d78f4.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/63e0eb1d-2d15-4882-b11f-831c931d78f4.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/63e0eb1d-2d15-4882-b11f-831c931d78f4.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546000,
+                        "is_group_discount_item": false,
+                        "name": "Cháo thịt bò"
+                    },
+                    {
+                        "total_order": 500,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "500+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 4,
+                        "total_like": "9",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/0515260f-8888-4515-a8f9-8b8ffff90186.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/0515260f-8888-4515-a8f9-8b8ffff90186.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/0515260f-8888-4515-a8f9-8b8ffff90186.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/0515260f-8888-4515-a8f9-8b8ffff90186.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/0515260f-8888-4515-a8f9-8b8ffff90186.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2545996,
+                        "is_group_discount_item": false,
+                        "name": "Cháo thịt heo"
+                    },
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 9,
+                        "total_like": "4",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/2018824105327-chao-tim-cat.jpg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/2018824105327-chao-tim-cat.jpg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/2018824105327-chao-tim-cat.jpg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/2018824105327-chao-tim-cat.jpg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/2018824105327-chao-tim-cat.jpg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2545995,
+                        "is_group_discount_item": false,
+                        "name": "Cháo tim cật"
+                    }
+                ]
+            },
+            {
+                "dish_type_id": 1093212,
+                "dish_type_name": "DEAL SỐC",
+                "dishes": [
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "34,000đ",
+                            "unit": "đ",
+                            "value": 34000.0
+                        },
+                        "is_active": true,
+                        "display_order": 0,
+                        "total_like": "10+",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/0ef485c1-dc2d-446e-9c00-0ad51ca75f98.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/0ef485c1-dc2d-446e-9c00-0ad51ca75f98.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/0ef485c1-dc2d-446e-9c00-0ad51ca75f98.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/0ef485c1-dc2d-446e-9c00-0ad51ca75f98.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/0ef485c1-dc2d-446e-9c00-0ad51ca75f98.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "27,200đ",
+                            "unit": "đ",
+                            "value": 27200.0
+                        },
+                        "id": 10074561,
+                        "is_group_discount_item": false,
+                        "name": "Combo: Súp cua lớn + Cháo bồ câu nhỏ"
+                    },
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "34,000đ",
+                            "unit": "đ",
+                            "value": 34000.0
+                        },
+                        "is_active": true,
+                        "display_order": 0,
+                        "total_like": "4",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/d9218e05-a33b-4742-882c-38bbf44b5e58.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/d9218e05-a33b-4742-882c-38bbf44b5e58.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/d9218e05-a33b-4742-882c-38bbf44b5e58.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/d9218e05-a33b-4742-882c-38bbf44b5e58.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/d9218e05-a33b-4742-882c-38bbf44b5e58.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "27,200đ",
+                            "unit": "đ",
+                            "value": 27200.0
+                        },
+                        "id": 10074562,
+                        "is_group_discount_item": false,
+                        "name": "Combo: Súp cua lớn + Cháo lươn nhỏ"
+                    },
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "34,000đ",
+                            "unit": "đ",
+                            "value": 34000.0
+                        },
+                        "is_active": true,
+                        "display_order": 0,
+                        "total_like": "2",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/f71e9863-b381-4a01-a0f5-846a6767c81c.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/f71e9863-b381-4a01-a0f5-846a6767c81c.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/f71e9863-b381-4a01-a0f5-846a6767c81c.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/f71e9863-b381-4a01-a0f5-846a6767c81c.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/f71e9863-b381-4a01-a0f5-846a6767c81c.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "27,200đ",
+                            "unit": "đ",
+                            "value": 27200.0
+                        },
+                        "id": 10074298,
+                        "is_group_discount_item": false,
+                        "name": "Combo: Súp cua lớn + Cháo thịt bò nhỏ"
+                    }
+                ]
+            },
+            {
+                "dish_type_id": 292526,
+                "dish_type_name": "Súp",
+                "dishes": [
+                    {
+                        "total_order": 1000,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "999+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 1,
+                        "total_like": "50+",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/696ac6c1-3bb3-42fb-a15a-acd79483f000.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/696ac6c1-3bb3-42fb-a15a-acd79483f000.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/696ac6c1-3bb3-42fb-a15a-acd79483f000.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/696ac6c1-3bb3-42fb-a15a-acd79483f000.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/696ac6c1-3bb3-42fb-a15a-acd79483f000.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546052,
+                        "is_group_discount_item": false,
+                        "name": "Súp cua"
+                    },
+                    {
+                        "total_order": 1000,
+                        "is_deleted": false,
+                        "description": "Phần lớn",
+                        "display_total_order": "999+",
+                        "price": {
+                            "text": "30,000đ",
+                            "unit": "đ",
+                            "value": 30000.0
+                        },
+                        "is_active": true,
+                        "display_order": 1,
+                        "total_like": "50+",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/e725be04-1dd3-48c6-aeb5-2dc1f8637f78.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/e725be04-1dd3-48c6-aeb5-2dc1f8637f78.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/e725be04-1dd3-48c6-aeb5-2dc1f8637f78.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/e725be04-1dd3-48c6-aeb5-2dc1f8637f78.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/e725be04-1dd3-48c6-aeb5-2dc1f8637f78.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "24,000đ",
+                            "unit": "đ",
+                            "value": 24000.0
+                        },
+                        "id": 9091671,
+                        "is_group_discount_item": false,
+                        "name": "Súp đặc biệt người lớn"
+                    },
+                    {
+                        "total_order": 1000,
+                        "is_deleted": false,
+                        "description": "Phần nhỏ",
+                        "display_total_order": "999+",
+                        "price": {
+                            "text": "25,000đ",
+                            "unit": "đ",
+                            "value": 25000.0
+                        },
+                        "is_active": true,
+                        "display_order": 0,
+                        "total_like": "10+",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/fa921281-3b11-4992-93d4-5a1220c5434e.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/fa921281-3b11-4992-93d4-5a1220c5434e.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/fa921281-3b11-4992-93d4-5a1220c5434e.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/fa921281-3b11-4992-93d4-5a1220c5434e.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/fa921281-3b11-4992-93d4-5a1220c5434e.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "20,000đ",
+                            "unit": "đ",
+                            "value": 20000.0
+                        },
+                        "id": 9091678,
+                        "is_group_discount_item": false,
+                        "name": "Súp đặc biệt người lớn"
+                    }
+                ]
+            },
+            {
+                "dish_type_id": 292525,
+                "dish_type_name": "Cháo",
+                "dishes": [
+                    {
+                        "total_order": 1000,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "999+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 3,
+                        "total_like": "10+",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/c04b0630-92a7-48b4-997c-4f06b1731e58.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/c04b0630-92a7-48b4-997c-4f06b1731e58.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/c04b0630-92a7-48b4-997c-4f06b1731e58.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/c04b0630-92a7-48b4-997c-4f06b1731e58.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/c04b0630-92a7-48b4-997c-4f06b1731e58.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2545969,
+                        "is_group_discount_item": false,
+                        "name": "Cháo bồ câu"
+                    },
+                    {
+                        "total_order": 1000,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "999+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 14,
+                        "total_like": "10+",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/30d97ab5-306d-4096-8e05-2a6fe4c8fb52.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/30d97ab5-306d-4096-8e05-2a6fe4c8fb52.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/30d97ab5-306d-4096-8e05-2a6fe4c8fb52.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/30d97ab5-306d-4096-8e05-2a6fe4c8fb52.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/30d97ab5-306d-4096-8e05-2a6fe4c8fb52.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546095,
+                        "is_group_discount_item": false,
+                        "name": "Cháo cá hồi"
+                    },
+                    {
+                        "total_order": 1000,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "999+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 6,
+                        "total_like": "10+",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/f5fd1718-84e6-4fb6-8cb9-0d266f10ec35.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/f5fd1718-84e6-4fb6-8cb9-0d266f10ec35.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/f5fd1718-84e6-4fb6-8cb9-0d266f10ec35.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/f5fd1718-84e6-4fb6-8cb9-0d266f10ec35.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/f5fd1718-84e6-4fb6-8cb9-0d266f10ec35.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546026,
+                        "is_group_discount_item": false,
+                        "name": "Cháo lươn"
+                    },
+                    {
+                        "total_order": 500,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "500+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 5,
+                        "total_like": "8",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/ddf0b1b8-7270-4115-b23f-33db6eb1c56e.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/ddf0b1b8-7270-4115-b23f-33db6eb1c56e.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/ddf0b1b8-7270-4115-b23f-33db6eb1c56e.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/ddf0b1b8-7270-4115-b23f-33db6eb1c56e.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/ddf0b1b8-7270-4115-b23f-33db6eb1c56e.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546002,
+                        "is_group_discount_item": false,
+                        "name": "Cháo tôm"
+                    },
+                    {
+                        "total_order": 500,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "500+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 7,
+                        "total_like": "6",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/8249d866-5cf8-4e49-99b4-474e9b2cc515.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/8249d866-5cf8-4e49-99b4-474e9b2cc515.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/8249d866-5cf8-4e49-99b4-474e9b2cc515.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/8249d866-5cf8-4e49-99b4-474e9b2cc515.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/8249d866-5cf8-4e49-99b4-474e9b2cc515.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546001,
+                        "is_group_discount_item": false,
+                        "name": "Cháo cua"
+                    },
+                    {
+                        "total_order": 500,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "500+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 16,
+                        "total_like": "10+",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/fe2b75d2-ab3e-4a93-acea-dfca7243cb89.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/fe2b75d2-ab3e-4a93-acea-dfca7243cb89.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/fe2b75d2-ab3e-4a93-acea-dfca7243cb89.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/fe2b75d2-ab3e-4a93-acea-dfca7243cb89.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/fe2b75d2-ab3e-4a93-acea-dfca7243cb89.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546100,
+                        "is_group_discount_item": false,
+                        "name": "Cháo gà ác tần"
+                    },
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 8,
+                        "total_like": "4",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/0baf4fc4-5e85-433a-9fad-6de566025e64.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/0baf4fc4-5e85-433a-9fad-6de566025e64.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/0baf4fc4-5e85-433a-9fad-6de566025e64.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/0baf4fc4-5e85-433a-9fad-6de566025e64.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/0baf4fc4-5e85-433a-9fad-6de566025e64.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2545993,
+                        "is_group_discount_item": false,
+                        "name": "Cháo óc heo"
+                    },
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 15,
+                        "total_like": "8",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/587de4a5-98f3-48b4-b929-4be44ca16c9e.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/587de4a5-98f3-48b4-b929-4be44ca16c9e.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/587de4a5-98f3-48b4-b929-4be44ca16c9e.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/587de4a5-98f3-48b4-b929-4be44ca16c9e.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/587de4a5-98f3-48b4-b929-4be44ca16c9e.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546099,
+                        "is_group_discount_item": false,
+                        "name": "Cháo bào ngư"
+                    },
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 11,
+                        "total_like": "6",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/2018824105214-chao-tuy-bo.jpg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/2018824105214-chao-tuy-bo.jpg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/2018824105214-chao-tuy-bo.jpg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/2018824105214-chao-tuy-bo.jpg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/2018824105214-chao-tuy-bo.jpg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2545991,
+                        "is_group_discount_item": false,
+                        "name": "Cháo tủy bò"
+                    },
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 12,
+                        "total_like": "0",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/c18d1e1d-6159-4d5f-9923-716ce765bc2e.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/c18d1e1d-6159-4d5f-9923-716ce765bc2e.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/c18d1e1d-6159-4d5f-9923-716ce765bc2e.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/c18d1e1d-6159-4d5f-9923-716ce765bc2e.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/c18d1e1d-6159-4d5f-9923-716ce765bc2e.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546050,
+                        "is_group_discount_item": false,
+                        "name": "Cháo cá thu"
+                    },
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 10,
+                        "total_like": "1",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/cfd8e5e1-53a9-4125-8abd-05b8be2558e8.jpg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/cfd8e5e1-53a9-4125-8abd-05b8be2558e8.jpg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/cfd8e5e1-53a9-4125-8abd-05b8be2558e8.jpg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/cfd8e5e1-53a9-4125-8abd-05b8be2558e8.jpg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/cfd8e5e1-53a9-4125-8abd-05b8be2558e8.jpg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546028,
+                        "is_group_discount_item": false,
+                        "name": "Cháo cá mú"
+                    },
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 13,
+                        "total_like": "4",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/4a9526f9-2e7d-4a7b-b676-1959885f0ed4.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/4a9526f9-2e7d-4a7b-b676-1959885f0ed4.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/4a9526f9-2e7d-4a7b-b676-1959885f0ed4.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/4a9526f9-2e7d-4a7b-b676-1959885f0ed4.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/4a9526f9-2e7d-4a7b-b676-1959885f0ed4.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546003,
+                        "is_group_discount_item": false,
+                        "name": "Cháo ếch"
+                    },
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 17,
+                        "total_like": "0",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/d5f1d67f-d0c2-4fd0-9b0c-c54322e5022c.jpg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/d5f1d67f-d0c2-4fd0-9b0c-c54322e5022c.jpg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/d5f1d67f-d0c2-4fd0-9b0c-c54322e5022c.jpg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/d5f1d67f-d0c2-4fd0-9b0c-c54322e5022c.jpg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/d5f1d67f-d0c2-4fd0-9b0c-c54322e5022c.jpg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546066,
+                        "is_group_discount_item": false,
+                        "name": "Cháo thập cẩm"
+                    },
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 19,
+                        "total_like": "0",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/201882410538-chao-trung-ga-ta.jpg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/201882410538-chao-trung-ga-ta.jpg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/201882410538-chao-trung-ga-ta.jpg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/201882410538-chao-trung-ga-ta.jpg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/201882410538-chao-trung-ga-ta.jpg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546070,
+                        "is_group_discount_item": false,
+                        "name": "Cháo trứng gà ta"
+                    },
+                    {
+                        "total_order": 100,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "100+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 20,
+                        "total_like": "1",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/bc4dc362-925c-4cc8-a7ac-c6ab21700372.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/bc4dc362-925c-4cc8-a7ac-c6ab21700372.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/bc4dc362-925c-4cc8-a7ac-c6ab21700372.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/bc4dc362-925c-4cc8-a7ac-c6ab21700372.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/bc4dc362-925c-4cc8-a7ac-c6ab21700372.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546062,
+                        "is_group_discount_item": false,
+                        "name": "Cháo bò cười"
+                    },
+                    {
+                        "total_order": 50,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "50+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 21,
+                        "total_like": "1",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/ed63635c-159e-4f55-b461-93eb3866ecd2.jpg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/ed63635c-159e-4f55-b461-93eb3866ecd2.jpg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/ed63635c-159e-4f55-b461-93eb3866ecd2.jpg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/ed63635c-159e-4f55-b461-93eb3866ecd2.jpg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/ed63635c-159e-4f55-b461-93eb3866ecd2.jpg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546093,
+                        "is_group_discount_item": false,
+                        "name": "Cháo đà điểu"
+                    },
+                    {
+                        "total_order": 50,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "50+",
+                        "price": {
+                            "text": "15,000đ",
+                            "unit": "đ",
+                            "value": 15000.0
+                        },
+                        "is_active": true,
+                        "display_order": 18,
+                        "total_like": "2",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/7a9c7185-754a-4ca1-81a1-fad2c72ace76.jpg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/7a9c7185-754a-4ca1-81a1-fad2c72ace76.jpg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/7a9c7185-754a-4ca1-81a1-fad2c72ace76.jpg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/7a9c7185-754a-4ca1-81a1-fad2c72ace76.jpg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/7a9c7185-754a-4ca1-81a1-fad2c72ace76.jpg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [
+                            {
+                                "ntop": "",
+                                "mandatory": true,
+                                "id": 55017,
+                                "option_items": {
+                                    "min_select": 1,
+                                    "max_select": 1,
+                                    "items": [
+                                        {
+                                            "name": "Phần nhỏ",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217451,
+                                            "is_default": true,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "0đ",
+                                                "value": 0.0,
+                                                "unit": "đ"
+                                            }
+                                        },
+                                        {
+                                            "name": "Phần lớn",
+                                            "weight": 1,
+                                            "ntop_price": {
+                                                "text": "0đ",
+                                                "value": 0,
+                                                "unit": "đ"
+                                            },
+                                            "max_quantity": 1,
+                                            "id": 217453,
+                                            "is_default": false,
+                                            "top_order": 0,
+                                            "price": {
+                                                "text": "5,000đ",
+                                                "value": 5000.0,
+                                                "unit": "đ"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "name": "Chọn"
+                            }
+                        ],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "12,000đ",
+                            "unit": "đ",
+                            "value": 12000.0
+                        },
+                        "id": 2546098,
+                        "is_group_discount_item": false,
+                        "name": "Cháo hải sâm"
+                    },
+                    {
+                        "total_order": 7,
+                        "is_deleted": false,
+                        "description": "",
+                        "display_total_order": "7",
+                        "price": {
+                            "text": "24,000đ",
+                            "unit": "đ",
+                            "value": 24000.0
+                        },
+                        "is_active": true,
+                        "display_order": 0,
+                        "total_like": "0",
+                        "properties": [],
+                        "photos": [
+                            {
+                                "width": 120,
+                                "value": "https://images.foody.vn/res/g75/746595/s120x120/51066c21-06fb-4a1f-b71f-20b82164-1ecea977-210125140042.jpeg",
+                                "height": 120
+                            },
+                            {
+                                "width": 180,
+                                "value": "https://images.foody.vn/res/g75/746595/s180x180/51066c21-06fb-4a1f-b71f-20b82164-1ecea977-210125140042.jpeg",
+                                "height": 180
+                            },
+                            {
+                                "width": 560,
+                                "value": "https://images.foody.vn/res/g75/746595/s570x570/51066c21-06fb-4a1f-b71f-20b82164-1ecea977-210125140042.jpeg",
+                                "height": 560
+                            },
+                            {
+                                "width": 750,
+                                "value": "https://images.foody.vn/res/g75/746595/s750x750/51066c21-06fb-4a1f-b71f-20b82164-1ecea977-210125140042.jpeg",
+                                "height": 750
+                            },
+                            {
+                                "width": 1242,
+                                "value": "https://images.foody.vn/res/g75/746595/s1242x1242/51066c21-06fb-4a1f-b71f-20b82164-1ecea977-210125140042.jpeg",
+                                "height": 1242
+                            }
+                        ],
+                        "options": [],
+                        "is_available": true,
+                        "time": {
+                            "available": [],
+                            "week_days": [
+                                {
+                                    "start": "00:00",
+                                    "week_day": 1,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 2,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 3,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 4,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 5,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 6,
+                                    "end": "23:59"
+                                },
+                                {
+                                    "start": "00:00",
+                                    "week_day": 7,
+                                    "end": "23:59"
+                                }
+                            ],
+                            "not_available": []
+                        },
+                        "quantity": 0,
+                        "discount_price": {
+                            "text": "19,200đ",
+                            "unit": "đ",
+                            "value": 19200.0
+                        },
+                        "id": 13844161,
+                        "is_group_discount_item": false,
+                        "name": "Cháo bồ câu lớn"
+                    }
+                ]
+            }
+        ]
+    },
+    "result": "success"
+}
