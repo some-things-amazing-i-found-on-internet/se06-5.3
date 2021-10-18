@@ -231,6 +231,17 @@
                     </div>
                 </div>
             </div>
+            <?php 
+                // $statement = $pdo->prepare("SELECT * FROM tbl_product WHERE p_is_active=? ORDER BY p_id DESC");
+                // $statement->execute(array(1));
+                // $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                // foreach ($result as $row) {
+                //     echo '<script>';
+                //     echo 'console.log('. json_encode($row, JSON_HEX_TAG) .')';
+                //     echo '</script>';
+                //     print $row['p_id'] . "</br>";
+                // }
+            ?>
             <div class="row">
                 <div class="col-md-6">
                     <div class="ex-collection-box mb-xl-20">
