@@ -17,6 +17,7 @@ Tìm hiểu ứng dụng Thương mại điện tử idea#1
 | Test Case | Kịch bản kiểm thử - review và đánh giá chức năng  |
 | Bug Reports | Thông báo lỗi |
 
-![Login page](https://bukethuy.s3.ap-southeast-1.amazonaws.com/se06-1.jpg "Login page")
-![Home page](https://bukethuy.s3.ap-southeast-1.amazonaws.com/se06-2.jpg "Home page")
-![Product layout](https://bukethuy.s3.ap-southeast-1.amazonaws.com/se06-2.jpg "Product layout")
+### Demo
+| Login page    | Home page    | Product Layout |
+|------------|-------------|-------------|
+| ![Login page](https://bukethuy.s3.ap-southeast-1.amazonaws.com/se06-1.jpg "Login page") | ![Home page](https://bukethuy.s3.ap-southeast-1.amazonaws.com/se06-2.jpg "Home page")|![Product layout](https://bukethuy.s3.ap-southeast-1.amazonaws.com/se06-3.jpg "Product layout") |
