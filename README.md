@@ -5,7 +5,7 @@ Tìm hiểu ứng dụng Thương mại điện tử idea#1
 ### Giao diện quản trị - figma và template
 [Demo Link](SD)
 ### Cơ sở dữ liệu - dữ liệu craw từ shopeefood 
-[Demo Link](SD)
+[Link](https://github.com/software-engineer-hus/se06-5.3/blob/main/document/database.md)
 ### Product Backlog - Planning
 [Planning project github](https://github.com/software-engineer-hus/se06-5.3/projects/1)
 | Cột | Nội dung |
