@@ -1,5 +1,57 @@
- <!-- footer -->
- <div class="footer-top section-padding bg-black">
+
+    <div class="contact_map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27988966845!2d-74.25986771844386!3d40.697670067927376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1629696871317!5m2!1sen!2sin" class="border-0 w-100" style="height: 100%; min-height: 500px;" allowfullscreen=""></iframe>
+    </div>
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header-style-2">
+                <h6 class="text-light-green sub-title">Contact Form</h6>
+                <h3 class="text-light-black header-title">Get In Touch</h3>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form class="form_validate ajax_submit form_alert" action="http://metropolitanhost.com/themes/themeforest/html/quickmunch/sendmail.php" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="text-light-black fw-600">Full Name</label>
+                                    <input type="text" name="name" class="form-control form-control-submit" placeholder="Full Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="text-light-black fw-600">Email I'd</label>
+                                    <input type="email" name="email" class="form-control form-control-submit" placeholder="Email I'd">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="text-light-black fw-600">Phone No.</label>
+                                    <input type="text" name="phone" class="form-control form-control-submit" placeholder="Phone No.">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="text-light-black fw-600">Subject</label>
+                                    <input type="text" name="subject" class="form-control form-control-submit" placeholder="Subject">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="text-light-black fw-600">Message</label>
+                                    <textarea class="form-control form-control-submit" name="message" rows="6" placeholder="Write Message"></textarea>
+                                </div>
+                                <button type="submit" class="btn-second btn-submit full-width">Submit</button>
+                                <div class="server_response w-100"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- footer -->
+    <div class="footer-top section-padding bg-black">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 col-sm-4 col-6 mb-sm-20">
@@ -202,30 +254,81 @@
         </div>
     </div>
     <!-- footer -->
-    <!-- Place all Scripts Here -->
-    <!-- jQuery -->
-    <script src="assets/js/jquery.min.js"></script>
-    <!-- Popper -->
-    <script src="assets/js/popper.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- Range Slider -->
-    <script src="assets/js/ion.rangeSlider.min.js"></script>
-    <!-- Swiper Slider -->
-    <script src="assets/js/swiper.min.js"></script>
-    <!-- Nice Select -->
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <!-- magnific popup -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!-- Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnd9JwZvXty-1gHZihMoFhJtCXmHfeRQg"></script>
-    <!-- sticky sidebar -->
-    <script src="assets/js/sticksy.js"></script>
-    <!-- Munch Box Js -->
-    <script src="assets/js/quickmunch.js"></script>
-    <!-- /Place all Scripts Here -->
-</body>
-
-
-<!-- Mirrored from metropolitanhost.com/themes/themeforest/html/quickmunch/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Oct 2021 03:06:48 GMT -->
-</html>
+    <!-- modal boxes -->
+    <div class="modal fade" id="address-box">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title fw-700">Change Address</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="location-picker">
+                        <input type="text" class="form-control" placeholder="Enter a new address">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="search-box">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="search-box p-relative full-width">
+                        <input type="text" class="form-control" placeholder="Pizza, Burger, Chinese">
+                    </div>
+                </div>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Theme skins -->
+    <div class="color-theme transition-4">
+        <div class="theme-switch">
+            <span class="switch">
+                <i class="fa fa-eye"></i>
+            </span>
+        </div>
+        <div class="theme-colors transition-4">
+            <h4>Theme Skins:</h4>
+            <ul class="theme-ul">
+                <li>
+                    <span class="each-color co4" data-color="assets/css/color4.css">
+                        <img src="assets/img/co-4.png" alt="">
+                    </span>
+                </li>
+                <li>
+                    <span class="each-color co2" data-color="assets/css/color2.css">
+                        <img src="assets/img/co-2.png" alt="">
+                    </span>
+                </li>
+                <li>
+                    <span class="each-color co3" data-color="assets/css/color3.css">
+                        <img src="assets/img/co-1.png" alt="">
+                    </span>
+                </li>
+                <li>
+                    <span class="each-color co5" data-color="assets/css/color5.css">
+                        <img src="assets/img/co-5.png" alt="">
+                    </span>
+                </li>
+                <li>
+                    <span class="each-color co6" data-color="assets/css/color6.css">
+                        <img src="assets/img/co-6.png" alt="">
+                    </span>
+                </li>
+                <li>
+                    <span class="each-color co7" data-color="assets/css/color7.css">
+                        <img src="assets/img/co-7.png" alt="">
+                    </span>
+                </li>
+                <li>
+                    <span class="each-color co8" data-color="assets/css/color8.css">
+                        <img src="assets/img/co-8.png" alt="">
+                    </span>
+                </li>
+            </ul>
+            <p class="fs-13 "><b>Note: </b>This will not change any image colors.</p>
+        </div>
+    </div>

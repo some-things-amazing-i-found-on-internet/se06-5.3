@@ -16,6 +16,6 @@ $loader->register();
 
 // Route dispatch
 $router = new Core\View();
-$router->render("login", compact([]));
+$router->render("order-details", compact([]));
 
 

@@ -34,11 +34,11 @@ class View {
         // Extract controller variables
         extract($params, EXTR_SKIP);
         // Page template path.
-        $content = APPLICATION_PATH . "/$view.php";
+        $content = APPLICATION_PATH . "/src/views/pages/$view.php";
         // echo is_readable($content);
         if (is_readable($content)) {
             // Include global template
-            require_once APPLICATION_PATH . "/src/views/layout.php";
+            require_once APPLICATION_PATH . "/src/views/fixLayout.php";
             
         } else {
             
