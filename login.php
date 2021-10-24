@@ -1,37 +1,8 @@
-<?php require_once("src/views/header.php") ?>
 
 <?php
-if (isset($_POST['form1'])) {
+// $logincontroll = new LoginController();
+// $logincontroll->loginAction(isset($_POST['form1']),$_POST['cust_email'],$_POST['cust_password'], $error_message);
 
-  if (empty($_POST['cust_email']) || empty($_POST['cust_password'])) {
-    $error_message = "Nhập đầy đủ thông tin!!" . '<br>';
-  } else {
-
-    $cust_email = strip_tags($_POST['cust_email']);
-    $cust_password = strip_tags($_POST['cust_password']);
-
-    $statement = $pdo->prepare("SELECT * FROM tbl_customer WHERE cust_email=?");
-    $statement->execute(array($cust_email));
-    $total = $statement->rowCount();
-    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($result as $row) {
-      $cust_status = $row['cust_status'];
-      $row_password = $row['cust_password'];
-    }
-
-    if ($total == 0) {
-      $error_message .= "Không tồn tại email !!!" . '<br>';
-    } else {
-      //using MD5 form
-      if ($row_password != md5($cust_password)) {
-        $error_message .= "Thông tin mật khẩu nhập chưa đúng" . '<br>';
-      } else {
-        $_SESSION['customer'] = $row;
-        header("location: " . BASE_URL . "index.php");
-      }
-    }
-  }
-}
 ?>
 <div class="inner-wrapper">
   <div class="container-fluid no-padding">
@@ -65,9 +36,9 @@ if (isset($_POST['form1'])) {
                       <div data-name="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></div>
                     </div>
                     <?php
-                      if ($error_message != '') {
-                        echo "<div class='error text-center text-white' style='padding: 10px;background:#ff0018;margin-bottom:20px;'>" . $error_message . "</div>";
-                      }
+                    if ($error_message != '') {
+                      echo "<div class='error text-center text-white' style='padding: 10px;background:#ff0018;margin-bottom:20px;'>" . $error_message . "</div>";
+                    }
                     ?>
                     <div class="form-group checkbox-reset">
                       <label class="custom-checkbox mb-0">
@@ -75,7 +46,7 @@ if (isset($_POST['form1'])) {
                     </div>
                     <div class="form-group">
                       <input type="submit" name="form1" class="btn-second btn-submit full-width">
-                        <img src="assets/img/M.png" alt="btn logo">Sign in</input>
+                      <img src="assets/img/M.png" alt="btn logo">Sign in</input>
                     </div>
                     <div class="form-group text-center"> <span>or</span>
                     </div>

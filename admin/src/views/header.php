@@ -2,11 +2,13 @@
 $cur_page = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
 if ($cur_page == 'index.php') {
     $prefixPath = "";
-} else if($cur_page == 'a.php' || $cur_page == 'restaurants.php' || $cur_page == 'sales.php' || $cur_page == 'widgets.php' || $cur_page == 'animation.php') {
+} else if($cur_page == 'restaurants.php' || $cur_page == 'sales.php' || $cur_page == 'widgets.php' || $cur_page == 'animation.php') {
     $prefixPath = "../";
 }else {
     $prefixPath = "../../";
 }
+$PATHCONFIG = $prefixPath . "../src/config/DB.php";
+require_once($PATHCONFIG);
 
 ?>
 
@@ -71,13 +73,9 @@ if ($cur_page == 'index.php') {
         <!-- Navigation -->
         <ul class="accordion ms-main-aside fs-14" id="side-nav-accordion">
             <!-- Dashboard -->
-            <li class="menu-item">
-                <a href="#" class="has-chevron" data-toggle="collapse" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard"> <span><i class="material-icons fs-16">dashboard</i>Dashboard </span>
+             <li class="menu-item">
+                <a href="<?php echo $prefixPath ?>index.php"> <span><i class="material-icons fs-16">dashboard</i>Dashboard</span>
                 </a>
-                <ul id="dashboard" class="collapse" aria-labelledby="dashboard" data-parent="#side-nav-accordion">
-                    <li> <a href="<?php echo $prefixPath ?>index.php">Costic</a>
-                    </li>
-                </ul>
             </li>
             <!-- /Dashboard -->
             <!-- restaurants -->
