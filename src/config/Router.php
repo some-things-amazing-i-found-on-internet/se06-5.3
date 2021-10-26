@@ -17,7 +17,8 @@ use Core\Request;
  * @link       http://pear.php.net/package/PackageName
  * @since      Class available since Release 1.0.0
  */
-class Router {
+class Router
+{
 
     /**
      * The array of the routes.
@@ -40,12 +41,12 @@ class Router {
      */
     private $routePath = null;
 
-    public function __construct() {
+    public function __construct()
+    {
 
-        $in = APPLICATION_PATH . "/src/views/Routes.php";
-
+        $in = APPLICATION_PATH . "/src/config/Routes.php";
         if (!is_file($in)) {
-            // throw new Exception("There is no routes defined.");
+            throw new \Exception("There is no routes defined.");
         }
 
         $this->routes = include $in;
@@ -64,7 +65,8 @@ class Router {
      * @access  public
      * @since   Method available since Release 1.0.0
      */
-    private function decodeControler(string $route): iterable {
+    private function decodeControler(string $route): iterable
+    {
 
         $con = explode("@", $route);
 
@@ -87,14 +89,14 @@ class Router {
      * @access  public
      * @since   Method available since Release 1.0.0
      */
-    private function checkRoute(string $url, string $method): ?iterable {
-
+    private function checkRoute(string $url, string $method): ?iterable
+    {
         foreach ($this->routes[$method] as $route_path => $route) {
-
-            if (strpos($url, $route_path) === 0) {
+            // echo $route_path;
+            if (strpos($url, $route_path) === 19) {
 
                 $route = $this->decodeControler($route);
-                $namespace = 'App\Controllers\\';
+                $namespace = 'App\controller\\';
                 $route['controller'] = $namespace . $route['controller'];
                 $this->routePath = $route_path;
                 return $route;
@@ -104,7 +106,7 @@ class Router {
     }
 
     /**
-     * Check if method is callable.
+     * Check if method is calla`b`le.
      *
      * @param object $controller_object The controller object
      *
@@ -112,7 +114,8 @@ class Router {
      * @access  public
      * @since   Method available since Release 1.0.0
      */
-    private function methodCallable(Controller $controller_object): void {
+    private function methodCallable(Controller $controller_object): void
+    {
 
         if (is_callable(array($controller_object, $this->route['action']))) {
             $action = $this->route['action'];
@@ -131,7 +134,8 @@ class Router {
      * @access  public
      * @since   Method available since Release 1.0.0
      */
-    private function methodExists(Controller $controller_object): void {
+    private function methodExists(Controller $controller_object): void
+    {
 
         if (method_exists($controller_object, $this->route['action'])) {
             $this->methodCallable($controller_object);
@@ -147,14 +151,16 @@ class Router {
      * @access  public
      * @since   Method available since Release 1.0.0
      */
-    private function runRoute(): void {
+    private function runRoute(): void
+    {
 
         // Check if class exists
+        echo $this->route['controller'];
         if (class_exists($this->route['controller'])) {
 
             // Inst the class
             $controller_object = new $this->route['controller']();
-
+            
             // Check for method
             $this->methodExists($controller_object);
         } else {
@@ -170,22 +176,26 @@ class Router {
      * @access  public
      * @since   Method available since Release 1.0.0
      */
-    public function dispatch(): void {
+    public function dispatch(): void
+    {
 
         // Get the url.
         $url = $_SERVER['PHP_SELF'];
-
         // Get the method.
         $method = $_SERVER['REQUEST_METHOD'];
 
+
         // Get default url if there is no route.
         if ($url === "" || $url === "/") {
-            $url = \Config\Application::DEFAULT_ROUTE;
+            $url = "/home";
         }
 
         // Validate route
         $this->route = $this->checkRoute($url, $method);
-
+            // echo '<script>';
+            // // echo 'console.log("'.strpos("/se06-5.3/home.php","/home"). '")';
+            // echo 'console.log("'.$this->route. '")';
+            // echo '</script>';
         if ($this->route === NULL) {
             throw new \Exception('No route matched.', 404);
         }
@@ -204,7 +214,8 @@ class Router {
      * @access  public
      * @since   Method available since Release 1.0.0
      */
-    public function getRoutes(): iterable {
+    public function getRoutes()
+    {
         return $this->routes;
     }
 
@@ -217,7 +228,8 @@ class Router {
      * @access  public
      * @since   Method available since Release 1.0.0
      */
-    public function extractUrlParams(string $url): void {
+    public function extractUrlParams(string $url): void
+    {
 
         // Route string
         $params_string = str_replace($this->routePath, "", $url);
@@ -241,5 +253,4 @@ class Router {
         // Set parameters
         Request::setParams($params);
     }
-
 }

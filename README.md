@@ -1,9 +1,9 @@
 # se06-5.3
 Tìm hiểu ứng dụng Thương mại điện tử idea#1
 ### Giao diện người dùng - figma và template
-[Demo Link](SD)
+[Link](https://github.com/software-engineer-hus/se06-5.3/blob/main/document/figma.md)
 ### Giao diện quản trị - figma và template
-[Demo Link](SD)
+[Link](https://github.com/software-engineer-hus/se06-5.3/blob/main/document/dashboard-figma.md)
 ### Cơ sở dữ liệu - dữ liệu craw từ shopeefood 
 [Link](https://github.com/software-engineer-hus/se06-5.3/blob/main/document/database.md)
 ### Product Backlog - Planning

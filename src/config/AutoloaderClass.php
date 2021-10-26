@@ -125,7 +125,7 @@ class AutoloaderClass {
     public function loadClass($class) {
         // the current namespace prefix
         $prefix = $class;
-
+        
         // work backwards through the namespace names of the fully-qualified
         // class name to find a mapped file name
         while (false !== $pos = strrpos($prefix, '\\')) {
@@ -135,10 +135,9 @@ class AutoloaderClass {
 
             // the rest is the relative class name
             $relative_class = substr($class, $pos + 1);
-
+            // print $relative_class . '<br />';
             // try to load a mapped file for the prefix and relative class
             $mapped_file = $this->loadMappedFile($prefix, $relative_class);
-
             if ($mapped_file) {
                 return $mapped_file;
             }
@@ -176,7 +175,6 @@ class AutoloaderClass {
             $file = $base_dir
                     . str_replace('\\', '/', $relative_class)
                     . '.php';
-
             // if the mapped file exists, require it
             if ($this->requireFile(APPLICATION_PATH . $file)) {
                 // yes, we're done
@@ -195,6 +193,7 @@ class AutoloaderClass {
      * @return bool True if the file exists, false if not.
      */
     protected function requireFile($file) {
+        // echo $file;
         if (file_exists($file)) {
             require $file;
             return true;

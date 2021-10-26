@@ -2,6 +2,8 @@
 
 return [
     'Core\\' => ['/src/views/'],
-    'Config\\' => ['/Config/'],
+    'Core\\' => ['/src/config/'],
+    'Config\\' => ['/src/config/'],
+    'App\\' => ['/src/controller/'],
 ];
 

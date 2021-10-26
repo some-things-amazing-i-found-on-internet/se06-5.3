@@ -15,7 +15,15 @@ $loader->register();
 // set_exception_handler('Core\Error::exceptionHandler');
 
 // Route dispatch
+// $router = new Core\View();
+// $router->render("home", compact([]));
+
+$url = $_SERVER['REQUEST_URI'];
+$extract = explode("/", $url);
+
 $router = new Core\View();
-$router->render("order-details", compact([]));
-
-
+if (isset($extract[2]) and $extract[2] !== "") {
+    $router->render($extract[2], compact([]));
+}else{
+    $router->render("/home", compact([]));
+}
