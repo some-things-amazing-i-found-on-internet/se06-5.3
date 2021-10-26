@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace Core\config;
 
 /**
  * This view class.
@@ -41,7 +41,6 @@ class View {
             require_once APPLICATION_PATH . "/src/views/fixLayout.php";
             
         } else {
-            
             throw new \Exception("View $view not found");
         }
     }

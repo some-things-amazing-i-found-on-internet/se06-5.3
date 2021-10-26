@@ -1,6 +1,6 @@
 <?php
 
-namespace Config;
+namespace Core\config;
 
 /**
  * This database config
@@ -27,7 +27,7 @@ class Database {
      * 
      * @var string
      */
-    const DB_NAME = 'fashiony_ogs';
+    const DB_NAME = 'food_data';
 
     /**
      * Database username

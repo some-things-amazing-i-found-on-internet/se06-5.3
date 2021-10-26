@@ -153,9 +153,8 @@ class Router
      */
     private function runRoute(): void
     {
-
-        // Check if class exists
         echo $this->route['controller'];
+        // Check if class exists
         if (class_exists($this->route['controller'])) {
 
             // Inst the class
@@ -191,14 +190,14 @@ class Router
         }
 
         // Validate route
-        $this->route = $this->checkRoute($url, $method);
+        // $this->route = $this->checkRoute($url, $method);
             // echo '<script>';
             // // echo 'console.log("'.strpos("/se06-5.3/home.php","/home"). '")';
             // echo 'console.log("'.$this->route. '")';
             // echo '</script>';
-        if ($this->route === NULL) {
-            throw new \Exception('No route matched.', 404);
-        }
+        // if ($this->route === NULL) {
+        //     throw new \Exception('No route matched.', 404);
+        // }
 
         // Get route parameters
         $this->extractUrlParams($url);

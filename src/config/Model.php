@@ -1,6 +1,6 @@
 <?php
-namespace Core;
-use Config\Database;
+namespace Core\config;
+use Core\config\Database;
 use PDO;
 
 /**
@@ -79,7 +79,7 @@ abstract class Model {
     public function insert(array $data): int {
 
         if($this->_table === ""){
-            throw new Exception("Attribute _table is empty string!");
+            throw new \Exception("Attribute _table is empty string!");
         }
         
         // Question marks

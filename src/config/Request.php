@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace Core\config;
 
 /**
  * The request class.

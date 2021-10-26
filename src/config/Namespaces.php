@@ -1,9 +1,8 @@
 <?php
 
 return [
-    'Core\\' => ['/src/views/'],
-    'Core\\' => ['/src/config/'],
+    'Core\\' => ['/src/'],
     'Config\\' => ['/src/config/'],
-    'App\\' => ['/src/controller/'],
+    // 'App\\' => ['/src/controller/'],
 ];
 

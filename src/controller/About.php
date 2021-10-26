@@ -1,7 +1,12 @@
 <?php
-namespace App\controller;
-use Core\Request;
-use Core\View;
+
+namespace Core\controller;
+
+use Core\config\Model;
+use Core\config\Request;
+
+use Core\config\View;
+
 /**
  * The home controller class.
  *
@@ -15,7 +20,8 @@ use Core\View;
  * @link       http://pear.php.net/package/PackageName
  * @since      Class available since Release 1.0.0
  */
-class About{
+class About extends Model
+{
 
     /**
      * The index controller action
@@ -29,7 +35,16 @@ class About{
      * @access  public
      * @since   Method available since Release 1.0.0
      */
-    public function index(): void {
+
+    public function getAll(): iterable
+    {
+        return $this->DB()
+            ->query('SELECT id, first_name FROM customers')
+            ->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function index(): void
+    {
 
         // Request params
         // $from = Request::getParam("from", date("Y-m-01"));
@@ -56,5 +71,4 @@ class About{
         // Render view
         View::render("about", compact([]));
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+use Core\Model;
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -21,9 +22,18 @@ $loader->register();
 $url = $_SERVER['REQUEST_URI'];
 $extract = explode("/", $url);
 
-$router = new Core\View();
+// $router = new Core\View();
+// $router = new App\controller\About("customers");
 if (isset($extract[2]) and $extract[2] !== "") {
-    $router->render($extract[2], compact([]));
-}else{
-    $router->render("/home", compact([]));
+    // $A = "1";
+    if ($extract[2] === "home") {
+        $router = new Core\controller\Home("");
+        $router->index();
+    } else if ($extract[2] === "about") {
+        $router = new Core\controller\About("");
+        $router->index();
+    }
+} else {
+    $router = new Core\controller\Home("");
+    $router->index();
 }
