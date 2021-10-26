@@ -81,7 +81,10 @@
 <body>
     <?php
     $cur_page = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
-    if ($cur_page == 'login.php') {
+    $cur_uri_compose = $_SERVER["REQUEST_URI"];
+    $cur_uri = explode("/", $cur_uri_compose);
+    $path = $cur_uri[2];
+    if ($path == 'login') {
     } else {
     ?>
         <!-- advertise-banner -->

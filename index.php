@@ -1,5 +1,7 @@
 <?php
+
 use Core\Model;
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -26,12 +28,20 @@ $extract = explode("/", $url);
 // $router = new App\controller\About("customers");
 if (isset($extract[2]) and $extract[2] !== "") {
     // $A = "1";
+    // echo $_SERVER["REQUEST_URI"];
+    // echo $extract[2];
     if ($extract[2] === "home") {
         $router = new Core\controller\Home("");
         $router->index();
     } else if ($extract[2] === "about") {
         $router = new Core\controller\About("");
         $router->index();
+    }else if($extract[2] === "login") {
+        $router = new Core\controller\Login("");
+        $router->index();
+    } else {
+        $router = new Core\config\View();
+        $router->render("home", compact([]));
     }
 } else {
     $router = new Core\controller\Home("");

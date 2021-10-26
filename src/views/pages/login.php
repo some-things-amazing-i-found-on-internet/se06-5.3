@@ -28,17 +28,17 @@
                     </p>
                     <div class="form-group">
                       <label class="text-light-white fs-14">Email</label>
-                      <input type="email" name="cust_email" class="form-control form-control-submit" placeholder="Email" required>
+                      <input type="email" name="cust_email" class="form-control" placeholder="Email" required>
                     </div>
                     <div class="form-group">
                       <label class="text-light-white fs-14">Password</label>
-                      <input type="password" id="password-field" name="cust_password" class="form-control form-control-submit" placeholder="Password" required>
+                      <input type="password" id="password-field" name="cust_password" class="form-control" placeholder="Password" required>
                       <div data-name="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></div>
                     </div>
                     <?php
-                    if ($error_message != '') {
-                      echo "<div class='error text-center text-white' style='padding: 10px;background:#ff0018;margin-bottom:20px;'>" . $error_message . "</div>";
-                    }
+                    // if ($error_message != '') {
+                    //   echo "<div class='error text-center text-white' style='padding: 10px;background:#ff0018;margin-bottom:20px;'>" . $error_message . "</div>";
+                    // }
                     ?>
                     <div class="form-group checkbox-reset">
                       <label class="custom-checkbox mb-0">

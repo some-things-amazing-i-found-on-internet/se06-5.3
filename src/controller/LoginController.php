@@ -10,7 +10,7 @@ class LoginController extends Model
     /**
      * The database table name.
      */
-    parent::__construct("login");
+    parent::__construct("users");
   }
   public function getAll(): iterable
   {
