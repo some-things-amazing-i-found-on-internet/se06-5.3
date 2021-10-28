@@ -15,29 +15,29 @@
           <div class="section-2 user-page main-padding">
             <div class="login-sec">
               <div class="login-box">
-                <form>
+                <form action="" method="post">
                   <h4 class="text-light-black fw-600">Create your account</h4>
                   <div class="row">
                     <div class="col-lg-6 col-md-12 col-sm-6">
                       <div class="form-group">
                         <label class="text-light-white fs-14">First name</label>
-                        <input type="text" name="#" class="form-control form-control-submit" placeholder="First Name" required>
+                        <input type="text" name="register_fname" class="form-control form-control-submit" placeholder="First Name" required>
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-6">
                       <div class="form-group">
                         <label class="text-light-white fs-14">Last name</label>
-                        <input type="text" name="#" class="form-control form-control-submit" placeholder="Last Name" required>
+                        <input type="text" name="register_lname" class="form-control form-control-submit" placeholder="Last Name" required>
                       </div>
                     </div>
                     <div class="col-12">
                       <div class="form-group">
                         <label class="text-light-white fs-14">Email</label>
-                        <input type="email" name="#" class="form-control form-control-submit" placeholder="Email I'd" required>
+                        <input type="email" name="register_email" class="form-control form-control-submit" placeholder="Email I'd" required>
                       </div>
                       <div class="form-group">
                         <label class="text-light-white fs-14">Password (8 character minimum)</label>
-                        <input type="password" id="password-field" name="#" class="form-control form-control-submit" value="password" placeholder="Password" required>
+                        <input type="password" id="password-field" name="register_password" class="form-control form-control-submit" value="password" placeholder="Password" required>
                         <div data-name="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></div>
                       </div>
                       <div class="form-group checkbox-reset">

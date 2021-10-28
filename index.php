@@ -39,6 +39,9 @@ if (isset($extract[2]) and $extract[2] !== "") {
     }else if($extract[2] === "login") {
         $router = new Core\controller\Login("");
         $router->index();
+    }else if($extract[2] === "register") {
+        $router = new Core\controller\RegisterController("");
+        $router->index();
     } else {
         $router = new Core\config\View();
         $router->render("home", compact([]));
