@@ -57,7 +57,7 @@ class RegisterController extends Model
             if ($total === 0) {
                 $insert_sql = "INSERT INTO users (email, user_password, fname, lname) VALUES (:email, :user_password, :fname, :lname)";
                 $insert = $this->DB()->prepare($insert_sql);
-                $insert->execute([":email"=>$register_email, ":user_password"=>$register_password, ":fname"=>$register_fname, ":lname"=>$register_lname]);
+                $insert->execute([":email"=>$register_email, ":user_password"=>md5($register_password), ":fname"=>$register_fname, ":lname"=>$register_lname]);
                 // thiếu: thông báo đkí thành công + chuyển đến trang login!
             }
             else {
