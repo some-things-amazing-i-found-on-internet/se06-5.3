@@ -19,7 +19,7 @@ use Core\config\View;
  * @link       http://pear.php.net/package/PackageName
  * @since      Class available since Release 1.0.0
  */
-class Home extends Model
+class HomeController extends Model
 {
 
     /**

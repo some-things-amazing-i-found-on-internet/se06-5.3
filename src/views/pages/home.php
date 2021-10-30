@@ -1,5 +1,6 @@
-
-
+<?php
+    
+?>
 	 <!-- slider -->
     <section class="about-us-slider swiper-container p-relative">
         <div class="swiper-wrapper">

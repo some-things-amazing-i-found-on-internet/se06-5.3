@@ -31,7 +31,7 @@ if (isset($extract[2]) and $extract[2] !== "") {
     // echo $_SERVER["REQUEST_URI"];
     // echo $extract[2];
     if ($extract[2] === "home") {
-        $router = new Core\controller\Home("");
+        $router = new Core\controller\HomeController("");
         $router->index();
     } else if ($extract[2] === "about") {
         $router = new Core\controller\About("");
@@ -47,6 +47,6 @@ if (isset($extract[2]) and $extract[2] !== "") {
         $router->render("home", compact([]));
     }
 } else {
-    $router = new Core\controller\Home("");
+    $router = new Core\controller\HomeController("");
     $router->index();
 }
