@@ -36,10 +36,10 @@ if (isset($extract[2]) and $extract[2] !== "") {
     } else if ($extract[2] === "about") {
         $router = new Core\controller\About("");
         $router->index();
-    }else if($extract[2] === "login") {
+    } else if ($extract[2] === "login") {
         $router = new Core\controller\Login("");
         $router->index();
-    }else if($extract[2] === "register") {
+    } else if ($extract[2] === "register") {
         $router = new Core\controller\RegisterController("");
         $router->index();
     } else {

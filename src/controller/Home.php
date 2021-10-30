@@ -2,6 +2,7 @@
 
 namespace Core\controller;
 
+use Core\config\Database;
 use Core\config\Model;
 use Core\config\Request;
 use Core\config\View;
@@ -24,8 +25,8 @@ class Home extends Model
 
     /**
      * The index controller action
-     * 
-     * It displays the statistics: 
+     *
+     * It displays the statistics:
      *  - The total number of orders, customers and revenue.
      *  - Monthly chart
      *  - Latest 10 orders.
@@ -39,6 +40,21 @@ class Home extends Model
         return $this->DB()
             ->query('SELECT id, first_name FROM customers')
             ->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    public function __construct($table_name)
+    {
+        parent::__construct($table_name);
+        session_start();
+        if (isset($_REQUEST['cust_email'])) {
+            echo $_REQUEST['cust_email'] . '\n';
+        } else {
+            echo 'email empty\n';
+        }
+        if (isset($_REQUEST['cust_password'])) {
+            echo $_REQUEST['cust_password'] . '\n';
+        } else {
+            echo 'empty password\n';
+        }
     }
     public function index(): void
     {
