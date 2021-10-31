@@ -41,21 +41,21 @@ class Home extends Model
             ->query('SELECT id, first_name FROM customers')
             ->fetchAll(\PDO::FETCH_ASSOC);
     }
-    public function __construct($table_name)
-    {
-        parent::__construct($table_name);
-        session_start();
-        if (isset($_REQUEST['cust_email'])) {
-            echo $_REQUEST['cust_email'] . '\n';
-        } else {
-            echo 'email empty\n';
-        }
-        if (isset($_REQUEST['cust_password'])) {
-            echo $_REQUEST['cust_password'] . '\n';
-        } else {
-            echo 'empty password\n';
-        }
-    }
+    // public function __construct($table_name)
+    // {
+    //     parent::__construct($table_name);
+    //     session_start();
+    //     if (isset($_POST['cust_email'])) {
+    //         echo $_POST['cust_email'] . '\n';
+    //     } else {
+    //         echo 'email empty\n';
+    //     }
+    //     if (isset($_POST['cust_password'])) {
+    //         echo $_POST['cust_password'] . '\n';
+    //     } else {
+    //         echo 'empty password\n';
+    //     }
+    // }
     public function index(): void
     {
 
