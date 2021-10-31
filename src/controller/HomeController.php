@@ -71,7 +71,12 @@ class HomeController extends Model
 
     public function get_food()
     {
-        $query_sql = "SELECT * FROM restaurants";
+        $query_sql = "SELECT * 
+                        FROM `dish_orderes`
+                        JOIN dish_types
+                        ON dish_orderes._id = dish_types._id
+                        WHERE dish_orderes._id <> '_id'
+                        limit 27";
         $query = $this->DB()->prepare($query_sql);
         $query->execute();
 
