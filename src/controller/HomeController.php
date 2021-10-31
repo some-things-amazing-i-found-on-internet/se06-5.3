@@ -68,4 +68,14 @@ class HomeController extends Model
         // Render view
         View::render("home", compact([]));
     }
+
+    public function get_food()
+    {
+        $query_sql = "SELECT * FROM restaurants";
+        $query = $this->DB()->prepare($query_sql);
+        $query->execute();
+
+        $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+        return $result;
+    }
 }
