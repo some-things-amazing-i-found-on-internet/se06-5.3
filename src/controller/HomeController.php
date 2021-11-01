@@ -20,7 +20,7 @@ use Core\config\View;
  * @link       http://pear.php.net/package/PackageName
  * @since      Class available since Release 1.0.0
  */
-class Home extends Model
+class HomeController extends Model
 {
 
     /**
@@ -83,5 +83,20 @@ class Home extends Model
 
         // Render view
         View::render("home", compact([]));
+    }
+
+    public function get_food()
+    {
+        $query_sql = "SELECT * 
+                        FROM `dish_orderes`
+                        JOIN dish_types
+                        ON dish_orderes._id = dish_types._id
+                        WHERE dish_orderes._id <> '_id'
+                        limit 27";
+        $query = $this->DB()->prepare($query_sql);
+        $query->execute();
+
+        $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+        return $result;
     }
 }
