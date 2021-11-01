@@ -43,32 +43,33 @@ if (isset($extract[2]) and $extract[2] !== "") {
         $router = new Core\controller\RegisterController("");
         $router->index();
     } else if ($extract[2] === "login-process") {
-        session_start();
+        // KHÔNG VIẾT CÁC HÀM XỬ LÝ CỦA MÀN VÀO TRONG INDEX.PHP, LÀM TẤT CẢ TRONG mục controller để render ra view
+        // session_start();
 
-        $_SESSION['cust_email'] = $_POST['cust_email'];
-        $_SESSION['cust_password'] = $_POST['cust_password'];
+        // $_SESSION['cust_email'] = $_POST['cust_email'];
+        // $_SESSION['cust_password'] = $_POST['cust_password'];
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $db = "users";
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $db);
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+        // $servername = "localhost";
+        // $username = "root";
+        // $password = "";
+        // $db = "users";
+        // // Create connection
+        // $conn = new mysqli($servername, $username, $password, $db);
+        // // Check connection
+        // if ($conn->connect_error) {
+        //     die("Connection failed: " . $conn->connect_error);
+        // }
 
-        $sql = "SELECT fname, lname FROM users WHERE email='" . $_POST['cust_email'] . "' AND user_password='" . $_POST['cust_password'] . "'";
-        $result = $conn->query($sql);
-        $conn->close();
-        if ($result->num_rows > 0) {
-            $router = new Core\controller\Home("");
-            $router->index();
-        } else {
-            session_destroy();
-            header('Location: ./login');
-        }
+        // $sql = "SELECT fname, lname FROM users WHERE email='" . $_POST['cust_email'] . "' AND user_password='" . $_POST['cust_password'] . "'";
+        // $result = $conn->query($sql);
+        // $conn->close();
+        // if ($result->num_rows > 0) {
+        //     $router = new Core\controller\Home("");
+        //     $router->index();
+        // } else {
+        //     session_destroy();
+        //     header('Location: ./login');
+        // }
     } else {
         $router = new Core\config\View();
         $router->render("home", compact([]));
