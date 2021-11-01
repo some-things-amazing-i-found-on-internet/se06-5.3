@@ -2,6 +2,7 @@
 
 namespace Core\controller;
 
+use Core\config\Database;
 use Core\config\Model;
 use Core\config\Request;
 use Core\config\View;
@@ -24,8 +25,8 @@ class Login extends Model
 
     /**
      * The index controller action
-     * 
-     * It displays the statistics: 
+     *
+     * It displays the statistics:
      *  - The total number of orders, customers and revenue.
      *  - Monthly chart
      *  - Latest 10 orders.
