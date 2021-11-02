@@ -58,7 +58,16 @@ class HomeController extends Model
     // }
     public function index(): void
     {
+        $query_sql = "SELECT * 
+                        FROM restaurants
+                        JOIN restaurant_photos
+                        ON restaurants._id = restaurant_photos._id
+                        WHERE restaurant_photos.width = 1242
+                        limit 27";
+        $query = $this->DB()->prepare($query_sql);
+        $query->execute();
 
+        $result = $query->fetchAll(\PDO::FETCH_ASSOC);
         // Request params
         // $from = Request::getParam("from", date("Y-m-01"));
         // $to = Request::getParam("to", date("Y-m-t"));
@@ -82,21 +91,7 @@ class HomeController extends Model
         // $orders = $mdlOrders->getLastTen();
 
         // Render view
-        View::render("home", compact([]));
-    }
 
-    public function get_food()
-    {
-        $query_sql = "SELECT *
-                        FROM `dish_orderes`
-                        JOIN dish_types
-                        ON dish_orderes._id = dish_types._id
-                        WHERE dish_orderes._id <> '_id'
-                        limit 27";
-        $query = $this->DB()->prepare($query_sql);
-        $query->execute();
-
-        $result = $query->fetchAll(\PDO::FETCH_ASSOC);
-        return $result;
+        View::render("home", compact(["result"]));
     }
 }

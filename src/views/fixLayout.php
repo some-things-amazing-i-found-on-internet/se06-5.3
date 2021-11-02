@@ -87,20 +87,7 @@
     if ($path == 'login') {
     } else {
     ?>
-        <!-- advertise-banner -->
-        <div class="banner-adv-bg">
-            <div id="banner-adv" class="banner-adv">
-                <div class="flex-adv">
-                    <a href="https://themeforest.net/item/costic-food-dashboard-html5-template/28164952" target="_blank">
-                        <i class="fas fa-gift"></i>
-                        <span class="text">Get FREE CRM Dashboard with Quickmunch.</span>
-                    </a>
-                    <a href="https://themeforest.net/item/costic-food-dashboard-html5-template/28164952" target="_blank" class="btn-second btn-submit">View Dashboard here</a>
-                </div>
-                <span class="close-banner"></span>
-            </div>
-        </div>
-        <!-- advertise-banner -->
+
 
         <!-- advertise-banner -->
         <!-- Navigation -->

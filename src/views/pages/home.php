@@ -1,7 +1,3 @@
-<?php
-$homecontroller = new Core\controller\HomeController("");
-$food = $homecontroller->get_food();
-?>
 <!-- slider -->
 <section class="about-us-slider swiper-container p-relative">
     <div class="swiper-wrapper">
@@ -246,18 +242,19 @@ $food = $homecontroller->get_food();
         ?>
         <div class="row">
             <?php
-            foreach ($food as $row) {
+            foreach ($result as $row) {
             ?>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product-box mb-xl-20">
                         <div class="product-img">
                             <a href="restaurant.html">
-                                <img src=<?php echo $row['photos'] ?> class="img-fluid full-width" alt="product-img">
+                                <img src=<?php echo $row['value'] ?> class="img-fluid full-width" alt="product-img">
                             </a>
                             <div class="overlay">
                                 <div class="product-tags padding-10"> <span class="circle-tag">
                                         <img src="assets/img/svg/013-heart-1.svg" alt="tag">
                                     </span>
+
                                     <?php if ($row['is_group_discount_item'] === "True") {
                                     ?>
                                         <div class="custom-tag"> <span class="text-custom-white rectangle-tag bg-gradient-red">
@@ -267,6 +264,10 @@ $food = $homecontroller->get_food();
                                     <?php
                                     }
                                     ?>
+                                    <div class="custom-tag"> <span class="text-custom-white rectangle-tag bg-gradient-red">
+                                            10%
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -274,14 +275,17 @@ $food = $homecontroller->get_food();
                             <div class="title-box">
                                 <h6 class="product-title"><a href="restaurant.html" class="text-light-black "><?php echo $row['name'] ?></a></h6>
                                 <div class="tags"> <span class="text-custom-white rectangle-tag bg-yellow">
-                                        3.1
+                                        <?php
+                                        echo $row['rating_avg'];
+                                        ?>
+                                        <i class="fas fa-star"></i>
                                     </span>
                                 </div>
                             </div>
-                            <p class="text-light-white"><?php echo $row['dish_type_name'] ?></p>
+                            <p class="text-light-white"><?php echo $row['address'] ?></p>
                             <div class="product-details">
-                                <div class="price-time"> <span class="text-light-black time"><?php echo "Số lần đặt: " . $row["display_total_order"] ?></span>
-                                    <span class="text-light-white price"><?php echo $row["price_text"] ?></span>
+                                <div class="price-time"> <span class="text-light-black time"><?php echo "Giới hạn khoảng cách: " . ((int)$row["limit_distance"])/1000 . "km" ?></span>
+                                    <span class="text-light-white price"><?php echo "Giá trung bình: ". str_replace("k", ".000đ", $row["price_range"]) ?></span>
                                 </div>
                                 <div class="rating"> <span>
                                         <i class="fas fa-star text-yellow"></i>
@@ -290,10 +294,10 @@ $food = $homecontroller->get_food();
                                         <i class="fas fa-star text-yellow"></i>
                                         <i class="fas fa-star text-yellow"></i>
                                     </span>
-                                    <span class="text-light-white text-right"><?php echo $row["total_like"] . " " . "likes" ?></span>
+                                    <span class="text-light-white text-right"><?php echo $row["rating_display_total_review"] . " " . "ratings" ?></span>
                                 </div>
                             </div>
-                            <div class="product-footer"> <span class="text-custom-white square-tag">
+                            <!-- <div class="product-footer"> <span class="text-custom-white square-tag">
                                     <img src="assets/img/svg/004-leaf.svg" alt="tag">
                                 </span>
                                 <span class="text-custom-white square-tag">
@@ -308,7 +312,7 @@ $food = $homecontroller->get_food();
                                 <span class="text-custom-white square-tag">
                                     <img src="assets/img/svg/009-lemon.svg" alt="tag">
                                 </span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
