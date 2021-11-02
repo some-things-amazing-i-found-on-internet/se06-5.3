@@ -270,6 +270,7 @@
                                         <?php
                                         echo $row['rating_avg'];
                                         ?>
+                                        <i class="fas fa-star"></i>
                                     </span>
                                 </div>
                             </div>
@@ -288,7 +289,7 @@
                                     <span class="text-light-white text-right"><?php echo $row["rating_display_total_review"] . " " . "ratings" ?></span>
                                 </div>
                             </div>
-                            <div class="product-footer"> <span class="text-custom-white square-tag">
+                            <!-- <div class="product-footer"> <span class="text-custom-white square-tag">
                                     <img src="assets/img/svg/004-leaf.svg" alt="tag">
                                 </span>
                                 <span class="text-custom-white square-tag">
@@ -303,7 +304,7 @@
                                 <span class="text-custom-white square-tag">
                                     <img src="assets/img/svg/009-lemon.svg" alt="tag">
                                 </span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
