@@ -58,7 +58,7 @@ class HomeController extends Model
     // }
     public function index(): void
     {
-        $query_sql = "SELECT * 
+        $query_sql = "SELECT *
                         FROM restaurants
                         JOIN restaurant_photos
                         ON restaurants._id = restaurant_photos._id
@@ -68,30 +68,15 @@ class HomeController extends Model
         $query->execute();
 
         $result = $query->fetchAll(\PDO::FETCH_ASSOC);
-        // Request params
-        // $from = Request::getParam("from", date("Y-m-01"));
-        // $to = Request::getParam("to", date("Y-m-t"));
-        // $month = Request::getParam("month", date("Y-m"));
 
-        // // Statistic counters
-        // $modelStatistic = new \App\Models\Statistic();
-        // $rows = $modelStatistic->getForDashboard($from, $to);
+        $query_sql2 = "SELECT *
+                        FROM  category_groups";
+        $query2 = $this->DB()->prepare($query_sql2);
+        $query2->execute();
 
-        // // Remove 0 index
-        // $statistic = $rows[0];
+        $result2 = $query2->fetchAll(\PDO::FETCH_ASSOC);
 
-        // // Format revenue
-        // $statistic['total_revenue'] = number_format(
-        //         $statistic['total_revenue'], 2, ".", ",");
 
-        // // Graphic data
-        // $graphic = $modelStatistic->getMountlyGraphicData($month);
-
-        // $mdlOrders = new \App\Models\Order();
-        // $orders = $mdlOrders->getLastTen();
-
-        // Render view
-
-        View::render("home", compact(["result"]));
+        View::render("home", compact(["result", "result2"]));
     }
 }

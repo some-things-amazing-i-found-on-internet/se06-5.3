@@ -64,33 +64,41 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-header-left">
-                    <h3 class="text-light-black header-title title">Browse by cuisine <span class="fs-14"><a href="restaurant.html">See all restaurant</a></span></h3>
+                    <h3 class="text-light-black header-title title">Browse by category <span class="fs-14"><a href="restaurant.html">See all restaurant</a></span></h3>
                 </div>
             </div>
             <div class="col-12">
                 <div class="category-slider swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <!-- <div class="swiper-slide">
                             <a href="restaurant.html" class="categories">
                                 <div class="icon icon-parent text-custom-white bg-light-green"> <i class="fas fa-map-marker-alt"></i>
                                 </div> <span class="text-light-black cat-name">Brooklyn</span>
                             </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="restaurant.html" class="categories">
-                                <div class="icon text-custom-white bg-light-green ">
-                                    <img src="assets/img/restaurants/125x125/cuisine-1.jpg" class="rounded-circle" alt="categories">
-                                </div> <span class="text-light-black cat-name">Italian </span>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
+                        </div> -->
+
+                        <?php
+                        foreach ($result2 as $row2) {
+                        ?>
+                            <div class="swiper-slide">
+                                <a href="restaurant.html" class="categories">
+                                    <div class="icon text-custom-white bg-light ">
+                                        <img src=<?php echo $row2['icon'] ?> class="rounded-circle" alt="categories">
+                                    </div> <span class="text-light-black cat-name"><?php echo $row2['name'] ?> </span>
+                                </a>
+                            </div>
+                        <?php
+                        }
+                        ?>
+
+                        <!-- <div class="swiper-slide">
                             <a href="restaurant.html" class="categories">
                                 <div class="icon text-custom-white bg-light-green ">
                                     <img src="assets/img/restaurants/125x125/cuisine-2.jpg" class="rounded-circle" alt="categories">
                                 </div> <span class="text-light-black cat-name">Thai </span>
                             </a>
-                        </div>
-                        <div class="swiper-slide">
+                        </div> -->
+                        <!--<div class="swiper-slide">
                             <a href="restaurant.html" class="categories">
                                 <div class="icon text-custom-white bg-light-green ">
                                     <img src="assets/img/restaurants/125x125/cuisine-3.jpg" class="rounded-circle" alt="categories">
@@ -132,14 +140,14 @@
                                 </div> <span class="text-light-black cat-name">American </span>
                             </a>
                         </div>
+                        <-------------------------------------------- </div> -->
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <!-- Browse by category -->
 <!-- your previous order -->
@@ -255,15 +263,12 @@
                                         <img src="assets/img/svg/013-heart-1.svg" alt="tag">
                                     </span>
 
-                                    <?php if ($row['is_group_discount_item'] === "True") {
-                                    ?>
-                                        <div class="custom-tag"> <span class="text-custom-white rectangle-tag bg-gradient-red">
-                                                10%
-                                            </span>
-                                        </div>
-                                    <?php
-                                    }
-                                    ?>
+
+                                    <div class="custom-tag"> <span class="text-custom-white rectangle-tag bg-gradient-red">
+                                            10%
+                                        </span>
+                                    </div>
+
                                     <div class="custom-tag"> <span class="text-custom-white rectangle-tag bg-gradient-red">
                                             10%
                                         </span>
@@ -284,8 +289,8 @@
                             </div>
                             <p class="text-light-white"><?php echo $row['address'] ?></p>
                             <div class="product-details">
-                                <div class="price-time"> <span class="text-light-black time"><?php echo "Giới hạn khoảng cách: " . ((int)$row["limit_distance"])/1000 . "km" ?></span>
-                                    <span class="text-light-white price"><?php echo "Giá trung bình: ". str_replace("k", ".000đ", $row["price_range"]) ?></span>
+                                <div class="price-time"> <span class="text-light-black time"><?php echo "Giới hạn khoảng cách: " . ((int)$row["limit_distance"]) / 1000 . "km" ?></span>
+                                    <span class="text-light-white price"><?php echo "Giá trung bình: " . str_replace("k", ".000đ", $row["price_range"]) ?></span>
                                 </div>
                                 <div class="rating"> <span>
                                         <i class="fas fa-star text-yellow"></i>
