@@ -91,6 +91,7 @@ class HomeController extends Model
         // $orders = $mdlOrders->getLastTen();
 
         // Render view
+
         View::render("home", compact(["result"]));
     }
 }

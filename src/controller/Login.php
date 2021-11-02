@@ -44,6 +44,28 @@ class Login extends Model
     public function index(): void
     {
 
+        if (isset($_POST['cust_email']) && isset($_POST['cust_password'])) {
+            $cust_email = strip_tags($_POST['cust_email']);
+            $cust_password = strip_tags($_POST['cust_password']);
+
+            $query_sql = "SELECT * FROM users WHERE email=:email AND user_password=:pass";
+            // $result = $this->DB()->query($query_sql);
+            // $query->execute(array($register_email));
+
+            $query = $this->DB()->prepare($query_sql);
+            $query->execute([":email" => $cust_email, ":pass" => $cust_password]);
+            $total = $query->rowCount();
+            $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+            if ($total > 0) {
+                session_start();
+                $_SESSION['customer'] = $result;
+                View::render("home", compact([]));
+            } else {
+                View::render("login", compact([]));
+            }
+        } else {
+            View::render("login", compact([]));
+        }
         // Request params
         // $from = Request::getParam("from", date("Y-m-01"));
         // $to = Request::getParam("to", date("Y-m-t"));
@@ -67,6 +89,6 @@ class Login extends Model
         // $orders = $mdlOrders->getLastTen();
 
         // Render view
-        View::render("login", compact([]));
+
     }
 }
