@@ -87,7 +87,7 @@ class HomeController extends Model
 
     public function get_food()
     {
-        $query_sql = "SELECT * 
+        $query_sql = "SELECT *
                         FROM `dish_orderes`
                         JOIN dish_types
                         ON dish_orderes._id = dish_types._id

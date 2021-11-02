@@ -12,9 +12,7 @@ $food = $homecontroller->get_food();
                     <div class="row justify-content-start">
                         <div class="col-lg-7 align-self-center">
                             <div class="right-side-content">
-                                <h1 class="text-custom-white fw-600"><?php if (isset($_SESSION['customer'])) {
-                                                                            echo $_SESSION['customer']['cust_name'];
-                                                                        }  ?> Increase takeout sales by 50%</h1>
+                                <h1 class="text-custom-white fw-600"> Increase takeout sales by 50%</h1>
                                 <h3 class="text-custom-white fw-400">with the largest delivery platform in the U.S. and Canada</h3>
                                 <a href="restaurant.html" class="btn-second btn-submit">Learn More.</a>
                             </div>
@@ -260,12 +258,12 @@ $food = $homecontroller->get_food();
                                 <div class="product-tags padding-10"> <span class="circle-tag">
                                         <img src="assets/img/svg/013-heart-1.svg" alt="tag">
                                     </span>
-                                    <?php if ($row['is_group_discount_item']=== "True") {
+                                    <?php if ($row['is_group_discount_item'] === "True") {
                                     ?>
-                                    <div class="custom-tag"> <span class="text-custom-white rectangle-tag bg-gradient-red">
-                                            10%
-                                        </span>
-                                    </div>
+                                        <div class="custom-tag"> <span class="text-custom-white rectangle-tag bg-gradient-red">
+                                                10%
+                                            </span>
+                                        </div>
                                     <?php
                                     }
                                     ?>
