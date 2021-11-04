@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="heading padding-tb-10">
-                    <h3 class="text-light-black title fw-700 no-margin">Great Burger</h3>
+                    <h3 class="text-light-black title fw-700 no-margin">Restaurant</h3>
                     <p class="text-light-black sub-title no-margin">4508 Fort Hamilton Pkwy <span><a href="checkout.html" class="text-success">Change locations</a></span>
                     </p>
                     <div class="head-rating">

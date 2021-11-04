@@ -56,8 +56,9 @@ class HomeController extends Model
     //         echo 'empty password\n';
     //     }
     // }
-    public function index(): void
+    public function index($params): void
     {
+        // print($params);
         $query_sql = "SELECT *
                         FROM restaurants
                         JOIN restaurant_photos

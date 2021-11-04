@@ -255,20 +255,13 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product-box mb-xl-20">
                         <div class="product-img">
-                            <a href="restaurant.html">
+                            <a href="<?php echo 'restaurant&'. $row['id'] ?>">
                                 <img src=<?php echo $row['value'] ?> class="img-fluid full-width" alt="product-img">
                             </a>
                             <div class="overlay">
                                 <div class="product-tags padding-10"> <span class="circle-tag">
                                         <img src="assets/img/svg/013-heart-1.svg" alt="tag">
                                     </span>
-
-
-                                    <div class="custom-tag"> <span class="text-custom-white rectangle-tag bg-gradient-red">
-                                            10%
-                                        </span>
-                                    </div>
-
                                     <div class="custom-tag"> <span class="text-custom-white rectangle-tag bg-gradient-red">
                                             10%
                                         </span>
@@ -278,7 +271,7 @@
                         </div>
                         <div class="product-caption">
                             <div class="title-box">
-                                <h6 class="product-title"><a href="restaurant.html" class="text-light-black "><?php echo $row['name'] ?></a></h6>
+                                <h6 class="product-title"><a href="<?php echo 'restaurant&id='. $row['id'] ?>" class="text-light-black "><?php echo $row['name'] ?></a></h6>
                                 <div class="tags"> <span class="text-custom-white rectangle-tag bg-yellow">
                                         <?php
                                         echo $row['rating_avg'];

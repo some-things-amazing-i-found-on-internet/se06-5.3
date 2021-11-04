@@ -1,7 +1,4 @@
 <?php
-
-use Core\Model;
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -12,41 +9,16 @@ require './src/config/AutoloaderClass.php';
 // PSR4 autoloader class.
 $loader = new Core\AutoloaderClass();
 $loader->register();
+use Core\config\Router;
+use Core\config\Request;
 
-// Error and Exception handling.
-// set_error_handler('Core\Error::errorHandler');
-// set_exception_handler('Core\Error::exceptionHandler');
+$router = new Router(new Request);
+// include_once APPLICATION_PATH . '/routes.php';
+// Lấy url hiện tại của trang web. Mặc định la /
+$request_url = !empty($_GET['url']) ? '/' . $_GET['url'] : '/';
 
-// Route dispatch
-// $router = new Core\View();
-// $router->render("home", compact([]));
+// Lấy phương thức hiện tại của url đang được gọi. (GET | POST). Mặc định là GET.
+$method_url = !empty($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : 'GET';
 
-$url = $_SERVER['REQUEST_URI'];
-$extract = explode("/", $url);
-
-// $router = new Core\View();
-// $router = new App\controller\About("customers");
-if (isset($extract[2]) and $extract[2] !== "") {
-    // $A = "1";
-    // echo $_SERVER["REQUEST_URI"];
-    // echo $extract[2];
-    if ($extract[2] === "home") {
-        $router = new Core\controller\HomeController("");
-        $router->index();
-    } else if ($extract[2] === "about") {
-        $router = new Core\controller\About("");
-        $router->index();
-    } else if ($extract[2] === "login") {
-        $router = new Core\controller\Login("");
-        $router->index();
-    } else if ($extract[2] === "register") {
-        $router = new Core\controller\RegisterController("");
-        $router->index();
-    } else {
-        $router = new Core\config\View();
-        $router->render("home", compact([]));
-    }
-} else {
-    $router = new Core\controller\HomeController("");
-    $router->index();
-}
+// map URL
+$router->map($request_url, $method_url);

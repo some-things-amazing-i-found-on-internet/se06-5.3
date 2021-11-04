@@ -1,9 +1,4 @@
-Options +FollowSymLinks
-Options -Indexes
-DirectoryIndex index.php
-RewriteEngine on
-RewriteBase /se06-5.3
-RewriteCond $1 !^(index\.php|images|robots\.txt)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+RewriteRule ^(.+)$ index.php?url=$1

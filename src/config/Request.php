@@ -2,53 +2,84 @@
 
 namespace Core\config;
 
-/**
- * The request class.
- *
- * This class stores parameters from get or post requests.
- *
- * @category   Request
- * @package    Core
- * @author     Andrej <*.*.com>
- * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
- * @version    Release: @package_version@
- * @link       http://pear.php.net/package/PackageName
- * @since      Class available since Release 1.0.0
- */
-class Request {
+class Request
+{
+    const GET_METHOD  = "GET";
+    const POST_METHOD = "POST";
+
+    function __construct()
+    {
+        $this->bootstrapSelf();
+    }
+    public static function getParam()
+    {
+        $url = $_SERVER['REQUEST_URI'];
+        $preg = "/(?<=\&).*/";
+        preg_match($preg, $url, $matches);
+        return $matches;
+    }
 
     /**
-     * The array of request parameters.
+     * bootstrapSelf là hàm lấy tất cả param của $_SERVER đổ vào cho đối tượng gốc.
+     * sau này việc sử dụng 1 router sẽ không cần sử dụng biến global của PHP
+     * thay vào đó chúng ta sẽ truyền đối tượng request vào
+     * các key của biến $_SERVER sẽ được format theo dạng CamelCase 
+     * đây là cú pháp lạc đà
      *
-     * @var object
+     * @return void
      */
-    static $params = [];
+    private function bootstrapSelf()
+    {
+        foreach ($_SERVER as $key => $value) {
 
-    /**
-     * The static method for getting certain parameter.
-     *
-     *
-     * @return mixed  It will return null if the parameter is not sent.
-     * @access  public
-     * @since   Method available since Release 1.0.0
-     */
-    public static function getParam(string $name, string $default = NULL): ?string {
-        if (isset(Request::$params[$name])) {
-            return Request::$params[$name];
-        } else {
-            return $default;
+            $this->{$this->toCamelCase($key)} = $value;
         }
     }
 
     /**
-     * The method for setting request parameters
+     * toCamelCase hàm này để format string bình thường thành cấu trúc lạc đà
      *
+     * @param  mixed $string type dạng lạc đà 
      * @return void
-     * @access  public
-     * @since   Method available since Release 1.0.0
      */
-    public static function setParams(array $params): void {
-        Request::$params = $params;
+    private function toCamelCase($string)
+    {
+        $result = strtolower($string);
+
+        preg_match_all('/_[a-z]/', $result, $matches);
+
+        foreach ($matches[0] as $match) {
+
+            $c      = str_replace('_', '', strtoupper($match));
+            $result = str_replace($match, $c, $result);
+        }
+
+        return $result;
     }
 
+    /**
+     * getBody 
+     * hàm này không có giá trị trả ra khi phương thức là GET
+     * Bạn có thể handle thêm ở đây khi bạn cần các phương thức khác như PUT, PATCH, DELETE,...
+     *
+     * @return void $body được trả ra để trong Closure function handle chính sẽ gọi đến
+     */
+    public function getBody()
+    {
+        if ($this->requestMethod === Request::GET_METHOD) {
+            return;
+        }
+
+
+        if ($this->requestMethod == Request::POST_METHOD) {
+
+            $body = array();
+            foreach ($_POST as $key => $value) {
+
+                $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+
+            return $body;
+        }
+    }
 }

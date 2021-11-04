@@ -1,255 +1,97 @@
 <?php
 
-namespace Core;
+namespace Core\config;
 
-use Core\Request;
+use Core\config\Request;
 
 /**
- * The router class.
- *
- * This class is used to store and validate routes.
- *
- * @category   Router
- * @package    Core
- * @author     Andrej <*.*.com>
- * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
- * @version    Release: @package_version@
- * @link       http://pear.php.net/package/PackageName
- * @since      Class available since Release 1.0.0
+ * 
+ * Class Route
+ * 
  */
 class Router
 {
 
     /**
-     * The array of the routes.
-     *
-     * @var object
+     * 
+     * - Mảng lưu trữ route của ứng dụng
+     * - Mỗi route sẽ gôm url, method, action và params
+     * 
      */
-    protected $routes = [];
+    private $__routes;
 
-    /**
-     * The current route details
-     *
-     * @var object
-     */
-    private $route = null;
-
-    /**
-     * The current route path
-     *
-     * @var object
-     */
-    private $routePath = null;
-
+    // Hàm khởi tạo
     public function __construct()
     {
-
-        $in = APPLICATION_PATH . "/src/config/Routes.php";
-        if (!is_file($in)) {
-            throw new \Exception("There is no routes defined.");
-        }
-
-        $this->routes = include $in;
-    }
-
-    /**
-     * The decode controller method.
-     * 
-     * This method accepts a string and decodes it.
-     * 
-     * For example: Home@index will be [ "controller" => "Home", "action" => "index" ]
-     *
-     * @param string $route A string representation of route.
-     *
-     * @return array  The route details.
-     * @access  public
-     * @since   Method available since Release 1.0.0
-     */
-    private function decodeControler(string $route): iterable
-    {
-
-        $con = explode("@", $route);
-
-        return [
-            "controller" => $con[0],
-            "action" => $con[1],
+        $this->__routes = [
+            "" => "HomeController@index",
+            "home" => "HomeController@index",
+            "login" => "LoginController@index",
+            "register" => "RegisterController@index",
+            "restaurant" => "RestaurantController@index",
         ];
     }
-
+    // public static function getParam(string $name, string $default = NULL): ?string
+    // {
+    //     if (isset(Request::$params[$name])) {
+    //         return Request::$params[$name];
+    //     } else {
+    //         return $default;
+    //     }
+    // }
     /**
-     * The check route method.
      * 
-     * The method checks whether the current route is valid 
-     * and if it is returns its details.
-     *
-     * @param string $url The route URL
-     * @param string $method The request method (GET, POST ...).
-     *
-     * @return mixed  Route details or false if route is not found.
-     * @access  public
-     * @since   Method available since Release 1.0.0
+     * Hàm xử lý khi một URL được gọi
+     * 
+     * @param string $url URL được gọi đến server
+     * @param string $method Phương thức url được gọi. GET | POST
+     * 
+     * @return void
+     * 
      */
-    private function checkRoute(string $url, string $method): ?iterable
+    public function map(string $url, string $method)
     {
-        foreach ($this->routes[$method] as $route_path => $route) {
-            // echo $route_path;
-            if (strpos($url, $route_path) === 19) {
-
-                $route = $this->decodeControler($route);
-                $namespace = 'App\controller\\';
-                $route['controller'] = $namespace . $route['controller'];
-                $this->routePath = $route_path;
-                return $route;
+        $params = Request::getParam();
+        // array_shift($params);
+        //    print var_dump($params);
+        // Lặp qua các route trong ứng dụng, kiểm tra có chứa url được gọi không
+        foreach ($this->__routes as $route => $route_value) {
+            // echo $route . "</br>";
+            // echo $route_value . "</br>";
+            // kiểm tra route hiện tại có phải là url đang được gọi.
+            $reg = '/^' . $route . '$/';
+            $url = ltrim($url, "/");
+            // print($reg . "</br>");
+            // print(preg_match($reg, $url, $params) . "</br>");
+            if (preg_match($reg, $url, $params2)) {
+                // print("ok");
+                // array_shift($params);
+                // print(var_dump($params) );
+                $this->__call_action_route($route_value, $params ? $params : Array("No thing here"));
+                return;
             }
         }
-        return NULL;
+
+        // nếu không khớp với bất kì route nào cả.
+        echo '404 - Not Found';
+        return;
     }
-
-    /**
-     * Check if method is calla`b`le.
-     *
-     * @param object $controller_object The controller object
-     *
-     * @return void
-     * @access  public
-     * @since   Method available since Release 1.0.0
-     */
-    private function methodCallable(Controller $controller_object): void
+    private function __call_action_route($action, $params)
     {
-
-        if (is_callable(array($controller_object, $this->route['action']))) {
-            $action = $this->route['action'];
-            $controller_object->$action();
-        } else {
-            throw new \Exception("Method " . $this->route['action'] . " in controller " . $this->route['controller'] . " is not a callable.");
-        }
-    }
-
-    /**
-     * Check if method exists.
-     *
-     * @param object $controller_object The controller object
-     *
-     * @return void
-     * @access  public
-     * @since   Method available since Release 1.0.0
-     */
-    private function methodExists(Controller $controller_object): void
-    {
-
-        if (method_exists($controller_object, $this->route['action'])) {
-            $this->methodCallable($controller_object);
-        } else {
-            throw new \Exception("Method " . $this->route['action'] . " in controller " . $this->route['controller'] . " is not defined.");
-        }
-    }
-
-    /**
-     * Run route
-     *
-     * @return void
-     * @access  public
-     * @since   Method available since Release 1.0.0
-     */
-    private function runRoute(): void
-    {
-        echo $this->route['controller'];
-        // Check if class exists
-        if (class_exists($this->route['controller'])) {
-
-            // Inst the class
-            $controller_object = new $this->route['controller']();
-            
-            // Check for method
-            $this->methodExists($controller_object);
-        } else {
-
-            throw new \Exception("Controller class " . $this->route['controller'] . " not found");
-        }
-    }
-
-    /**
-     * Dispatch the route
-     * 
-     * @return void
-     * @access  public
-     * @since   Method available since Release 1.0.0
-     */
-    public function dispatch(): void
-    {
-
-        // Get the url.
-        $url = $_SERVER['PHP_SELF'];
-        // Get the method.
-        $method = $_SERVER['REQUEST_METHOD'];
-
-
-        // Get default url if there is no route.
-        if ($url === "" || $url === "/") {
-            $url = "/home";
+        // Nếu $action là một callback (một hàm).
+        if (is_callable($action)) {
+            call_user_func_array($action, $params);
+            return;
         }
 
-        // Validate route
-        // $this->route = $this->checkRoute($url, $method);
-            // echo '<script>';
-            // // echo 'console.log("'.strpos("/se06-5.3/home.php","/home"). '")';
-            // echo 'console.log("'.$this->route. '")';
-            // echo '</script>';
-        // if ($this->route === NULL) {
-        //     throw new \Exception('No route matched.', 404);
-        // }
+        // Nếu $action là một phương thức của controller. VD: 'HomeController@index'.
+        if (is_string($action)) {
+            $action = explode('@', $action);
+            $controller_name = 'Core\\controller\\' . $action[0];
+            $controller = new $controller_name("");
+            call_user_func_array([$controller, $action[1]], $params);
 
-        // Get route parameters
-        $this->extractUrlParams($url);
-
-        // Run the route
-        $this->runRoute();
-    }
-
-    /**
-     * Routes
-     *
-     * @return array The array of the routes.
-     * @access  public
-     * @since   Method available since Release 1.0.0
-     */
-    public function getRoutes()
-    {
-        return $this->routes;
-    }
-
-    /**
-     * The method for extracting parameters from request.
-     * 
-     * @param $url $data A set of data to be added to the database.
-     *
-     * @return void
-     * @access  public
-     * @since   Method available since Release 1.0.0
-     */
-    public function extractUrlParams(string $url): void
-    {
-
-        // Route string
-        $params_string = str_replace($this->routePath, "", $url);
-
-        // Remove /
-        if (substr($params_string, 0, 1) === "/") {
-            $params_string = substr($params_string, 1);
+            return;
         }
-        $params = [];
-        $arr = explode("/", $params_string);
-
-        for ($index = 0; $index < count($arr); $index++) {
-            if (isset($arr[$index + 1])) {
-                $params[$arr[$index]] = $arr[$index + 1];
-            } else {
-                $params[$arr[$index]] = null;
-            }
-            $index++;
-        }
-
-        // Set parameters
-        Request::setParams($params);
     }
 }

@@ -20,7 +20,7 @@ use Core\config\View;
  * @link       http://pear.php.net/package/PackageName
  * @since      Class available since Release 1.0.0
  */
-class Login extends Model
+class LoginController extends Model
 {
 
     /**
@@ -41,7 +41,7 @@ class Login extends Model
             ->query('SELECT id, first_name FROM customers')
             ->fetchAll(\PDO::FETCH_ASSOC);
     }
-    public function index(): void
+    public function index($params): void
     {
 
         if (isset($_POST['cust_email']) && isset($_POST['cust_password'])) {

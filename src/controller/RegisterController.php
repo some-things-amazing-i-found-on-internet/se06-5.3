@@ -40,7 +40,7 @@ class RegisterController extends Model
             ->query('SELECT id, first_name FROM customers')
             ->fetchAll(\PDO::FETCH_ASSOC);
     }
-    public function index(): void
+    public function index($params): void
     {
         if (isset($_POST['register_fname']) && isset($_POST['register_lname']) && isset($_POST['register_email']) && isset($_POST['register_password'])) {
             $register_fname = strip_tags($_POST['register_fname']);
