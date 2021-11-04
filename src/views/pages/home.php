@@ -364,9 +364,8 @@
             }
 
             echo $pagLink;
-
+            // cho Hiếu làm mấy cái nút cho đẹp nhá
             ?>
-
             <!-- <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="product-box mb-xl-20">
                     <div class="product-img">
