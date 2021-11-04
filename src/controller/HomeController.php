@@ -63,8 +63,8 @@ class HomeController extends Model
                         FROM restaurants
                         JOIN restaurant_photos
                         ON restaurants._id = restaurant_photos._id
-                        WHERE restaurant_photos.width = 1242
-                        limit 27";
+                        WHERE restaurant_photos.width = 1242";
+        // limit 27";
         $query = $this->DB()->prepare($query_sql);
         $query->execute();
 
