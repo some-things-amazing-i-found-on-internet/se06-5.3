@@ -29,6 +29,7 @@ class Router
             "login" => "LoginController@index",
             "register" => "RegisterController@index",
             "restaurant" => "RestaurantController@index",
+            "about" => "About@index"
         ];
     }
     // public static function getParam(string $name, string $default = NULL): ?string
@@ -61,7 +62,8 @@ class Router
             // kiểm tra route hiện tại có phải là url đang được gọi.
             $reg = '/^' . $route . '$/';
             $url = ltrim($url, "/");
-            // print($reg . "</br>");
+            // $url_real = str_replace($url,"/", "\/");
+            // print($url_real . "</br>");
             // print(preg_match($reg, $url, $params) . "</br>");
             if (preg_match($reg, $url, $params2)) {
                 // print("ok");
@@ -89,7 +91,9 @@ class Router
             $action = explode('@', $action);
             $controller_name = 'Core\\controller\\' . $action[0];
             $controller = new $controller_name("");
-            call_user_func_array([$controller, $action[1]], $params);
+            // print gettype($params);
+            // $explode =  $params[0];
+            call_user_func_array([$controller, $action[1]], array($params));
 
             return;
         }
