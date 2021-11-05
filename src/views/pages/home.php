@@ -250,12 +250,29 @@
         ?>
         <div class="row">
             <?php
-            foreach ($result as $row) {
+            $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+            parse_str($req_param, $param);
+            if (!isset($param['page'])) {
+                $page = 1;
+            } else {
+                $page = $param['page'];
+            }
+            $per_page_record = 27;
+            $total_records = count($result);
+            $total_pages = ceil($total_records / $per_page_record);
+
+            $start_from = ($page - 1) * $per_page_record;
+
+
+            for ($i = $start_from; $i < min($start_from + $per_page_record, $total_records); $i++) {
+                $row = $result[$i];
+                // }
+                // foreach ($result as $row) {
             ?>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product-box mb-xl-20">
                         <div class="product-img">
-                            <a href="<?php echo 'restaurant&'. $row['id'] ?>">
+                            <a href="<?php echo 'restaurant&' . $row['id'] ?>">
                                 <img src=<?php echo $row['value'] ?> class="img-fluid full-width" alt="product-img">
                             </a>
                             <div class="overlay">
@@ -271,7 +288,7 @@
                         </div>
                         <div class="product-caption">
                             <div class="title-box">
-                                <h6 class="product-title"><a href="<?php echo 'restaurant&id='. $row['id'] ?>" class="text-light-black "><?php echo $row['name'] ?></a></h6>
+                                <h6 class="product-title"><a href="<?php echo 'restaurant&id=' . $row['id'] ?>" class="text-light-black "><?php echo $row['name'] ?></a></h6>
                                 <div class="tags"> <span class="text-custom-white rectangle-tag bg-yellow">
                                         <?php
                                         echo $row['rating_avg'];
@@ -316,6 +333,38 @@
                 </div>
             <?php
             }
+
+
+            $pagLink = "";
+
+            if ($page >= 2) {
+                echo "<a href='home?page=" . ($page - 1) . "'>  Prev </a>";
+                $pagLink .= "<a  href='home?page=1'>1</a>";
+            }
+
+            if ($page > 3) {
+                $pagLink .= "<b>......</b>";
+            }
+            if ($page > 2) {
+                $pagLink .= "<a  href='home?page=" . $page - 1 . "'>" . $page - 1 . " </a>";
+            }
+
+            $pagLink .= "<a class = 'active' href='home?page=" . $page . "'>" . $page  . " </a>";
+
+            if ($page < $total_pages - 1) {
+                $pagLink .= "<a  href='home?page=" . $page + 1 . "'>" . $page + 1 . " </a>";
+            }
+            if ($page < $total_pages - 2) {
+                $pagLink .= "<b>......</b>";
+            }
+
+            if ($page < $total_pages) {
+                $pagLink .= "<a href='home?page=" . $total_pages . "'>" . $total_pages . " </a>";
+                $pagLink .= "<a href='home?page=" . ($page + 1) . "'>  Next </a>";
+            }
+
+            echo $pagLink;
+            // cho Hiếu làm mấy cái nút cho đẹp nhá
             ?>
             <!-- <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="product-box mb-xl-20">
