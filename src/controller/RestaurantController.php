@@ -47,4 +47,8 @@ class RestaurantController extends Model
         // print(gettype($params));
         View::render("restaurant", compact([]));
     }
+    public function indexTest() :void 
+    {
+        View::render("restaurant",compact([]));
+    }
 }

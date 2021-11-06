@@ -331,41 +331,51 @@
                         </div>
                     </div>
                 </div>
+            
             <?php
             }
 
-
+            echo '<div class="col-lg-12 d-flex justify-content-center mt-3"><nav aria-label="Page navigation example"><ul class="pagination">';
             $pagLink = "";
 
             if ($page >= 2) {
-                echo "<a href='home?page=" . ($page - 1) . "'>  Prev </a>";
-                $pagLink .= "<a  href='home?page=1'>1</a>";
+                echo "<li class='page-item'><a class='page-link' href='home?page=" . ($page - 1) . "'>  Prev </a></li>";
+                $pagLink .= "<a class='page-link' href='home?page=1'>1</a>";
             }
 
             if ($page > 3) {
                 $pagLink .= "<b>......</b>";
             }
             if ($page > 2) {
-                $pagLink .= "<a  href='home?page=" . $page - 1 . "'>" . $page - 1 . " </a>";
+                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . $page - 1 . "'>" . $page - 1 . " </a></li>";
             }
 
-            $pagLink .= "<a class = 'active' href='home?page=" . $page . "'>" . $page  . " </a>";
+            $pagLink .= "<li class='page-item active'><a class = 'page-link' href='home?page=" . $page . "'>" . $page  . " </a></li>";
 
             if ($page < $total_pages - 1) {
-                $pagLink .= "<a  href='home?page=" . $page + 1 . "'>" . $page + 1 . " </a>";
+                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . $page + 1 . "'>" . $page + 1 . " </a></li>";
             }
             if ($page < $total_pages - 2) {
                 $pagLink .= "<b>......</b>";
             }
 
             if ($page < $total_pages) {
-                $pagLink .= "<a href='home?page=" . $total_pages . "'>" . $total_pages . " </a>";
-                $pagLink .= "<a href='home?page=" . ($page + 1) . "'>  Next </a>";
+                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . $total_pages . "'>" . $total_pages . " </a></li>";
+                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . ($page + 1) . "'>  Next </a></li>";
             }
 
             echo $pagLink;
+            echo '</ul></nav></div>';
             // cho Hiếu làm mấy cái nút cho đẹp nhá
             ?>
+           
+                
+                    <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
+                    <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+                
             <!-- <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="product-box mb-xl-20">
                     <div class="product-img">

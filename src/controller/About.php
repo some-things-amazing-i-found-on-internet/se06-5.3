@@ -43,9 +43,9 @@ class About extends Model
             ->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function index(): void
+    public function index($params): void
     {
-
+        print var_dump($params);
         // Request params
         // $from = Request::getParam("from", date("Y-m-01"));
         // $to = Request::getParam("to", date("Y-m-t"));
@@ -69,6 +69,6 @@ class About extends Model
         // $orders = $mdlOrders->getLastTen();
 
         // Render view
-        View::render("about", compact([]));
+        View::render("about", compact(['params']));
     }
 }

@@ -62,7 +62,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="history-title mb-md-40">
-                        <h2 class="text-light-black">A History Has Written For Quickmunch Explore <span class="text-light-green">more Our Story</span></h2>
+                        <h2 class="text-light-black">     <?php echo var_dump($params) ;?>
+                        A History Has Written For Quickmunch Explore <span class="text-light-green">more Our Story</span></h2>
                         <p class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                         <p class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.</p> <a class="btn-second btn-submit" href="#">
               Our History
