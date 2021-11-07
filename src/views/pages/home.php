@@ -347,13 +347,13 @@
                 $pagLink .= "<b>......</b>";
             }
             if ($page > 2) {
-                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . $page - 1 . "'>" . $page - 1 . " </a></li>";
+                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . (intval($page) - 1) . "'>" . (intval($page) - 1) . " </a></li>";
             }
 
             $pagLink .= "<li class='page-item active'><a class = 'page-link' href='home?page=" . $page . "'>" . $page  . " </a></li>";
-
-            if ($page < $total_pages - 1) {
-                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . $page + 1 . "'>" . $page + 1 . " </a></li>";
+            if ($page < intval($total_pages) - 1) {
+                // print $page + 1; 
+                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . (intval($page) + 1) . "'>" .(intval($page) + 1) . " </a></li>";
             }
             if ($page < $total_pages - 2) {
                 $pagLink .= "<b>......</b>";
@@ -361,7 +361,7 @@
 
             if ($page < $total_pages) {
                 $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . $total_pages . "'>" . $total_pages . " </a></li>";
-                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . ($page + 1) . "'>  Next </a></li>";
+                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . (intval($page) + 1) . "'>  Next </a></li>";
             }
 
             echo $pagLink;
