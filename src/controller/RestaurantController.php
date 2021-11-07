@@ -44,11 +44,25 @@ class RestaurantController extends Model
 
     public function index($params): void
     {
+        $list = explode("=", $params[0]);
+        $id = $list[1];
+
+        $query_dish_types = "SELECT * FROM dish_types WHERE id_restaurant=? GROUP BY dish_type_id";
+        $query = $this->DB()->prepare($query_dish_types);
+        $query->execute(array($id));
+        $dish_types = $query->fetchAll(\PDO::FETCH_ASSOC);
+
+        $query_dish_orders = "SELECT * FROM `dish_types`
+                                JOIN dish_orderes
+                                ON dish_types._id = dish_orderes._id
+                                WHERE id_restaurant=?
+                                GROUP BY dish_orderes.id";
+        
+        $query2 = $this->DB()->prepare($query_dish_orders);
+        $query2->execute(array($id));
+        $dish_orders = $query2->fetchAll(\PDO::FETCH_ASSOC);
+
         // print(gettype($params));
-        View::render("restaurant", compact([]));
-    }
-    public function indexTest() :void 
-    {
-        View::render("restaurant",compact([]));
+        View::render("restaurant", compact(["dish_types", "dish_orders"]));
     }
 }
