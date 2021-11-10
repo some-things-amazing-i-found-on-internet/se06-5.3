@@ -56,13 +56,21 @@ class RestaurantController extends Model
                                 JOIN dish_orderes
                                 ON dish_types._id = dish_orderes._id
                                 WHERE id_restaurant=?
-                                GROUP BY dish_orderes.id";
-        
+                                GROUP BY dish_orderes.id";    
         $query2 = $this->DB()->prepare($query_dish_orders);
         $query2->execute(array($id));
         $dish_orders = $query2->fetchAll(\PDO::FETCH_ASSOC);
 
+        $query_restaurants = "SELECT * FROM restaurants
+                                JOIN restaurant_photos
+                                ON restaurants._id = restaurant_photos._id
+                                WHERE restaurant_photos.width = 1242 AND restaurants.id = ?
+                                GROUP BY restaurants.id";
+        $query3 = $this->DB()->prepare($query_restaurants);
+        $query3->execute(array($id));
+        $restaurants = $query3->fetchAll(\PDO::FETCH_ASSOC);
+
         // print(gettype($params));
-        View::render("restaurant", compact(["dish_types", "dish_orders"]));
+        View::render("restaurant", compact(["dish_types", "dish_orders", "restaurants"]));
     }
 }

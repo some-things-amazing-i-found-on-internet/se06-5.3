@@ -1,6 +1,6 @@
 <!-- restaurent top -->
 <div class="page-banner p-relative smoothscroll" id="menu">
-    <img src="assets/img/banner.jpg" class="img-fluid full-width" alt="banner">
+    <img src= <?php echo $restaurants[0]['value'] ?> class="img-fluid full-width" alt="banner">
     <div class="overlay-2">
         <div class="container">
             <div class="row">
@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="heading padding-tb-10">
-                    <h3 class="text-light-black title fw-700 no-margin">Restaurant</h3>
+                    <h3 class="text-light-black title fw-700 no-margin"><?php echo $restaurants[0]['name']  ?></h3>
                     <p class="text-light-black sub-title no-margin">4508 Fort Hamilton Pkwy <span><a href="checkout.html" class="text-success">Change locations</a></span>
                     </p>
                     <div class="head-rating">
@@ -313,7 +313,7 @@
                                                             <div class="restaurent-product-box">
                                                                 <div class="restaurent-product-title">
                                                                     <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600"><?php echo $food['name'] ?></a></h6>
-                                                                    <p class="text-light-white">600-700 Cal.</p>
+                                                                    <p class="text-light-white"><?php echo "Tổng số lần đặt: " . $food['display_total_order'] ?></p>
                                                                 </div>
                                                                 <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
                                                                     <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
@@ -327,7 +327,7 @@
                                                                     <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
                                                                 </div>
                                                                 <div class="rating-text">
-                                                                    <p class="text-light-white fs-12 title">3845 ratings</p>
+                                                                    <p class="text-light-white fs-12 title"><?php echo $food['total_like'] . " lượt thích" ?></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -355,7 +355,7 @@
                                                                 <img src="assets/img/svg/010-heart.svg" alt="tag">
                                                             </span>
                                                             <div class="restaurent-product-price">
-                                                                <h6 class="text-success fw-600 no-margin">$7.99+</h6>
+                                                                <h6 class="text-success fw-600 no-margin"><?php echo $food['price_text'] ?></h6>
                                                             </div>
                                                         </div>
                                                     </div>
