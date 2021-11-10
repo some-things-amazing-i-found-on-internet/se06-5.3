@@ -27,8 +27,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="heading padding-tb-10">
-                    <h3 class="text-light-black title fw-700 no-margin"><?php echo $restaurants[0]['name']  ?></h3>
-                    <p class="text-light-black sub-title no-margin">4508 Fort Hamilton Pkwy <span><a href="checkout.html" class="text-success">Change locations</a></span>
+                    <h3 class="text-light-black title fw-700 no-margin"><?php echo $restaurants[0]['name'] ?></h3>
+                    <p class="text-light-black sub-title no-margin"><?php echo $restaurants[0]['address'] ?><span><a href="checkout.html" class="text-success">Change locations</a></span>
                     </p>
                     <div class="head-rating">
                         <div class="rating"> <span class="fs-16 text-yellow">
@@ -46,7 +46,7 @@
                             <span class="fs-16 text-dark-white">
                                 <i class="fas fa-star"></i>
                             </span>
-                            <span class="text-light-black fs-12 rate-data">58 rating</span>
+                            <span class="text-light-black fs-12 rate-data"><?php echo $restaurants[0]['rating_display_total_review'] . " đánh giá"?></span>
                         </div>
                         <div class="product-review">
                             <div class="restaurent-details-mob">
@@ -315,9 +315,9 @@
                                                                     <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600"><?php echo $food['name'] ?></a></h6>
                                                                     <p class="text-light-white"><?php echo "Tổng số lần đặt: " . $food['display_total_order'] ?></p>
                                                                 </div>
-                                                                <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
+                                                                <!-- <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
                                                                     <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
-                                                                </div>
+                                                                </div> -->
                                                             </div>
                                                             <div class="restaurent-product-rating">
                                                                 <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
