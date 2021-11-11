@@ -1,6 +1,6 @@
 <!-- restaurent top -->
 <div class="page-banner p-relative smoothscroll" id="menu">
-    <img src="assets/img/banner.jpg" class="img-fluid full-width" alt="banner">
+    <img src= <?php echo $restaurants[0]['value'] ?> class="img-fluid full-width" alt="banner">
     <div class="overlay-2">
         <div class="container">
             <div class="row">
@@ -27,8 +27,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="heading padding-tb-10">
-                    <h3 class="text-light-black title fw-700 no-margin">Restaurant</h3>
-                    <p class="text-light-black sub-title no-margin">4508 Fort Hamilton Pkwy <span><a href="checkout.html" class="text-success">Change locations</a></span>
+                    <h3 class="text-light-black title fw-700 no-margin"><?php echo $restaurants[0]['name'] ?></h3>
+                    <p class="text-light-black sub-title no-margin"><?php echo $restaurants[0]['address'] ?><span><a href="checkout.html" class="text-success">Change locations</a></span>
                     </p>
                     <div class="head-rating">
                         <div class="rating"> <span class="fs-16 text-yellow">
@@ -46,7 +46,7 @@
                             <span class="fs-16 text-dark-white">
                                 <i class="fas fa-star"></i>
                             </span>
-                            <span class="text-light-black fs-12 rate-data">58 rating</span>
+                            <span class="text-light-black fs-12 rate-data"><?php echo $restaurants[0]['rating_display_total_review'] . " đánh giá"?></span>
                         </div>
                         <div class="product-review">
                             <div class="restaurent-details-mob">
@@ -285,12 +285,15 @@
             <div class="col-xl-6 col-lg-6">
                 <div class="row">
                     <div class="col-lg-12 restaurent-meal-head mb-md-40">
+                        <?php
+                        foreach($dish_types as $type) {
+                        ?>
                         <div class="card">
                             <div class="card-header">
                                 <div class="section-header-left">
                                     <h3 class="text-light-black header-title">
                                         <a class="card-link text-light-black no-margin" data-toggle="collapse" href="#collapseOne">
-                                            Most Popular
+                                            <?php echo $type['dish_type_name'];?>
                                         </a>
                                     </h3>
                                 </div>
@@ -298,6 +301,10 @@
                             <div id="collapseOne" class="collapse show">
                                 <div class="card-body no-padding">
                                     <div class="row">
+                                        <?php
+                                        foreach($dish_orders as $food) {
+                                            if ($food["dish_type_id"] == $type["dish_type_id"]) {                                          
+                                        ?>
                                         <div class="col-lg-12">
                                             <div class="restaurent-product-list">
                                                 <div class="restaurent-product-detail">
@@ -305,12 +312,12 @@
                                                         <div class="restaurent-product-title-box">
                                                             <div class="restaurent-product-box">
                                                                 <div class="restaurent-product-title">
-                                                                    <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600">Bacon Egg & Vegan Burger - Meal</a></h6>
-                                                                    <p class="text-light-white">600-700 Cal.</p>
+                                                                    <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600"><?php echo $food['name'] ?></a></h6>
+                                                                    <p class="text-light-white"><?php echo "Tổng số lần đặt: " . $food['display_total_order'] ?></p>
                                                                 </div>
-                                                                <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
+                                                                <!-- <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
                                                                     <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
-                                                                </div>
+                                                                </div> -->
                                                             </div>
                                                             <div class="restaurent-product-rating">
                                                                 <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
@@ -320,7 +327,7 @@
                                                                     <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
                                                                 </div>
                                                                 <div class="rating-text">
-                                                                    <p class="text-light-white fs-12 title">3845 ratings</p>
+                                                                    <p class="text-light-white fs-12 title"><?php echo $food['total_like'] . " lượt thích" ?></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -348,559 +355,27 @@
                                                                 <img src="assets/img/svg/010-heart.svg" alt="tag">
                                                             </span>
                                                             <div class="restaurent-product-price">
-                                                                <h6 class="text-success fw-600 no-margin">$7.99+</h6>
+                                                                <h6 class="text-success fw-600 no-margin"><?php echo $food['price_text'] ?></h6>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="restaurent-product-img">
-                                                        <img src="assets/img/dish/150x151/dish-1.jpg" class="img-fluid" alt="#">
+                                                        <img src=<?php echo $food["photos"] ?> class="img-fluid" alt="#">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <div class="restaurent-product-list">
-                                                <div class="restaurent-product-detail">
-                                                    <div class="restaurent-product-left">
-                                                        <div class="restaurent-product-title-box">
-                                                            <div class="restaurent-product-box">
-                                                                <div class="restaurent-product-title">
-                                                                    <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600">Bacon Egg & Vegan Burger - Meal</a></h6>
-                                                                    <p class="text-light-white">600-700 Cal.</p>
-                                                                </div>
-                                                                <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
-                                                                    <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="restaurent-product-rating">
-                                                                <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
-                                                                </div>
-                                                                <div class="rating-text">
-                                                                    <p class="text-light-white fs-12 title">3845 ratings</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
-                                                        </div>
-                                                        <div class="restaurent-tags-price">
-                                                            <div class="restaurent-tags"> <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/004-leaf.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/006-chili.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/005-chef.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/008-protein.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/009-lemon.svg" alt="tag">
-                                                                </span>
-                                                            </div> <span class="circle-tag">
-                                                                <img src="assets/img/svg/013-heart-1.svg" alt="tag">
-                                                            </span>
-                                                            <div class="restaurent-product-price">
-                                                                <h6 class="text-success fw-600 no-margin">$7.99+</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="restaurent-product-img">
-                                                        <img src="assets/img/dish/150x151/dish-2.jpg" class="img-fluid" alt="#">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="restaurent-product-list">
-                                                <div class="restaurent-product-detail">
-                                                    <div class="restaurent-product-left">
-                                                        <div class="restaurent-product-title-box">
-                                                            <div class="restaurent-product-box">
-                                                                <div class="restaurent-product-title">
-                                                                    <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600">Bacon Egg & Vegan Burger - Meal</a></h6>
-                                                                    <p class="text-light-white">600-700 Cal.</p>
-                                                                </div>
-                                                                <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
-                                                                    <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="restaurent-product-rating">
-                                                                <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
-                                                                </div>
-                                                                <div class="rating-text">
-                                                                    <p class="text-light-white fs-12 title">3845 ratings</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
-                                                        </div>
-                                                        <div class="restaurent-tags-price">
-                                                            <div class="restaurent-tags"> <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/004-leaf.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/006-chili.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/005-chef.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/008-protein.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/009-lemon.svg" alt="tag">
-                                                                </span>
-                                                            </div> <span class="circle-tag">
-                                                                <img src="assets/img/svg/010-heart.svg" alt="tag">
-                                                            </span>
-                                                            <div class="restaurent-product-price">
-                                                                <h6 class="text-success fw-600 no-margin">$7.99+</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="restaurent-product-img">
-                                                        <img src="assets/img/dish/150x151/dish-3.jpg" class="img-fluid" alt="#">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="restaurent-product-list">
-                                                <div class="restaurent-product-detail">
-                                                    <div class="restaurent-product-left">
-                                                        <div class="restaurent-product-title-box">
-                                                            <div class="restaurent-product-box">
-                                                                <div class="restaurent-product-title">
-                                                                    <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600">Bacon Egg & Vegan Burger - Meal</a></h6>
-                                                                    <p class="text-light-white">600-700 Cal.</p>
-                                                                </div>
-                                                                <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
-                                                                    <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="restaurent-product-rating">
-                                                                <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
-                                                                </div>
-                                                                <div class="rating-text">
-                                                                    <p class="text-light-white fs-12 title">3845 ratings</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
-                                                        </div>
-                                                        <div class="restaurent-tags-price">
-                                                            <div class="restaurent-tags"> <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/004-leaf.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/006-chili.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/005-chef.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/008-protein.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/009-lemon.svg" alt="tag">
-                                                                </span>
-                                                            </div> <span class="circle-tag">
-                                                                <img src="assets/img/svg/013-heart-1.svg" alt="tag">
-                                                            </span>
-                                                            <div class="restaurent-product-price">
-                                                                <h6 class="text-success fw-600 no-margin">$7.99+</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="restaurent-product-img">
-                                                        <img src="assets/img/dish/150x151/dish-4.jpg" class="img-fluid" alt="#">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="restaurent-product-list">
-                                                <div class="restaurent-product-detail">
-                                                    <div class="restaurent-product-left">
-                                                        <div class="restaurent-product-title-box">
-                                                            <div class="restaurent-product-box">
-                                                                <div class="restaurent-product-title">
-                                                                    <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600">Bacon Egg & Vegan Burger - Meal</a></h6>
-                                                                    <p class="text-light-white">600-700 Cal.</p>
-                                                                </div>
-                                                                <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
-                                                                    <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="restaurent-product-rating">
-                                                                <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
-                                                                </div>
-                                                                <div class="rating-text">
-                                                                    <p class="text-light-white fs-12 title">3845 ratings</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
-                                                        </div>
-                                                        <div class="restaurent-tags-price">
-                                                            <div class="restaurent-tags"> <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/004-leaf.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/006-chili.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/005-chef.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/008-protein.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/009-lemon.svg" alt="tag">
-                                                                </span>
-                                                            </div> <span class="circle-tag">
-                                                                <img src="assets/img/svg/010-heart.svg" alt="tag">
-                                                            </span>
-                                                            <div class="restaurent-product-price">
-                                                                <h6 class="text-success fw-600 no-margin">$7.99+</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="restaurent-product-img">
-                                                        <img src="assets/img/dish/150x151/dish-5.jpg" class="img-fluid" alt="#">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php
+                                            }
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="section-header-left">
-                                    <h3 class="text-light-black header-title">
-                                        <a class="card-link text-light-black no-margin" data-toggle="collapse" href="#collapseTwo">
-                                            Combo Meals
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div id="collapseTwo" class="collapse show">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="restaurent-product-list">
-                                                <div class="restaurent-product-detail">
-                                                    <div class="restaurent-product-left">
-                                                        <div class="restaurent-product-title-box">
-                                                            <div class="restaurent-product-box">
-                                                                <div class="restaurent-product-title">
-                                                                    <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600">Hakka Noodles & Sticky Date Cake - Meal</a></h6>
-                                                                    <p class="text-light-white">600-700 Cal.</p>
-                                                                </div>
-                                                                <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
-                                                                    <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="restaurent-product-rating">
-                                                                <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
-                                                                </div>
-                                                                <div class="rating-text">
-                                                                    <p class="text-light-white fs-12 title">3845 ratings</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
-                                                        </div>
-                                                        <div class="restaurent-tags-price">
-                                                            <div class="restaurent-tags"> <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/004-leaf.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/006-chili.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/005-chef.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/008-protein.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/009-lemon.svg" alt="tag">
-                                                                </span>
-                                                            </div> <span class="circle-tag">
-                                                                <img src="assets/img/svg/013-heart-1.svg" alt="tag">
-                                                            </span>
-                                                            <div class="restaurent-product-price">
-                                                                <h6 class="text-success fw-600 no-margin">$7.99+</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="restaurent-product-img">
-                                                        <img src="assets/img/dish/150x151/dish-6.jpg" class="img-fluid" alt="#">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="restaurent-product-list">
-                                                <div class="restaurent-product-detail">
-                                                    <div class="restaurent-product-left">
-                                                        <div class="restaurent-product-title-box">
-                                                            <div class="restaurent-product-box">
-                                                                <div class="restaurent-product-title">
-                                                                    <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600">Hakka Noodles & Sticky Date Cake - Meal</a></h6>
-                                                                    <p class="text-light-white">600-700 Cal.</p>
-                                                                </div>
-                                                                <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
-                                                                    <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="restaurent-product-rating">
-                                                                <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
-                                                                </div>
-                                                                <div class="rating-text">
-                                                                    <p class="text-light-white fs-12 title">3845 ratings</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
-                                                        </div>
-                                                        <div class="restaurent-tags-price">
-                                                            <div class="restaurent-tags"> <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/004-leaf.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/006-chili.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/005-chef.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/008-protein.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/009-lemon.svg" alt="tag">
-                                                                </span>
-                                                            </div> <span class="circle-tag">
-                                                                <img src="assets/img/svg/010-heart.svg" alt="tag">
-                                                            </span>
-                                                            <div class="restaurent-product-price">
-                                                                <h6 class="text-success fw-600 no-margin">$7.99+</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="restaurent-product-img">
-                                                        <img src="assets/img/dish/150x151/dish-7.jpg" class="img-fluid" alt="#">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="restaurent-product-list">
-                                                <div class="restaurent-product-detail">
-                                                    <div class="restaurent-product-left">
-                                                        <div class="restaurent-product-title-box">
-                                                            <div class="restaurent-product-box">
-                                                                <div class="restaurent-product-title">
-                                                                    <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600">Hakka Noodles & Sticky Date Cake - Meal</a></h6>
-                                                                    <p class="text-light-white">600-700 Cal.</p>
-                                                                </div>
-                                                                <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
-                                                                    <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="restaurent-product-rating">
-                                                                <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
-                                                                </div>
-                                                                <div class="rating-text">
-                                                                    <p class="text-light-white fs-12 title">3845 ratings</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
-                                                        </div>
-                                                        <div class="restaurent-tags-price">
-                                                            <div class="restaurent-tags"> <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/004-leaf.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/006-chili.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/005-chef.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/008-protein.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/009-lemon.svg" alt="tag">
-                                                                </span>
-                                                            </div> <span class="circle-tag">
-                                                                <img src="assets/img/svg/013-heart-1.svg" alt="tag">
-                                                            </span>
-                                                            <div class="restaurent-product-price">
-                                                                <h6 class="text-success fw-600 no-margin">$7.99+</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="restaurent-product-img">
-                                                        <img src="assets/img/dish/150x151/dish-8.jpg" class="img-fluid" alt="#">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="restaurent-product-list">
-                                                <div class="restaurent-product-detail">
-                                                    <div class="restaurent-product-left">
-                                                        <div class="restaurent-product-title-box">
-                                                            <div class="restaurent-product-box">
-                                                                <div class="restaurent-product-title">
-                                                                    <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600">Hakka Noodles & Sticky Date Cake - Meal</a></h6>
-                                                                    <p class="text-light-white">600-700 Cal.</p>
-                                                                </div>
-                                                                <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
-                                                                    <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="restaurent-product-rating">
-                                                                <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
-                                                                </div>
-                                                                <div class="rating-text">
-                                                                    <p class="text-light-white fs-12 title">3845 ratings</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
-                                                        </div>
-                                                        <div class="restaurent-tags-price">
-                                                            <div class="restaurent-tags"> <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/004-leaf.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/006-chili.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/005-chef.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/008-protein.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/009-lemon.svg" alt="tag">
-                                                                </span>
-                                                            </div> <span class="circle-tag">
-                                                                <img src="assets/img/svg/010-heart.svg" alt="tag">
-                                                            </span>
-                                                            <div class="restaurent-product-price">
-                                                                <h6 class="text-success fw-600 no-margin">$7.99+</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="restaurent-product-img">
-                                                        <img src="assets/img/dish/150x151/dish-9.jpg" class="img-fluid" alt="#">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="restaurent-product-list">
-                                                <div class="restaurent-product-detail">
-                                                    <div class="restaurent-product-left">
-                                                        <div class="restaurent-product-title-box">
-                                                            <div class="restaurent-product-box">
-                                                                <div class="restaurent-product-title">
-                                                                    <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600">Hakka Noodles & Sticky Date Cake - Meal</a></h6>
-                                                                    <p class="text-light-white">600-700 Cal.</p>
-                                                                </div>
-                                                                <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
-                                                                    <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="restaurent-product-rating">
-                                                                <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
-                                                                </div>
-                                                                <div class="rating-text">
-                                                                    <p class="text-light-white fs-12 title">3845 ratings</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
-                                                        </div>
-                                                        <div class="restaurent-tags-price">
-                                                            <div class="restaurent-tags"> <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/004-leaf.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/006-chili.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/005-chef.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/008-protein.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/009-lemon.svg" alt="tag">
-                                                                </span>
-                                                            </div> <span class="circle-tag">
-                                                                <img src="assets/img/svg/013-heart-1.svg" alt="tag">
-                                                            </span>
-                                                            <div class="restaurent-product-price">
-                                                                <h6 class="text-success fw-600 no-margin">$7.99+</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="restaurent-product-img">
-                                                        <img src="assets/img/dish/150x151/dish-4.jpg" class="img-fluid" alt="#">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
