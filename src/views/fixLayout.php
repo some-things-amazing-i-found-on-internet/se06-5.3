@@ -108,12 +108,12 @@
                                     <div class="row">
                                         <!-- location picker -->
                                         <div class="col-lg-6 col-md-5">
-                                            <a href="#" class="delivery-add p-relative"> <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                            <!-- <a href="#" class="delivery-add p-relative"> <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
                                                 <span class="address">Brooklyn, NY</span>
                                             </a>
                                             <div class="location-picker">
                                                 <input type="text" class="form-control" placeholder="Enter a new address">
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <!-- location picker -->
                                         <!-- search -->
@@ -136,7 +136,7 @@
                                     <a href="#"> <span>Pages <i class="fas fa-caret-down"></i></span>
                                         <i class="fas fa-bars"></i>
                                     </a>
-                                    <div class="megamenu">
+                                    <!-- <div class="megamenu">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="row">
@@ -214,7 +214,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <!-- mobile search -->
                                 <div class="mobile-search">
@@ -388,11 +388,11 @@
                             </div>
                         </div>
                         <div class="col-sm-12 mobile-search">
-                            <div class="mobile-address">
+                            <!-- <div class="mobile-address">
                                 <a href="#" class="delivery-add" data-toggle="modal" data-target="#address-box"> <span class="address">Brooklyn, NY</span>
                                 </a>
-                            </div>
-                            <div class="sorting-addressbox"> <span class="full-address text-light-green">Brooklyn, NY 10041</span>
+                            </div> -->
+                            <!-- <div class="sorting-addressbox"> <span class="full-address text-light-green">Brooklyn, NY 10041</span>
                                 <div class="btns">
                                     <div class="filter-btn">
                                         <button type="button"><i class="fas fa-sliders-h text-light-green fs-18"></i>
@@ -403,7 +403,7 @@
                                         </button> <span class="text-light-green">Filter</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
