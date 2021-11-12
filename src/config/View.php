@@ -49,6 +49,7 @@ class View
     {
         extract($params, EXTR_SKIP);
         // Page template path.
+        $prefixPath = "../src/views/adminViews/";
         $content = APPLICATION_PATH . "/src/views/adminViews/pages/$view.php";
         // echo is_readable($content);
         if (is_readable($content)) {

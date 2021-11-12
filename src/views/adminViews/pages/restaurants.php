@@ -383,3 +383,5 @@
     </div>
   </div>
 
+  <script src="<?php echo $prefixPath ?>assets/js/Chart.bundle.min.js"></script>
+  <script src="<?php echo $prefixPath ?>assets/js/Resturant.js"> </script>

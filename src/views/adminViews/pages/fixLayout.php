@@ -1,17 +1,4 @@
-<?php
-$prefixPath = "../src/views/admin/";
-//     $cur_page = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
-// if ($cur_page == 'index.php') {
-//     $prefixPath = "";
-// } else if($cur_page == 'restaurants.php' || $cur_page == 'sales.php' || $cur_page == 'widgets.php' || $cur_page == 'animation.php') {
-//     $prefixPath = "../";
-// }else {
-//     $prefixPath = "../../";
-// }
-// $PATHCONFIG = $prefixPath . "../src/config/DB.php";
-// require_once($PATHCONFIG);
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -958,7 +945,7 @@ $prefixPath = "../src/views/admin/";
     </script>
     <!-- Global Required Scripts End -->
     <!-- Page Specific Scripts Start -->
-
+<!-- 
     <script src="<?php echo $prefixPath ?>assets/js/Chart.bundle.min.js">
     </script>
     <script src="<?php echo $prefixPath ?>assets/js/widgets.js"> </script>
@@ -971,7 +958,7 @@ $prefixPath = "../src/views/admin/";
     <script src="<?php echo $prefixPath ?>assets/js/datatables.min.js">
     </script>
     <script src="<?php echo $prefixPath ?>assets/js/data-tables.js">
-    </script>
+    </script> -->
     <!-- Page Specific Scripts Finish -->
     <!-- Costic core JavaScript -->
     <script src="<?php echo $prefixPath ?>assets/js/framework.js"></script>
