@@ -107,7 +107,7 @@ if ($params_request[0] !== false || isset($param_check['page'])) {
 <!-- Browse by category -->
 <!-- your previous order -->
 <?php
-if ($params_request !== false || isset($param_check['page'])) {
+if ($params_request[0] !== false || isset($param_check['page'])) {
 } else {
 ?>
     <section class="recent-order section-padding">

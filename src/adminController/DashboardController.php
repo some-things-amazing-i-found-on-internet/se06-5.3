@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\admin;
+namespace Core\adminController;
 
 use Core\config\Database;
 use Core\config\Model;

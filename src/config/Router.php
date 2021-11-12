@@ -120,7 +120,7 @@ class Router
         // Nếu $action là một phương thức của controller. VD: 'HomeController@index'.
         if (is_string($action)) {
             $action = explode('@', $action);
-            $controller_name = 'Core\\admin\\' . $action[0];
+            $controller_name = 'Core\\adminController\\' . $action[0];
             $controller = new $controller_name("");
             // print gettype($params);
             // $explode =  $params[0];

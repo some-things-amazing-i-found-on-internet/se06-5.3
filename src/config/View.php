@@ -49,11 +49,11 @@ class View
     {
         extract($params, EXTR_SKIP);
         // Page template path.
-        $content = APPLICATION_PATH . "/src/views/admin/pages/$view.php";
+        $content = APPLICATION_PATH . "/src/views/adminViews/pages/$view.php";
         // echo is_readable($content);
         if (is_readable($content)) {
             // Include global template
-            require_once APPLICATION_PATH . "/src/views/admin/pages/fixLayout.php";
+            require_once APPLICATION_PATH . "/src/views/adminViews/pages/fixLayout.php";
         } else {
             throw new \Exception("View $view not found");
         }
