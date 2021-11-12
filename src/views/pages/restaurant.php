@@ -286,19 +286,21 @@
                 <div class="row">
                     <div class="col-lg-12 restaurent-meal-head mb-md-40">
                         <?php
+                        $i = -1;
                         foreach($dish_types as $type) {
+                            $i++;
                         ?>
                         <div class="card">
                             <div class="card-header">
                                 <div class="section-header-left">
                                     <h3 class="text-light-black header-title">
-                                        <a class="card-link text-light-black no-margin" data-toggle="collapse" href="#collapseOne">
+                                        <a class="card-link text-light-black no-margin" data-toggle="collapse" href="#collapseOne<?php echo $i; ?>">
                                             <?php echo $type['dish_type_name'];?>
                                         </a>
                                     </h3>
                                 </div>
                             </div>
-                            <div id="collapseOne" class="collapse show">
+                            <div id="collapseOne<?php echo $i; ?>" class="collapse show">
                                 <div class="card-body no-padding">
                                     <div class="row">
                                         <?php
@@ -331,8 +333,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
-                                                        </div>
+                                                        <!-- <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
+                                                        </div> -->
                                                         <div class="restaurent-tags-price">
                                                             <div class="restaurent-tags">
                                                                 <span class="text-custom-white square-tag">

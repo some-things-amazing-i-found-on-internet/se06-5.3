@@ -15,7 +15,8 @@ namespace Core\config;
  * @link       http://pear.php.net/package/PackageName
  * @since      Class available since Release 1.0.0
  */
-class View {
+class View
+{
 
     /**
      * The render method.
@@ -29,7 +30,8 @@ class View {
      * @access  public
      * @since   Method available since Release 1.0.0
      */
-    static function render(string $view, array $params): void {
+    static function render(string $view, array $params): void
+    {
 
         // Extract controller variables
         extract($params, EXTR_SKIP);
@@ -39,12 +41,23 @@ class View {
         if (is_readable($content)) {
             // Include global template
             require_once APPLICATION_PATH . "/src/views/fixLayout.php";
-            
         } else {
             throw new \Exception("View $view not found");
         }
     }
-
+    static function render_admin(string $view, array $params): void
+    {
+        extract($params, EXTR_SKIP);
+        // Page template path.
+        $content = APPLICATION_PATH . "/src/views/admin/pages/$view.php";
+        // echo is_readable($content);
+        if (is_readable($content)) {
+            // Include global template
+            require_once APPLICATION_PATH . "/src/views/admin/pages/fixLayout.php";
+        } else {
+            throw new \Exception("View $view not found");
+        }
+    }
     /**
      * The error render method.
      * 
@@ -65,11 +78,11 @@ class View {
     //     $content = APPLICATION_PATH . "/App/Views/error.php"; 
 
     //     if (is_readable($content)) {
-            
+
     //         require_once $content;
-            
+
     //     } else {
-            
+
     //         throw new \Exception("View ERROR not found");
     //     }
     // }

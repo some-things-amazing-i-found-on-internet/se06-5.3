@@ -56,9 +56,10 @@ class HomeController extends Model
     //         echo 'empty password\n';
     //     }
     // }
-    public function index($params): void
+    public function index($params_request): void
     {
         // print($params);
+        // echo var_dump($params_request) ;
         $query_sql = "SELECT *
                         FROM restaurants
                         JOIN restaurant_photos
@@ -78,6 +79,6 @@ class HomeController extends Model
         $result2 = $query2->fetchAll(\PDO::FETCH_ASSOC);
 
 
-        View::render("home", compact(["result", "result2"]));
+        View::render("home", compact(["result", "result2", "params_request"]));
     }
 }

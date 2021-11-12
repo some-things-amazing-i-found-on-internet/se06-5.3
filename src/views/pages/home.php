@@ -1,62 +1,68 @@
 <!-- slider -->
-<section class="about-us-slider swiper-container p-relative">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide slide-item">
-            <img src="assets/img/about/blog/1920x700/banner-4.jpg" class="img-fluid full-width" alt="Banner">
-            <div class="transform-center">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-lg-7 align-self-center">
-                            <div class="right-side-content">
-                                <h1 class="text-custom-white fw-600"> Increase takeout sales by 50%</h1>
-                                <h3 class="text-custom-white fw-400">with the largest delivery platform in the U.S. and Canada</h3>
-                                <a href="restaurant.html" class="btn-second btn-submit">Learn More.</a>
+<?php
+$req_param_check = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+parse_str($req_param_check, $param_check);
+if ($params_request[0] !== false || isset($param_check['page'])) {
+} else { ?>
+    <section class="about-us-slider swiper-container p-relative">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide-item">
+                <img src="assets/img/about/blog/1920x700/banner-4.jpg" class="img-fluid full-width" alt="Banner">
+                <div class="transform-center">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-lg-7 align-self-center">
+                                <div class="right-side-content">
+                                    <h1 class="text-custom-white fw-600"> Increase takeout sales by 50%</h1>
+                                    <h3 class="text-custom-white fw-400">with the largest delivery platform in the U.S. and Canada</h3>
+                                    <a href="restaurant.html" class="btn-second btn-submit">Learn More.</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="overlay overlay-bg"></div>
             </div>
-            <div class="overlay overlay-bg"></div>
-        </div>
-        <div class="swiper-slide slide-item">
-            <img src="assets/img/about/blog/1920x700/banner-5.jpg" class="img-fluid full-width" alt="Banner">
-            <div class="transform-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8 align-self-center">
-                            <div class="right-side-content text-center">
-                                <h1 class="text-custom-white fw-600">Increase takeout sales by 50%</h1>
-                                <h3 class="text-custom-white fw-400">with the largest delivery platform in the U.S. and Canada</h3>
-                                <a href="restaurant.html" class="btn-second btn-submit">Learn More.</a>
+            <div class="swiper-slide slide-item">
+                <img src="assets/img/about/blog/1920x700/banner-5.jpg" class="img-fluid full-width" alt="Banner">
+                <div class="transform-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 align-self-center">
+                                <div class="right-side-content text-center">
+                                    <h1 class="text-custom-white fw-600">Increase takeout sales by 50%</h1>
+                                    <h3 class="text-custom-white fw-400">with the largest delivery platform in the U.S. and Canada</h3>
+                                    <a href="restaurant.html" class="btn-second btn-submit">Learn More.</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="overlay overlay-bg"></div>
             </div>
-            <div class="overlay overlay-bg"></div>
-        </div>
-        <div class="swiper-slide slide-item">
-            <img src="assets/img/about/blog/1920x700/banner-6.jpg" class="img-fluid full-width" alt="Banner">
-            <div class="transform-center">
-                <div class="container">
-                    <div class="row justify-content-end">
-                        <div class="col-lg-7 align-self-center">
-                            <div class="right-side-content text-right">
-                                <h1 class="text-custom-white fw-600">Increase takeout sales by 50%</h1>
-                                <h3 class="text-custom-white fw-400">with the largest delivery platform in the U.S. and Canada</h3>
-                                <a href="restaurant.html" class="btn-second btn-submit">Learn More.</a>
+            <div class="swiper-slide slide-item">
+                <img src="assets/img/about/blog/1920x700/banner-6.jpg" class="img-fluid full-width" alt="Banner">
+                <div class="transform-center">
+                    <div class="container">
+                        <div class="row justify-content-end">
+                            <div class="col-lg-7 align-self-center">
+                                <div class="right-side-content text-right">
+                                    <h1 class="text-custom-white fw-600">Increase takeout sales by 50%</h1>
+                                    <h3 class="text-custom-white fw-400">with the largest delivery platform in the U.S. and Canada</h3>
+                                    <a href="restaurant.html" class="btn-second btn-submit">Learn More.</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="overlay overlay-bg"></div>
             </div>
-            <div class="overlay overlay-bg"></div>
         </div>
-    </div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-</section>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </section>
+<?php } ?>
 <!-- slider -->
 <!-- Browse by category -->
 <section class="browse-cat u-line section-padding">
@@ -90,57 +96,6 @@
                         <?php
                         }
                         ?>
-
-                        <!-- <div class="swiper-slide">
-                            <a href="restaurant.html" class="categories">
-                                <div class="icon text-custom-white bg-light-green ">
-                                    <img src="assets/img/restaurants/125x125/cuisine-2.jpg" class="rounded-circle" alt="categories">
-                                </div> <span class="text-light-black cat-name">Thai </span>
-                            </a>
-                        </div> -->
-                        <!--<div class="swiper-slide">
-                            <a href="restaurant.html" class="categories">
-                                <div class="icon text-custom-white bg-light-green ">
-                                    <img src="assets/img/restaurants/125x125/cuisine-3.jpg" class="rounded-circle" alt="categories">
-                                </div> <span class="text-light-black cat-name">Chinese </span>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="restaurant.html" class="categories">
-                                <div class="icon text-custom-white bg-light-green ">
-                                    <img src="assets/img/restaurants/125x125/cuisine-4.jpg" class="rounded-circle" alt="categories">
-                                </div> <span class="text-light-black cat-name">Mexican </span>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="restaurant.html" class="categories">
-                                <div class="icon text-custom-white bg-light-green ">
-                                    <img src="assets/img/restaurants/125x125/cuisine-5.jpg" class="rounded-circle" alt="categories">
-                                </div> <span class="text-light-black cat-name">Indian </span>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="restaurant.html" class="categories">
-                                <div class="icon text-custom-white bg-light-green ">
-                                    <img src="assets/img/restaurants/125x125/cuisine-6.jpg" class="rounded-circle" alt="categories">
-                                </div> <span class="text-light-black cat-name">Lebanese </span>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="restaurant.html" class="categories">
-                                <div class="icon text-custom-white bg-light-green ">
-                                    <img src="assets/img/restaurants/125x125/cuisine-7.jpg" class="rounded-circle" alt="categories">
-                                </div> <span class="text-light-black cat-name">Japanese </span>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="restaurant.html" class="categories">
-                                <div class="icon text-custom-white bg-light-green ">
-                                    <img src="assets/img/restaurants/125x125/cuisine-8.jpg" class="rounded-circle" alt="categories">
-                                </div> <span class="text-light-black cat-name">American </span>
-                            </a>
-                        </div>
-                        <-------------------------------------------- </div> -->
                         <!-- Add Arrows -->
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
@@ -151,82 +106,91 @@
 </section>
 <!-- Browse by category -->
 <!-- your previous order -->
-<section class="recent-order section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-header-left">
-                    <h3 class="text-light-black header-title title">Your previous orders <span class="fs-14"><a href="order-details.html">See all past orders</a></span></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="product-box mb-md-20">
-                    <div class="product-img">
-                        <a href="restaurant.html">
-                            <img src="assets/img/restaurants/255x104/order-1.jpg" class="img-fluid full-width" alt="product-img">
-                        </a>
+<?php
+if ($params_request !== false || isset($param_check['page'])) {
+} else {
+?>
+    <section class="recent-order section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header-left">
+                        <h3 class="text-light-black header-title title">Your previous orders <span class="fs-14"><a href="order-details.html">See all past orders</a></span></h3>
                     </div>
-                    <div class="product-caption">
-                        <h6 class="product-title"><a href="restaurant.html" class="text-light-black "> Chilli Chicken Pizza</a></h6>
-                        <p class="text-light-white">Big Bites, Brooklyn</p>
-                        <div class="product-btn">
-                            <a href="order-details.html" class="btn-first white-btn full-width text-light-green fw-600">Track Order</a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product-box mb-md-20">
+                        <div class="product-img">
+                            <a href="restaurant.html">
+                                <img src="assets/img/restaurants/255x104/order-1.jpg" class="img-fluid full-width" alt="product-img">
+                            </a>
+                        </div>
+                        <div class="product-caption">
+                            <h6 class="product-title"><a href="restaurant.html" class="text-light-black "> Chilli Chicken Pizza</a></h6>
+                            <p class="text-light-white">Big Bites, Brooklyn</p>
+                            <div class="product-btn">
+                                <a href="order-details.html" class="btn-first white-btn full-width text-light-green fw-600">Track Order</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="product-box mb-md-20">
-                    <div class="product-img">
-                        <a href="restaurant.html">
-                            <img src="assets/img/restaurants/255x104/order-2.jpg" class="img-fluid full-width" alt="product-img">
-                        </a>
-                    </div>
-                    <div class="product-caption">
-                        <h6 class="product-title"><a href="restaurant.html" class="text-light-black "> Hakka Noodles</a></h6>
-                        <p class="text-light-white">Flavor Town, Brooklyn</p>
-                        <div class="product-btn">
-                            <a href="order-details.html" class="btn-first white-btn full-width text-light-green fw-600">Track Order</a>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product-box mb-md-20">
+                        <div class="product-img">
+                            <a href="restaurant.html">
+                                <img src="assets/img/restaurants/255x104/order-2.jpg" class="img-fluid full-width" alt="product-img">
+                            </a>
+                        </div>
+                        <div class="product-caption">
+                            <h6 class="product-title"><a href="restaurant.html" class="text-light-black "> Hakka Noodles</a></h6>
+                            <p class="text-light-white">Flavor Town, Brooklyn</p>
+                            <div class="product-btn">
+                                <a href="order-details.html" class="btn-first white-btn full-width text-light-green fw-600">Track Order</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="product-box mb-md-20">
-                    <div class="product-img">
-                        <a href="restaurant.html">
-                            <img src="assets/img/restaurants/255x104/order-3.jpg" class="img-fluid full-width" alt="product-img">
-                        </a>
-                    </div>
-                    <div class="product-caption">
-                        <h6 class="product-title"><a href="restaurant.html" class="text-light-black "> Vegan Burger </a></h6>
-                        <p class="text-light-white">Great Burger, Brooklyn</p>
-                        <div class="product-btn">
-                            <a href="order-details.html" class="btn-first white-btn full-width text-light-green fw-600">Track Order</a>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product-box mb-md-20">
+                        <div class="product-img">
+                            <a href="restaurant.html">
+                                <img src="assets/img/restaurants/255x104/order-3.jpg" class="img-fluid full-width" alt="product-img">
+                            </a>
+                        </div>
+                        <div class="product-caption">
+                            <h6 class="product-title"><a href="restaurant.html" class="text-light-black "> Vegan Burger </a></h6>
+                            <p class="text-light-white">Great Burger, Brooklyn</p>
+                            <div class="product-btn">
+                                <a href="order-details.html" class="btn-first white-btn full-width text-light-green fw-600">Track Order</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="product-box mb-md-20">
-                    <div class="product-img">
-                        <a href="restaurant.html">
-                            <img src="assets/img/restaurants/255x104/order-4.jpg" class="img-fluid full-width" alt="product-img">
-                        </a>
-                    </div>
-                    <div class="product-caption">
-                        <h6 class="product-title"><a href="restaurant.html" class="text-light-black "> Sticky Date Cake</a></h6>
-                        <p class="text-light-white">Smile N’ Delight, Brooklyn</p>
-                        <div class="product-btn">
-                            <a href="order-details.html" class="btn-first white-btn full-width text-light-green fw-600">Track Order</a>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product-box mb-md-20">
+                        <div class="product-img">
+                            <a href="restaurant.html">
+                                <img src="assets/img/restaurants/255x104/order-4.jpg" class="img-fluid full-width" alt="product-img">
+                            </a>
+                        </div>
+                        <div class="product-caption">
+                            <h6 class="product-title"><a href="restaurant.html" class="text-light-black "> Sticky Date Cake</a></h6>
+                            <p class="text-light-white">Smile N’ Delight, Brooklyn</p>
+                            <div class="product-btn">
+                                <a href="order-details.html" class="btn-first white-btn full-width text-light-green fw-600">Track Order</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- your previous order -->
+    </section>
+    <!-- your previous order -->
+<?php
+}
+
+?>
+
 <!-- Explore collection -->
 <section class="ex-collection section-padding">
     <div class="container">
@@ -331,7 +295,7 @@
                         </div>
                     </div>
                 </div>
-            
+
             <?php
             }
 
@@ -353,7 +317,7 @@
             $pagLink .= "<li class='page-item active'><a class = 'page-link' href='home?page=" . $page . "'>" . $page  . " </a></li>";
             if ($page < intval($total_pages) - 1) {
                 // print $page + 1; 
-                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . (intval($page) + 1) . "'>" .(intval($page) + 1) . " </a></li>";
+                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . (intval($page) + 1) . "'>" . (intval($page) + 1) . " </a></li>";
             }
             if ($page < $total_pages - 2) {
                 $pagLink .= "<b>......</b>";
@@ -368,14 +332,14 @@
             echo '</ul></nav></div>';
             // cho Hiếu làm mấy cái nút cho đẹp nhá
             ?>
-           
-                
-                    <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
-                    <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+
+
+            <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
+            <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
                     <li class="page-item"><a class="page-link" href="#">2</a></li>
                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                     <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
-                
+
             <!-- <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="product-box mb-xl-20">
                     <div class="product-img">
