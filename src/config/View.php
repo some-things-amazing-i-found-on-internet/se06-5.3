@@ -45,7 +45,7 @@ class View
             throw new \Exception("View $view not found");
         }
     }
-    static function render_admin(string $view, array $params, array $scripts): void
+    static function render_admin(string $view, array $params, array $scripts, $hideLayout = false): void
     {
         extract($params, EXTR_SKIP);
         extract($scripts, EXTR_SKIP);

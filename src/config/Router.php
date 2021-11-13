@@ -34,7 +34,11 @@ class Router
         $this->__admin_routes = [
             "admin\/home" => "DashBoardController@index",
             "admin\/" => "DashBoardController@index",
-            "admin\/restaurant" => "RestaurantController@index"
+            "admin\/restaurant" => "RestaurantController@index",
+            "admin\/orders" => "OrdersController@index",
+            "admin\/menu-list" => "MenuListController@index",
+            "admin\/add-menu" => "AddMenuController@index",
+            "admin\/login" => "LoginController@index",
         ];
     }
     /**

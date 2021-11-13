@@ -12,7 +12,7 @@
         </nav>
         <!-- Active Orders Graph -->
         <div class="row">
-          <div class="col-lg-6 col-md-12">
+          <div class="col-lg-12 col-md-12">
             <div class="ms-panel ms-panel-fh">
               <div class="ms-panel-header">
                 <h6>Restaurant wise sales</h6>
@@ -48,49 +48,6 @@
                   <div class="col-xl-8 col-md-8">
                     <canvas id="pie-chart"></canvas>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12">
-            <div class="ms-panel">
-              <div class="ms-panel-header new">
-                <h6>Top Food Menu</h6>
-              </div>
-              <div class="ms-panel-body">
-                <div class="table-responsive">
-                  <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th scope="col">Food Item</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Product ID</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="ms-table-f-w"> <img src="<?php echo $prefixPath ?>assets/img/costic/pizza.jpg" alt="people"> Pizza </td>
-                        <td>$20</td>
-                        <td>67384917</td>
-                      </tr>
-                      <tr>
-                        <td class="ms-table-f-w"> <img src="<?php echo $prefixPath ?>assets/img/costic/french-fries.jpg" alt="people"> French Fries </td>
-                        <td>$14</td>
-                        <td>789393819</td>
-                      </tr>
-                      <tr>
-                        <td class="ms-table-f-w"> <img src="<?php echo $prefixPath ?>assets/img/costic/cereals.jpg" alt="people"> Multigrain Hot Cereal </td>
-                        <td>$25</td>
-                        <td>137893137</td>
-                      </tr>
-                      <tr>
-                        <td class="ms-table-f-w"> <img src="<?php echo $prefixPath ?>assets/img/costic/egg-sandwich.jpg" alt="people"> Fried Egg Sandwich </td>
-                        <td>$10</td>
-                        <td>235193138</td>
-                      </tr>
-
-                    </tbody>
-                  </table>
                 </div>
               </div>
             </div>

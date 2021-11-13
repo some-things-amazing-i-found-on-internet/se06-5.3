@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,6 +45,11 @@
             <div class="ms-circle12 ms-child"></div>
         </div>
     </div>
+    <?php 
+        if($hideLayout) {
+            require_once $content;
+        }else{ 
+    ?>
     <!-- Overlays -->
     <div class="ms-aside-overlay ms-overlay-left ms-toggler" data-target="#ms-side-nav" data-toggle="slideLeft"></div>
     <div class="ms-aside-overlay ms-overlay-right ms-toggler" data-target="#ms-recent-activity" data-toggle="slideRight"></div>
@@ -72,29 +75,26 @@
                 </a>
             </li>
             <!-- restaurants end -->
+            <!-- orders -->
+            <li class="menu-item">
+                <a href="<?php echo $admin_prefixPath ?>orders"> <span><i class="fas fa-clipboard-list fs-16"></i>Orders</span>
+                </a>
+            </li>
+            <!-- orders end -->
+
             <!-- product -->
             <li class="menu-item">
                 <a href="#" class="has-chevron" data-toggle="collapse" data-target="#product" aria-expanded="false" aria-controls="product"> <span><i class="fa fa-archive fs-16"></i>Menus </span>
                 </a>
                 <ul id="product" class="collapse" aria-labelledby="product" data-parent="#side-nav-accordion">
-                    <li> <a href="<?php echo $prefixPath ?>pages/product/productcata.php">Menu Catalogue</a>
+                    <li> <a href="<?php echo $admin_prefixPath ?>menu-list">Menu List</a>
                     </li>
-                    <li> <a href="<?php echo $prefixPath ?>pages/product/productlist.php">Menu List</a>
-                    </li>
-                    <li> <a href="<?php echo $prefixPath ?>pages/product/productgrid.php">Menu Grid</a>
-                    </li>
-                    <li> <a href="<?php echo $prefixPath ?>pages/product/addproduct.php">Add Product</a>
+                    <li> <a href="<?php echo $admin_prefixPath ?>add-menu">Add Product</a>
                     </li>
 
                 </ul>
             </li>
             <!-- product end -->
-            <!-- orders -->
-            <li class="menu-item">
-                <a href="<?php echo $prefixPath ?>pages/orders.html"> <span><i class="fas fa-clipboard-list fs-16"></i>Orders</span>
-                </a>
-            </li>
-            <!-- orders end -->
 
             <!-- Invoice -->
             <li class="menu-item">
@@ -935,6 +935,7 @@
         </div>
     </div>
     <!-- SCRIPTS -->
+    <?php } ?>
     <!-- Global Required Scripts Start -->
     <script src="<?php echo $prefixPath ?>assets/js/jquery-3.5.0.min.js"></script>
     <script src="<?php echo $prefixPath ?>assets/js/popper.min.js"></script>
@@ -945,11 +946,11 @@
     </script>
     <!-- Global Required Scripts End -->
     <!-- Page Specific Scripts Start -->
-    <?php 
-        foreach($scripts as $script) {
-            echo '<script src="'.$prefixPath.'assets/js/'.$script.'">
+    <?php
+    foreach ($scripts as $script) {
+        echo '<script src="' . $prefixPath . 'assets/js/' . $script . '">
             </script>';
-        }
+    }
     ?>
     <!-- Page Specific Scripts Finish -->
     <!-- Costic core JavaScript -->
