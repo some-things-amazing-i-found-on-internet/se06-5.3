@@ -34,6 +34,7 @@ class Router
         $this->__admin_routes = [
             "admin\/home" => "DashBoardController@index",
             "admin\/" => "DashBoardController@index",
+            "admin\/restaurant" => "RestaurantController@index"
         ];
     }
     /**

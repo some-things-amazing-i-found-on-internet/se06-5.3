@@ -20,7 +20,7 @@ use Core\config\View;
  * @link       http://pear.php.net/package/PackageName
  * @since      Class available since Release 1.0.0
  */
-class DashBoardController extends Model
+class RestaurantController extends Model
 {
 
     /**
@@ -45,6 +45,6 @@ class DashBoardController extends Model
     public function index($params_request): void
     {
 
-        View::render_admin("dashboard", compact(["params_request"]), array("Chart.bundle.min.js", "widgets.js"));
+        View::render_admin("restaurants", compact(["params_request"]), array(false));
     }
 }

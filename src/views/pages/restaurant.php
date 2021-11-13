@@ -120,7 +120,7 @@
                         <div class="change-address"> <a href="checkout.html" class="fw-500">Change</a>
                         </div>
                     </div>
-                    <p class="text-light-white no-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+                    <p class="text-light-white no-margin"> </p>
                 </div>
             </div>
         </div>
@@ -129,59 +129,12 @@
 <!-- restaurent address -->
 <!-- restaurent meals -->
 <section class="section-padding restaurent-meals bg-light-theme">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-xl-3 col-lg-3">
                 <div class="advertisement-slider swiper-container h-auto mb-xl-20 mb-md-40">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrapper">
-                                <div class="testimonial-box">
-                                    <div class="testimonial-img p-relative">
-                                        <a href="restaurant.html">
-                                            <img src="assets/img/blog/438x180/shop-1.jpg" class="img-fluid full-width" alt="testimonial-img">
-                                        </a>
-                                        <div class="overlay">
-                                            <div class="brand-logo">
-                                                <img src="assets/img/user/user-3.png" class="img-fluid" alt="logo">
-                                            </div>
-                                            <div class="add-fav text-success">
-                                                <img src="assets/img/svg/013-heart-1.svg" alt="tag">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-caption padding-15">
-                                        <p class="text-light-white text-uppercase no-margin fs-12">Featured</p>
-                                        <h5 class="fw-600"><a href="restaurant.html" class="text-light-black">GSA King Tomato Farm</a></h5>
-                                        <div class="testimonial-user-box">
-                                            <img src="assets/img/blog-details/40x40/user-1.png" class="rounded-circle" alt="#">
-                                            <div class="testimonial-user-name">
-                                                <p class="text-light-black fw-600">Sarra</p> <i class="fas fa-trophy text-black"></i><span class="text-light-black">Top Reviewer</span>
-                                            </div>
-                                        </div>
-                                        <div class="ratings"> <span class="text-yellow fs-16">
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            <span class="text-yellow fs-16">
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            <span class="text-yellow fs-16">
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            <span class="text-yellow fs-16">
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            <span class="text-yellow fs-16">
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                        </div>
-                                        <p class="text-light-black">Delivery was fast and friendly...</p>
-                                        <p class="text-light-white fw-100"><strong class="text-light-black fw-700">Local delivery: </strong> From $7.99 (4.0 mi)</p>
-                                        <a href="checkout.html" class="btn-second btn-submit">Order Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="swiper-wrapper-dcmm">
+                     
                         <div class="swiper-slide">
                             <div class="testimonial-wrapper">
                                 <div class="testimonial-box">
@@ -229,57 +182,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrapper">
-                                <div class="testimonial-box">
-                                    <div class="testimonial-img p-relative">
-                                        <a href="restaurant.html">
-                                            <img src="assets/img/blog/438x180/shop-2.jpg" class="img-fluid full-width" alt="testimonial-img">
-                                        </a>
-                                        <div class="overlay">
-                                            <div class="brand-logo">
-                                                <img src="assets/img/user/user-1.png" class="img-fluid" alt="logo">
-                                            </div>
-                                            <div class="add-fav text-success"><img src="assets/img/svg/013-heart-1.svg" alt="tag">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-caption padding-15">
-                                        <p class="text-light-white text-uppercase no-margin fs-12">Featured</p>
-                                        <h5 class="fw-600"><a href="restaurant.html" class="text-light-black">GSA King Tomato Farm</a></h5>
-                                        <div class="testimonial-user-box">
-                                            <img src="assets/img/blog-details/40x40/user-3.png" class="rounded-circle" alt="#">
-                                            <div class="testimonial-user-name">
-                                                <p class="text-light-black fw-600">Sarra</p> <i class="fas fa-trophy text-black"></i><span class="text-light-black">Top Reviewer</span>
-                                            </div>
-                                        </div>
-                                        <div class="ratings"> <span class="text-yellow fs-16">
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            <span class="text-yellow fs-16">
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            <span class="text-yellow fs-16">
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            <span class="text-yellow fs-16">
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            <span class="text-yellow fs-16">
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                        </div>
-                                        <p class="text-light-black">Delivery was fast and friendly...</p>
-                                        <p class="text-light-white fw-100"><strong class="text-light-black fw-700">Local delivery: </strong> From $7.99 (4.0 mi)</p>
-                                        <a href="checkout.html" class="btn-second btn-submit">Order Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6">

@@ -54,7 +54,7 @@
     <aside id="ms-side-nav" class="side-nav fixed ms-aside-scrollable ms-aside-left">
         <!-- Logo -->
         <div class="logo-sn ms-d-block-lg">
-            <a class="pl-0 ml-0 text-center" href="<?php echo $prefixPath ?>index.php">
+            <a class="pl-0 ml-0 text-center" href="<?php echo $admin_prefixPath ?>">
                 <img src="<?php $prefixPath ?><?php echo $prefixPath ?>assets/img/costic/costic-logo-216x62.png" alt="logo">
             </a>
         </div>
@@ -62,13 +62,13 @@
         <ul class="accordion ms-main-aside fs-14" id="side-nav-accordion">
             <!-- Dashboard -->
             <li class="menu-item">
-                <a href="<?php echo $prefixPath ?>index.php"> <span><i class="material-icons fs-16">dashboard</i>Dashboard</span>
+                <a href="<?php echo $admin_prefixPath ?>"> <span><i class="material-icons fs-16">dashboard</i>Dashboard</span>
                 </a>
             </li>
             <!-- /Dashboard -->
             <!-- restaurants -->
             <li class="menu-item">
-                <a href="<?php echo $prefixPath ?>pages/restaurants.php"> <span><i class="fa fa-tasks fs-16"></i>Restaurants List</span>
+                <a href="<?php echo $admin_prefixPath ?>restaurant"> <span><i class="fa fa-tasks fs-16"></i>Restaurants List</span>
                 </a>
             </li>
             <!-- restaurants end -->
@@ -945,20 +945,12 @@
     </script>
     <!-- Global Required Scripts End -->
     <!-- Page Specific Scripts Start -->
-<!-- 
-    <script src="<?php echo $prefixPath ?>assets/js/Chart.bundle.min.js">
-    </script>
-    <script src="<?php echo $prefixPath ?>assets/js/widgets.js"> </script>
-    <script src="<?php echo $prefixPath ?>assets/js/clients.js"> </script>
-    <script src="<?php echo $prefixPath ?>assets/js/Chart.Financial.js"> </script>
-    <script src="<?php echo $prefixPath ?>assets/js/d3.v3.min.js">
-    </script>
-    <script src="<?php echo $prefixPath ?>assets/js/topojson.v1.min.js">
-    </script>
-    <script src="<?php echo $prefixPath ?>assets/js/datatables.min.js">
-    </script>
-    <script src="<?php echo $prefixPath ?>assets/js/data-tables.js">
-    </script> -->
+    <?php 
+        foreach($scripts as $script) {
+            echo '<script src="'.$prefixPath.'assets/js/'.$script.'">
+            </script>';
+        }
+    ?>
     <!-- Page Specific Scripts Finish -->
     <!-- Costic core JavaScript -->
     <script src="<?php echo $prefixPath ?>assets/js/framework.js"></script>

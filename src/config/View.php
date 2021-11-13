@@ -45,11 +45,13 @@ class View
             throw new \Exception("View $view not found");
         }
     }
-    static function render_admin(string $view, array $params): void
+    static function render_admin(string $view, array $params, array $scripts): void
     {
         extract($params, EXTR_SKIP);
+        extract($scripts, EXTR_SKIP);
         // Page template path.
         $prefixPath = "../src/views/adminViews/";
+        $admin_prefixPath = "/se06-5.3/admin/";
         $content = APPLICATION_PATH . "/src/views/adminViews/pages/$view.php";
         // echo is_readable($content);
         if (is_readable($content)) {
