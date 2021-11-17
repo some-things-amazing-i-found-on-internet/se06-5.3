@@ -37,11 +37,11 @@ class RestaurantController extends Model
      */
     public function getAll(): iterable
     {
+        // $this->insert(compact(['']));
         return $this->DB()
             ->query('SELECT id, first_name FROM customers')
             ->fetchAll(\PDO::FETCH_ASSOC);
     }
-
     public function index($params): void
     {
         $list = explode("=", $params[0]);
@@ -56,7 +56,7 @@ class RestaurantController extends Model
                                 JOIN dish_orderes
                                 ON dish_types._id = dish_orderes._id
                                 WHERE id_restaurant=?
-                                GROUP BY dish_orderes.id";    
+                                GROUP BY dish_orderes.id";
         $query2 = $this->DB()->prepare($query_dish_orders);
         $query2->execute(array($id));
         $dish_orders = $query2->fetchAll(\PDO::FETCH_ASSOC);
@@ -70,7 +70,15 @@ class RestaurantController extends Model
         $query3->execute(array($id));
         $restaurants = $query3->fetchAll(\PDO::FETCH_ASSOC);
 
+        
+        $print_function = function($string) {
+            // insert vào database 
+        };
+          
+        // Array of strings
+    
+        // $insertFood = $this->insertFood();
         // print(gettype($params));
-        View::render("restaurant", compact(["dish_types", "dish_orders", "restaurants"]));
+        View::render("restaurant", compact(["dish_types", "dish_orders", "restaurants", "print_function"]));
     }
 }

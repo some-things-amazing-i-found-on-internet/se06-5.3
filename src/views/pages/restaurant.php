@@ -1,6 +1,6 @@
 <!-- restaurent top -->
 <div class="page-banner p-relative smoothscroll" id="menu">
-    <img src= <?php echo $restaurants[0]['value'] ?> class="img-fluid full-width" alt="banner">
+    <img src=<?php echo $restaurants[0]['value'] ?> class="img-fluid full-width" alt="banner">
     <div class="overlay-2">
         <div class="container">
             <div class="row">
@@ -46,7 +46,7 @@
                             <span class="fs-16 text-dark-white">
                                 <i class="fas fa-star"></i>
                             </span>
-                            <span class="text-light-black fs-12 rate-data"><?php echo $restaurants[0]['rating_display_total_review'] . " đánh giá"?></span>
+                            <span class="text-light-black fs-12 rate-data"><?php echo $restaurants[0]['rating_display_total_review'] . " đánh giá" ?></span>
                         </div>
                         <div class="product-review">
                             <div class="restaurent-details-mob">
@@ -134,7 +134,7 @@
             <div class="col-xl-3 col-lg-3">
                 <div class="advertisement-slider swiper-container h-auto mb-xl-20 mb-md-40">
                     <div class="swiper-wrapper-dcmm">
-                     
+
                         <div class="swiper-slide">
                             <div class="testimonial-wrapper">
                                 <div class="testimonial-box">
@@ -190,94 +190,102 @@
                     <div class="col-lg-12 restaurent-meal-head mb-md-40">
                         <?php
                         $i = -1;
-                        foreach($dish_types as $type) {
+                        foreach ($dish_types as $type) {
                             $i++;
                         ?>
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="section-header-left">
-                                    <h3 class="text-light-black header-title">
-                                        <a class="card-link text-light-black no-margin" data-toggle="collapse" href="#collapseOne<?php echo $i; ?>">
-                                            <?php echo $type['dish_type_name'];?>
-                                        </a>
-                                    </h3>
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="section-header-left">
+                                        <h3 class="text-light-black header-title">
+                                            <a class="card-link text-light-black no-margin" data-toggle="collapse" href="#collapseOne<?php echo $i; ?>">
+                                                <?php echo $type['dish_type_name']; ?>
+                                            </a>
+                                        </h3>
+                                    </div>
                                 </div>
-                            </div>
-                            <div id="collapseOne<?php echo $i; ?>" class="collapse show">
-                                <div class="card-body no-padding">
-                                    <div class="row">
-                                        <?php
-                                        foreach($dish_orders as $food) {
-                                            if ($food["dish_type_id"] == $type["dish_type_id"]) {                                          
-                                        ?>
-                                        <div class="col-lg-12">
-                                            <div class="restaurent-product-list">
-                                                <div class="restaurent-product-detail">
-                                                    <div class="restaurent-product-left">
-                                                        <div class="restaurent-product-title-box">
-                                                            <div class="restaurent-product-box">
-                                                                <div class="restaurent-product-title">
-                                                                    <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600"><?php echo $food['name'] ?></a></h6>
-                                                                    <p class="text-light-white"><?php echo "Tổng số lần đặt: " . $food['display_total_order'] ?></p>
-                                                                </div>
-                                                                <!-- <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
+                                <div id="collapseOne<?php echo $i; ?>" class="collapse show">
+                                    <div class="card-body no-padding">
+                                        <div class="row">
+                                            <?php
+                                            $j = -1;
+                                            foreach ($dish_orders as $food) {
+                                                $j++;
+                                                if ($food["dish_type_id"] == $type["dish_type_id"]) {
+                                            ?>
+                                                    <!-- <script>
+                                                        let <?php echo $j ?> = document.getElementById("product-detail-<?php echo $j ?>")
+                                                        restaurant_test <?php echo $j ?>.onclick(e => {
+                                                            console.log("dayyyyyy")
+                                                        })
+                                                    </script> -->
+                                                    <div class="col-lg-12">
+                                                        <div class="restaurent-product-list">
+                                                            <div class="restaurent-product-detail" id="product-detail-<?php echo $j ?>" onclick='test(<?php echo $food["id"] ?>)'>
+                                                                <div class="restaurent-product-left">
+                                                                    <div class="restaurent-product-title-box">
+                                                                        <div class="restaurent-product-box">
+                                                                            <div class="restaurent-product-title">
+                                                                                <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600"><?php echo $food['name'] ?></a></h6>
+                                                                                <p class="text-light-white"><?php echo "Tổng số lần đặt: " . $food['display_total_order'] ?></p>
+                                                                            </div>
+                                                                            <!-- <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
                                                                     <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
                                                                 </div> -->
-                                                            </div>
-                                                            <div class="restaurent-product-rating">
-                                                                <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star"></i></span>
-                                                                    <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
-                                                                </div>
-                                                                <div class="rating-text">
-                                                                    <p class="text-light-white fs-12 title"><?php echo $food['total_like'] . " lượt thích" ?></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
+                                                                        </div>
+                                                                        <div class="restaurent-product-rating">
+                                                                            <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
+                                                                                <span class="text-yellow"><i class="fas fa-star"></i></span>
+                                                                                <span class="text-yellow"><i class="fas fa-star"></i></span>
+                                                                                <span class="text-yellow"><i class="fas fa-star"></i></span>
+                                                                                <span class="text-yellow"><i class="fas fa-star-half-alt"></i></span>
+                                                                            </div>
+                                                                            <div class="rating-text">
+                                                                                <p class="text-light-white fs-12 title"><?php echo $food['total_like'] . " lượt thích" ?></p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
                                                         </div> -->
-                                                        <div class="restaurent-tags-price">
-                                                            <div class="restaurent-tags">
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/004-leaf.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/006-chili.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/005-chef.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/008-protein.svg" alt="tag">
-                                                                </span>
-                                                                <span class="text-custom-white square-tag">
-                                                                    <img src="assets/img/svg/009-lemon.svg" alt="tag">
-                                                                </span>
-                                                            </div>
-                                                            <span class="circle-tag">
-                                                                <img src="assets/img/svg/010-heart.svg" alt="tag">
-                                                            </span>
-                                                            <div class="restaurent-product-price">
-                                                                <h6 class="text-success fw-600 no-margin"><?php echo $food['price_text'] ?></h6>
+                                                                    <div class="restaurent-tags-price">
+                                                                        <div class="restaurent-tags">
+                                                                            <span class="text-custom-white square-tag">
+                                                                                <img src="assets/img/svg/004-leaf.svg" alt="tag">
+                                                                            </span>
+                                                                            <span class="text-custom-white square-tag">
+                                                                                <img src="assets/img/svg/006-chili.svg" alt="tag">
+                                                                            </span>
+                                                                            <span class="text-custom-white square-tag">
+                                                                                <img src="assets/img/svg/005-chef.svg" alt="tag">
+                                                                            </span>
+                                                                            <span class="text-custom-white square-tag">
+                                                                                <img src="assets/img/svg/008-protein.svg" alt="tag">
+                                                                            </span>
+                                                                            <span class="text-custom-white square-tag">
+                                                                                <img src="assets/img/svg/009-lemon.svg" alt="tag">
+                                                                            </span>
+                                                                        </div>
+                                                                        <span class="circle-tag">
+                                                                            <img src="assets/img/svg/010-heart.svg" alt="tag">
+                                                                        </span>
+                                                                        <div class="restaurent-product-price">
+                                                                            <h6 class="text-success fw-600 no-margin"><?php echo $food['price_text'] ?></h6>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="restaurent-product-img">
+                                                                    <img src=<?php echo $food["photos"] ?> class="img-fluid" alt="#">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="restaurent-product-img">
-                                                        <img src=<?php echo $food["photos"] ?> class="img-fluid" alt="#">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <?php
+                                            <?php
+                                                }
                                             }
-                                        }
-                                        ?>
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         <?php
                         }
                         ?>
@@ -286,7 +294,6 @@
             </div>
             <div class="col-xl-3 col-lg-3">
                 <div class="sidebar">
-                    
                     <div class="cart-detail-box">
                         <div class="card">
                             <div class="card-header padding-15 fw-700">Your Order</div>
@@ -295,58 +302,7 @@
                                     <div class="cat-product">
                                         <div class="cat-name">
                                             <a href="#">
-                                                <p class="text-light-green fw-700"><span class="text-dark-white">1</span> Chilli Chicken Pizza</p> <span class="text-light-white fw-700">small, chilli chicken</span>
-                                            </a>
-                                        </div>
-                                        <div class="delete-btn">
-                                            <a href="#" class="text-dark-white"> <i class="far fa-trash-alt"></i>
-                                            </a>
-                                        </div>
-                                        <div class="price"> <a href="#" class="text-dark-white fw-500">
-                                                $2.25
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cat-product-box">
-                                    <div class="cat-product">
-                                        <div class="cat-name">
-                                            <a href="#">
-                                                <p class="text-light-green fw-700"><span class="text-dark-white">1</span> Chilli Chicken Pizza</p> <span class="text-light-white fw-700">small, chilli chicken</span>
-                                            </a>
-                                        </div>
-                                        <div class="delete-btn">
-                                            <a href="#" class="text-dark-white"> <i class="far fa-trash-alt"></i>
-                                            </a>
-                                        </div>
-                                        <div class="price"> <a href="#" class="text-dark-white fw-500">
-                                                $2.25
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cat-product-box">
-                                    <div class="cat-product">
-                                        <div class="cat-name">
-                                            <a href="#">
-                                                <p class="text-light-green fw-700"><span class="text-dark-white">1</span> Chilli Chicken Pizza</p> <span class="text-light-white fw-700">small, chilli chicken</span>
-                                            </a>
-                                        </div>
-                                        <div class="delete-btn">
-                                            <a href="#" class="text-dark-white"> <i class="far fa-trash-alt"></i>
-                                            </a>
-                                        </div>
-                                        <div class="price"> <a href="#" class="text-dark-white fw-500">
-                                                $2.25
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cat-product-box">
-                                    <div class="cat-product">
-                                        <div class="cat-name">
-                                            <a href="#">
-                                                <p class="text-light-green fw-700"><span class="text-dark-white">1</span> Chilli Chicken Pizza</p> <span class="text-light-white fw-700">small, chilli chicken</span>
+                                                <p class="text-light-green fw-700" id="dat"><span class="text-dark-white">1</span> Chilli Chicken Pizza</p> <span class="text-light-white fw-700">small, chilli chicken</span>
                                             </a>
                                         </div>
                                         <div class="delete-btn">
@@ -376,6 +332,33 @@
         </div>
     </div>
 </section>
+<script>
+    function createElement(id) {
+        let div1 = document.createElement("div") // <div> </div>
+        div1.className = "cat-product-box" // <div class="cat-product-box"> </div>
+        let div2 = document.createElement("div") // <div> </div>
+        div2.className = "cat-product" // <div class="cat-product"> </div>
+        div1.appendChild(div2) // <div class="cat-product-box"> <div class="cat-product"> </div></div>
+        div2.innerHTML += id
+        return div1
+    }
+
+    function test(id) {
+        console.log(id)
+        let ele1 = createElement(id);
+        let root = document.getElementById("scrollstyle-4")
+        root.appendChild(ele1)
+        <?php
+        // insert vao database 
+        // $insertFood()
+        $string_array = array(123345, "GFG", "Article");
+
+        // // Callable closure
+        array_map($print_function, $string_array);
+
+        ?>
+    }
+</script>
 <!-- restaurent meals -->
 <!-- restaurent about -->
 <section class="section-padding restaurent-about smoothscroll" id="about">

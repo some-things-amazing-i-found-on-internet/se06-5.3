@@ -52,7 +52,12 @@ class View
         // Page template path.
         $prefixPath = "../src/views/adminViews/";
         $admin_prefixPath = "/se06-5.3/admin/";
-        $content = APPLICATION_PATH . "/src/views/adminViews/pages/$view.php";
+        if(isset($_SESSION['admin'])){
+            $content = APPLICATION_PATH . "/src/views/adminViews/pages/$view.php";
+        }else{
+            $hideLayout=true;
+            $content = APPLICATION_PATH . "/src/views/adminViews/pages/prebuilt-pages/default-login.php";
+        }
         // echo is_readable($content);
         if (is_readable($content)) {
             // Include global template
