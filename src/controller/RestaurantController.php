@@ -74,11 +74,21 @@ class RestaurantController extends Model
         $print_function = function($string) {
             // insert vào database 
         };
-          
+         
+        $fetch_data_function = function($user_id) {
+            // lấy dữ liệu từ database 
+            $query_orders = "SELECT * FROM user_orders
+                                WHERE user_id = ?";
+            $query4 = $this->DB()->prepare($query_orders);
+            $query4->execute(array($user_id));
+            $orders = $query4->fetchAll(\PDO::FETCH_ASSOC);
+            return $orders;
+        };
         // Array of strings
-    
+        session_start();
+        $_SESSION['customer'] = 3;
         // $insertFood = $this->insertFood();
         // print(gettype($params));
-        View::render("restaurant", compact(["dish_types", "dish_orders", "restaurants", "print_function"]));
+        View::render("restaurant", compact(["dish_types", "dish_orders", "restaurants", "print_function", "fetch_data_function"]));
     }
 }

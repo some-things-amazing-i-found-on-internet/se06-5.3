@@ -358,7 +358,31 @@
 
         ?>
     }
+
+    function fetch_data() {
+        <?php
+            $user_id = $_SESSION['customer'];
+            $_result = array_map($fetch_data_function, array($user_id));  
+        ?>
+        let ketqua = <?php echo json_encode($_result) ;?>;
+        ketqua = ketqua[0];
+        
+        let root = document.getElementById("scrollstyle-4");
+        for(let i = 0; i < ketqua.length; i++) {
+            console.log(ketqua[i]['order_id']);
+            let ele1 = createElement(ketqua[i]['food_id']);
+            root.appendChild(ele1);
+        }
+    }
+    fetch_data();
+    
+    
 </script>
+<?php
+    $user_id = $_SESSION['customer'];
+    $_result = array_map($fetch_data_function, array($user_id));
+    var_dump($_result);     
+?>
 <!-- restaurent meals -->
 <!-- restaurent about -->
 <section class="section-padding restaurent-about smoothscroll" id="about">
