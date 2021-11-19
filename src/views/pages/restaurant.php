@@ -220,7 +220,7 @@
                                                     </script> -->
                                                     <div class="col-lg-12">
                                                         <div class="restaurent-product-list">
-                                                            <div class="restaurent-product-detail" id="product-detail-<?php echo $j ?>" onclick='test(<?php echo $food["id"] ?>)'>
+                                                            <div class="restaurent-product-detail" id="product-detail-<?php echo $j ?>" onclick= '() =>insert_order(<?php echo $food["id"] ?>)'>
                                                                 <div class="restaurent-product-left">
                                                                     <div class="restaurent-product-title-box">
                                                                         <div class="restaurent-product-box">
@@ -333,30 +333,35 @@
     </div>
 </section>
 <script>
-    function createElement(id) {
+    function createElement(order) {
         let div1 = document.createElement("div") // <div> </div>
         div1.className = "cat-product-box" // <div class="cat-product-box"> </div>
         let div2 = document.createElement("div") // <div> </div>
         div2.className = "cat-product" // <div class="cat-product"> </div>
+        div2.innerHTML += order['name']
+        let div3 = document.createElement("div")
+        div3.className = "price"
+        div3.innerHTML += "Đơn giá: " + order['price_text'];
+        let div4 = document.createElement("div")
+        div4.className = "text-light-green fw-700"
+        div4.innerHTML += "Số lượng: " + order['quantity'];
+        div2.appendChild(div3)
         div1.appendChild(div2) // <div class="cat-product-box"> <div class="cat-product"> </div></div>
-        div2.innerHTML += id
+        div1.appendChild(div4)
         return div1
     }
 
-    function test(id) {
-        console.log(id)
-        let ele1 = createElement(id);
-        let root = document.getElementById("scrollstyle-4")
-        root.appendChild(ele1)
+    function insert_order(id) {
         <?php
         // insert vao database 
         // $insertFood()
-        $string_array = array(123345, "GFG", "Article");
-
+        // $id = "<script>document.write(id);</script>";
+        
         // // Callable closure
-        array_map($print_function, $string_array);
-
+        array_map($insert_data_function, array(6546456));
+    
         ?>
+        alert(id);
     }
 
     function fetch_data() {
@@ -370,19 +375,13 @@
         let root = document.getElementById("scrollstyle-4");
         for(let i = 0; i < ketqua.length; i++) {
             console.log(ketqua[i]['order_id']);
-            let ele1 = createElement(ketqua[i]['food_id']);
+            let ele1 = createElement(ketqua[i]);
             root.appendChild(ele1);
         }
     }
     fetch_data();
     
-    
 </script>
-<?php
-    $user_id = $_SESSION['customer'];
-    $_result = array_map($fetch_data_function, array($user_id));
-    var_dump($_result);     
-?>
 <!-- restaurent meals -->
 <!-- restaurent about -->
 <section class="section-padding restaurent-about smoothscroll" id="about">
