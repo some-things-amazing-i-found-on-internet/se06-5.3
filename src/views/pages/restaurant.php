@@ -437,7 +437,8 @@
             let result = JSON.parse(res)
             show(result)
         } else {
-            show([])
+            btn.className='d-none'
+            // show([])
         }
     }
     fetch()
