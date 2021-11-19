@@ -220,7 +220,7 @@
                                                     </script> -->
                                                     <div class="col-lg-12">
                                                         <div class="restaurent-product-list">
-                                                            <div class="restaurent-product-detail" id="product-detail-<?php echo $j ?>" onclick= '() =>insert_order(<?php echo $food["id"] ?>)'>
+                                                            <div class="restaurent-product-detail" id="product-detail-<?php echo $j ?>" onclick='insert_order(<?php echo $food["id"] ?>)'>
                                                                 <div class="restaurent-product-left">
                                                                     <div class="restaurent-product-title-box">
                                                                         <div class="restaurent-product-box">
@@ -358,10 +358,9 @@
         // $id = "<script>document.write(id);</script>";
         
         // // Callable closure
-        array_map($insert_data_function, array(6546456));
+        array_map($insert_data_function, array(10014810));
     
         ?>
-        alert(id);
     }
 
     function fetch_data() {

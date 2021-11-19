@@ -84,15 +84,10 @@ class RestaurantController extends Model
         };
 
         $insert_data_function = function($food_id) {
-            // if (isset($food_id)) {
-                // insert vào database
-                $insert_sql = "INSERT INTO user_orders (customer_id, food_id) VALUES (:val_1, :val_2)";
-                $insert = $this->DB()->prepare($insert_sql);
-                $insert->execute([":val_1"=>3, ":val_2"=>$food_id]);
-            // }
-            
-            
-
+            // insert vào database
+            $insert_sql = "INSERT INTO user_orders (customer_id, food_id) VALUES (:val_1, :val_2)";
+            $insert = $this->DB()->prepare($insert_sql);
+            $insert->execute([":val_1"=>3, ":val_2"=>$food_id]);
         };
         // Array of strings
         session_start();
