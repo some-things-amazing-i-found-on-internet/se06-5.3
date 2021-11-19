@@ -2450,7 +2450,6 @@ footer .footer-links .appimg {
     position: relative;
     box-shadow: 0 0 0 1px rgba(67, 41, 163, .08), 0 1px 5px 0 rgba(67, 41, 163, .08);
     border-radius: 3px;
-    cursor: pointer;
     margin-bottom: 10px;
     height: 95%;
 }
