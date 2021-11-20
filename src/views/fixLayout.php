@@ -63,7 +63,7 @@
                         <div class="col-12 mainNavCol">
                             <!-- logo -->
                             <div class="logo mainNavCol">
-                                <a href="index.html">
+                                <a href="/se06-5.3">
                                     <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
                                 </a>
                             </div>

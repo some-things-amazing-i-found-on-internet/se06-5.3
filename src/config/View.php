@@ -52,6 +52,7 @@ class View
         // Page template path.
         $prefixPath = "../src/views/adminViews/";
         $admin_prefixPath = "/se06-5.3/admin/";
+        $_SESSION['admin'] = 'test';
         if(isset($_SESSION['admin'])){
             $content = APPLICATION_PATH . "/src/views/adminViews/pages/$view.php";
         }else{

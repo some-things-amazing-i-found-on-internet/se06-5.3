@@ -1,4 +1,5 @@
   <!-- Body Content Wrapper -->
+
   <div class="ms-content-wrapper">
     <div class="row">
 
@@ -12,7 +13,7 @@
         </nav>
         <!-- Active Orders Graph -->
         <div class="row">
-          <div class="col-lg-12 col-md-12">
+          <!-- <div class="col-lg-12 col-md-12">
             <div class="ms-panel ms-panel-fh">
               <div class="ms-panel-header">
                 <h6>Restaurant wise sales</h6>
@@ -51,11 +52,16 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="col-xl-12">
             <div class="ms-panel">
-              <div class="ms-panel-header">
-                <h6>Invoice List</h6>
+              <div class="ms-panel-header d-flex justify-content-between pb-0" style="align-items: baseline;">
+                <h6 class="mr-3">Restaurant List</h6>
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <?php echo $pagLink; ?>
+                  </ul>
+                </nav>
               </div>
               <div class="ms-panel-body">
 
@@ -63,273 +69,50 @@
                   <table class="table table-hover thead-primary">
                     <thead>
                       <tr>
-                        <th scope="col">Restaurant ID</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Restaurant Name</th>
                         <th scope="col">Location</th>
                         <th scope="col">Ratings</th>
-                        <th scope="col">Joining Date</th>
 
-                        <th scope="col">Restaurant Sale(%)</th>
-                        <th scope="col">Send / Edit / Delete</th>
+                        <th scope="col">Food Link</th>
+                        <th scope="col">Lock</th>
 
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">15451</th>
-                        <td>Delizus</td>
-                        <td> New York</td>
-                        <td>
-                          <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                            <li class="ms-rating-item"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                          </ul>
-                        </td>
-                        <td>12/10/19</td>
-                        <td>90</td>
-                        <td><a href='#'><i class='fas fa-paper-plane text-secondary text-success'></i></a>
-                          <a href='#'><i class='fas fa-pencil-alt text-secondary'></i></a>
-                          <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">15452</th>
-                        <td>Lumina</td>
-                        <td> New York</td>
-                        <td>
-                          <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                            <li class="ms-rating-item"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                          </ul>
-                        </td>
 
-                        <td>20/9/19</td>
-                        <td>99</td>
-                        <td><a href='#'><i class='fas fa-paper-plane text-secondary text-success'></i></a>
-                          <a href='#'><i class='fas fa-pencil-alt text-secondary'></i></a>
-                          <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">45263</th>
-                        <td>Food Loung</td>
-                        <td> New York</td>
-                        <td>
-                          <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                            <li class="ms-rating-item"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                          </ul>
-                        </td>
+                    <?php
+                    $i = -1;
+                    foreach ($result as $row) {
+                      $i++;
+                    ?>
+                      <tbody>
+                        <tr>
+                          <th style="width: 10%;" scope="row"><?php echo $row['id']; ?></th>
+                          <td style="width: 15%;"><?php echo $row['name'] ?></td>
+                          <td style="width: 30%;"><?php echo $row['address'] ?></td>
+                          <td>
+                            <ul class="ms-star-rating rating-fill rating-circle ratings-new">
 
-                        <td>15/10/19</td>
-                        <td>95</td>
-                        <td><a href='#'><i class='fas fa-paper-plane text-secondary text-success'></i></a>
-                          <a href='#'><i class='fas fa-pencil-alt text-secondary'></i></a>
-                          <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">45865</th>
-                        <td>Hungry House</td>
-                        <td> New York</td>
-                        <td>
-                          <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                            <li class="ms-rating-item"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                          </ul>
-                        </td>
-
-                        <td>21/11/19</td>
-                        <td>88</td>
-                        <td><a href='#'><i class='fas fa-paper-plane text-secondary text-success'></i></a>
-                          <a href='#'><i class='fas fa-pencil-alt text-secondary'></i></a>
-                          <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">56652</th>
-                        <td>Luncheon</td>
-                        <td> New York</td>
-                        <td>
-                          <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                            <li class="ms-rating-item"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                          </ul>
-                        </td>
-
-                        <td>12/11/19</td>
-                        <td>81</td>
-                        <td><a href='#'><i class='fas fa-paper-plane text-secondary text-success'></i></a>
-                          <a href='#'><i class='fas fa-pencil-alt text-secondary'></i></a>
-                          <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">65845</th>
-                        <td>Spice 'n' Steam</td>
-                        <td> New York</td>
-                        <td>
-                          <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                            <li class="ms-rating-item"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                          </ul>
-                        </td>
-
-                        <td>20/10/19</td>
-                        <td>91</td>
-                        <td><a href='#'><i class='fas fa-paper-plane text-secondary text-success'></i></a>
-                          <a href='#'><i class='fas fa-pencil-alt text-secondary'></i></a>
-                          <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">65425</th>
-                        <td>Tomato</td>
-                        <td> New York</td>
-                        <td>
-                          <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                            <li class="ms-rating-item"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                          </ul>
-                        </td>
-
-                        <td>12/10/19</td>
-                        <td>77</td>
-                        <td><a href='#'><i class='fas fa-paper-plane text-secondary text-success'></i></a>
-                          <a href='#'><i class='fas fa-pencil-alt text-secondary'></i></a>
-                          <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">54556</th>
-                        <td>Bardojo</td>
-                        <td> New York</td>
-                        <td>
-                          <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                            <li class="ms-rating-item"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                          </ul>
-                        </td>
-
-                        <td>12/11/19</td>
-                        <td>78</td>
-                        <td><a href='#'><i class='fas fa-paper-plane text-secondary text-success'></i></a>
-                          <a href='#'><i class='fas fa-pencil-alt text-secondary'></i></a>
-                          <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">45556</th>
-                        <td>Deliceiux</td>
-                        <td> New York</td>
-                        <td>
-                          <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                            <li class="ms-rating-item"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                          </ul>
-                        </td>
-
-                        <td>22/10/19</td>
-                        <td>88</td>
-                        <td><a href='#'><i class='fas fa-paper-plane text-secondary text-success'></i></a>
-                          <a href='#'><i class='fas fa-pencil-alt text-secondary'></i></a>
-                          <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">55856</th>
-                        <td>Food Forest</td>
-                        <td> New York</td>
-                        <td>
-                          <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                            <li class="ms-rating-item"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                          </ul>
-                        </td>
-
-                        <td>12/10/19</td>
-                        <td>75</td>
-                        <td><a href='#'><i class='fas fa-paper-plane text-secondary text-success'></i></a>
-                          <a href='#'><i class='fas fa-pencil-alt text-secondary'></i></a>
-                          <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">36456</th>
-                        <td>Food Bella</td>
-                        <td> New York</td>
-                        <td>
-                          <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                            <li class="ms-rating-item"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                          </ul>
-                        </td>
-
-                        <td>18/11/19</td>
-                        <td>90</td>
-                        <td><a href='#'><i class='fas fa-paper-plane text-secondary text-success'></i></a>
-                          <a href='#'><i class='fas fa-pencil-alt text-secondary'></i></a>
-                          <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">78456</th>
-                        <td>Red Chilly</td>
-                        <td> New York</td>
-                        <td>
-                          <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                            <li class="ms-rating-item"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                            <li class="ms-rating-item rated"> <i class="material-icons">star</i> </li>
-                          </ul>
-                        </td>
-
-                        <td>12/10/19</td>
-                        <td>85</td>
-                        <td><a href='#'><i class='fas fa-paper-plane text-secondary text-success'></i></a>
-                          <a href='#'><i class='fas fa-pencil-alt text-secondary'></i></a>
-                          <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a>
-                        </td>
-                      </tr>
-
-
-                    </tbody>
+                              <li class="ms-rating-item rated d-flex">
+                                <div class="mr-2"><?php echo $row['rating_avg']; ?></div>
+                                <i class="material-icons">star</i>
+                              </li>
+                            </ul>
+                          </td>
+                          <td>
+                            <a target="__blank" href="<?php echo $row['url'] ?>"><i class='fas fa-paper-plane text-secondary text-success'></i></a>
+                          </td>
+                          <td>
+                            <a href='#'><i class='fas fa-unlock-alt text-secondary'></i></a>
+                            <!-- <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a> -->
+                          </td>
+                        </tr>
+                      </tbody>
+                    <?php
+                    }
+                    ?>
                   </table>
+
                 </div>
               </div>
             </div>
@@ -339,6 +122,3 @@
 
     </div>
   </div>
-
-  <script src="<?php echo $prefixPath ?>assets/js/Chart.bundle.min.js"></script>
-  <script src="<?php echo $prefixPath ?>assets/js/Resturant.js"> </script>
