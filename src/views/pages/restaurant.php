@@ -300,7 +300,7 @@
 
 
                             </div>
-                            <div class="card-footer padding-15" id="proceed-checkout"> <a href="checkout.html" class="btn-first green-btn text-custom-white full-width fw-500">Proceed to Checkout</a>
+                            <div class="card-footer padding-15" id="proceed-checkout"> <a href="checkout" class="btn-first green-btn text-custom-white full-width fw-500">Proceed to Checkout</a>
                             </div>
                         </div>
                     </div>
