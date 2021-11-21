@@ -93,6 +93,7 @@ class RestaurantController extends Model
         // Array of strings
         session_start();
         $_SESSION['customer'] = 3;
+        $_SESSION['order_status'] = 1;
         // $insertFood = $this->insertFood();
         // print(gettype($params));
         View::render("restaurant", compact(["dish_types", "dish_orders", "restaurants", "insert_data_function", "orders"]));
