@@ -466,26 +466,34 @@
                 <div class="sidebar">
                     <div class="cart-detail-box">
                         <div class="card">
-                            <div class="card-header padding-15 fw-700">Your order from
-                                <p class="text-light-white no-margin fw-500">Jhon Deo</p>
+                            <div class="card-header padding-15 fw-700">Đơn hàng của bạn:
+                                <!-- <p class="text-light-white no-margin fw-500">Jhon Deo</p> -->
                             </div>
                             <div class="card-body no-padding" id="scrollstyle-4">
                                 <div class="cat-product-box">
+                                    <?php 
+                                    $i = 1;
+                                    foreach($orders as $order) {
+                                    ?>
                                     <div class="cat-product">
                                         <div class="cat-name">
                                             <a href="#">
-                                                <p class="text-light-green fw-700"><span class="text-dark-white">1</span> Chilli Chicken Pizza</p> <span class="text-light-white fw-700">small, chilli chicken</span>
+                                                <p class="text-light-green fw-700"><span class="text-dark-white"><?php echo $i ?></span><?php echo $order['name'] ?></p> <span class="text-light-white fw-700"><?php echo "Số lượng: ". $order['quantity'] ?></span>
                                             </a>
                                         </div>
-                                        <div class="delete-btn">
+                                        <!-- <div class="delete-btn">
                                             <a href="#" class="text-dark-white"> <i class="far fa-trash-alt"></i>
                                             </a>
-                                        </div>
+                                        </div> -->
                                         <div class="price"> <a href="#" class="text-dark-white fw-500">
-                                                $2.25
+                                                <?php echo $order['price_value']/1000 . ".000đ" ?>
                                             </a>
                                         </div>
                                     </div>
+                                    <?php
+                                    $i++;
+                                    }
+                                    ?>
                                 </div>
                                 <div class="item-total">
                                     <div class="total-price border-0 pb-0"> <span class="text-dark-white fw-600">Items subtotal:</span>
