@@ -29,7 +29,8 @@ class Router
             "login" => "LoginController@index",
             "register" => "RegisterController@index",
             "restaurant" => "RestaurantController@index",
-            "about" => "About@index"
+            "about" => "About@index",
+            "checkout" => "CheckOutController@index"
         ];
         $this->__admin_routes = [
             "admin\/home" => "DashBoardController@index",
