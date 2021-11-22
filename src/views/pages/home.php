@@ -209,6 +209,11 @@ if ($params_request[0] !== false || isset($param_check['page'])) {
             <?php
             $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
             parse_str($req_param, $param);
+            if (isset($param['category'])) {
+                $str_param = "category=" . $param['category'] . "&page=";
+            } else {
+                $str_param = "page=";
+            }
             if (!isset($param['page'])) {
                 $page = 1;
             } else {
@@ -296,35 +301,35 @@ if ($params_request[0] !== false || isset($param_check['page'])) {
             $pagLink = "";
 
             if ($page >= 2) {
-                echo "<li class='page-item'><a class='page-link' href='home?page=" . ($page - 1) . "'>  Prev </a></li>";
-                $pagLink .= "<a class='page-link' href='home?page=1'>1</a>";
+                echo "<li class='page-item'><a class='page-link' href='home?" . $str_param . ($page - 1) . "'>  Prev </a></li>";
+                $pagLink .= "<a class='page-link' href='home?" . $str_param . "1'>1</a>";
             }
 
             if ($page > 3) {
                 $pagLink .= "<b>......</b>";
             }
             if ($page > 2) {
-                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . (intval($page) - 1) . "'>" . (intval($page) - 1) . " </a></li>";
+                $pagLink .= "<li class='page-item'><a class='page-link' href='home?" . $str_param . (intval($page) - 1) . "'>" . (intval($page) - 1) . " </a></li>";
             }
 
-            $pagLink .= "<li class='page-item active'><a class = 'page-link' href='home?page=" . $page . "'>" . $page  . " </a></li>";
+            $pagLink .= "<li class='page-item active'><a class = 'page-link' href='home?" . $str_param . $page . "'>" . $page  . " </a></li>";
             if ($page < intval($total_pages) - 1) {
-                // print $page + 1; 
-                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . (intval($page) + 1) . "'>" . (intval($page) + 1) . " </a></li>";
+                // print $page + 1;
+                $pagLink .= "<li class='page-item'><a class='page-link' href='home?" . $str_param . (intval($page) + 1) . "'>" . (intval($page) + 1) . " </a></li>";
             }
             if ($page < $total_pages - 2) {
                 $pagLink .= "<b>......</b>";
             }
 
             if ($page < $total_pages) {
-                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . $total_pages . "'>" . $total_pages . " </a></li>";
-                $pagLink .= "<li class='page-item'><a class='page-link' href='home?page=" . (intval($page) + 1) . "'>  Next </a></li>";
+                $pagLink .= "<li class='page-item'><a class='page-link' href='home?" . $str_param . $total_pages . "'>" . $total_pages . " </a></li>";
+                $pagLink .= "<li class='page-item'><a class='page-link' href='home?" . $str_param . (intval($page) + 1) . "'>  Next </a></li>";
             }
 
             echo $pagLink;
             echo '</ul></nav></div>';
             // cho Hiếu làm mấy cái nút cho đẹp nhá
             ?>
-    </div>
+        </div>
 </section>
 <!-- Explore collection -->
