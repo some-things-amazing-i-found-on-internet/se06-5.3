@@ -80,7 +80,7 @@ if ($params_request[0] !== false || isset($param_check['page'])) {
                         foreach ($result2 as $row2) {
                         ?>
                             <div class="swiper-slide">
-                                <a href="restaurant.html" class="categories">
+                                <a href="home?category=<?php echo $row2['id'] ?>" class="categories">
                                     <div class="icon text-custom-white bg-light ">
                                         <img src=<?php echo $row2['icon'] ?> class="rounded-circle" alt="categories">
                                     </div> <span class="text-light-black cat-name"><?php echo $row2['name'] ?> </span>
