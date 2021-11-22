@@ -53,7 +53,7 @@ class LoginController extends Model
             // $query->execute(array($register_email));
 
             $query = $this->DB()->prepare($query_sql);
-            $query->execute([":email" => $cust_email, ":pass" => $cust_password]);
+            $query->execute([":email" => $cust_email, ":pass" => md5($cust_password)]);
             $total = $query->rowCount();
             $result = $query->fetchAll(\PDO::FETCH_ASSOC);
             if ($total > 0) {

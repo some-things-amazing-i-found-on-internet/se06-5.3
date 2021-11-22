@@ -6,20 +6,20 @@
         </div>
         <div class="ms-auth-col">
           <div class="ms-auth-form">
-            <form class="needs-validation" novalidate="">
+            <form class="needs-validation" novalidate=""  method="POST">
               <h3>Login to Account</h3>
               <p>Please enter your email and password to continue</p>
               <div class="mb-3">
                 <label for="validationCustom08">Email Address</label>
                 <div class="input-group">
-                  <input type="email" class="form-control" id="validationCustom08" placeholder="Email Address" required="">
+                  <input type="email" class="form-control" id="validationCustom08" name="validationCustom08" placeholder="Email Address" required="">
                   <div class="invalid-feedback">Please provide a valid email.</div>
                 </div>
               </div>
               <div class="mb-2">
                 <label for="validationCustom09">Password</label>
                 <div class="input-group">
-                  <input type="password" class="form-control" id="validationCustom09" placeholder="Password" required="">
+                  <input type="password" class="form-control" id="validationCustom09" name="validationCustom09" placeholder="Password" required="">
                   <div class="invalid-feedback">Please provide a password.</div>
                 </div>
               </div>
@@ -30,7 +30,7 @@
                 <label class="d-block mt-3"><a href="#" class="btn-link" data-toggle="modal" data-target="#modal-12">Forgot Password?</a>
                 </label>
               </div>
-              <button class="btn btn-primary mt-4 d-block w-100" type="submit">Sign In</button> 
+              <button class="btn btn-primary mt-4 d-block w-100" type="submit" name="admin_login">Sign In</button> 
               <p class="mb-0 mt-3 text-center">Don't have an account? <a class="btn-link" href="default-register.html">Create Account</a> 
               </p>
             </form>

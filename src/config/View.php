@@ -47,18 +47,19 @@ class View
     }
     static function render_admin(string $view, array $params, array $scripts, $hideLayout = false): void
     {
+        session_start();
+        // echo var_dump($_SESSION['admin']) ;
+        if(!isset($_SESSION['admin'])) {
+            header("Location: /se06-5.3/admin/login");
+        }
+        // session_destroy();
         extract($params, EXTR_SKIP);
         extract($scripts, EXTR_SKIP);
         // Page template path.
         $prefixPath = "../src/views/adminViews/";
         $admin_prefixPath = "/se06-5.3/admin/";
-        $_SESSION['admin'] = 'test';
-        if(isset($_SESSION['admin'])){
-            $content = APPLICATION_PATH . "/src/views/adminViews/pages/$view.php";
-        }else{
-            $hideLayout=true;
-            $content = APPLICATION_PATH . "/src/views/adminViews/pages/prebuilt-pages/default-login.php";
-        }
+        // $_SESSION['admin'] = 'test';
+        $content = APPLICATION_PATH . "/src/views/adminViews/pages/$view.php";
         // echo is_readable($content);
         if (is_readable($content)) {
             // Include global template

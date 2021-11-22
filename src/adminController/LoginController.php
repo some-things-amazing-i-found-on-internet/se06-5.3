@@ -41,10 +41,41 @@ class LoginController extends Model
             ->query('SELECT id, first_name FROM customers')
             ->fetchAll(\PDO::FETCH_ASSOC);
     }
-
+    private function login($usr, $pass): void
+    {
+        $cust_email = strip_tags($usr);
+        $cust_password = strip_tags($pass);
+        $query_sql = "SELECT * FROM users WHERE email=:email AND user_password=:pass";
+        $query = $this->DB()->prepare($query_sql);
+        $query->execute([":email" => $cust_email, ":pass" => md5($cust_password)]);
+        $total = $query->rowCount();
+        $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+        // echo var_dump($result[0]['role']);
+        if ($total > 0) {
+            if ($result[0]['role'] == 0) {
+                echo "not have right";
+            } else {
+                session_start();
+                $_SESSION['admin'] = $result;
+                header("Location: /se06-5.3/admin/");
+            }
+        } else {
+            echo "Wrong";
+        }
+    }
     public function index($params_request): void
     {
-
-        View::render_admin("prebuilt-pages\/default-login", compact(["params_request"]), array("Chart.bundle.min.js", "widgets.js"), true);
+        // echo $_SESSION['admin'];
+        if (isset($_SESSION['admin'])) {
+            header("Location: /se06-5.3/admin/");
+        } else {
+            if (isset($_POST['admin_login'])) {
+                if (isset($_POST['validationCustom08']) && isset($_POST['validationCustom09'])) {
+                    $this->login($_POST['validationCustom08'], $_POST['validationCustom09']);
+                } else {
+                }
+            }
+            View::render_admin("prebuilt-pages\/default-login", compact(["params_request"]), array("Chart.bundle.min.js", "widgets.js"), true);
+        }
     }
 }
