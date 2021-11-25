@@ -1,7 +1,7 @@
 <?php
 // $logincontroll = new LoginController();
 // $logincontroll->loginAction(isset($_POST['form1']),$_POST['cust_email'],$_POST['cust_password'], $error_message);
-
+// var_dump($_SESSION['customer']);
 ?>
 <div class="inner-wrapper">
 	<div class="container-fluid no-padding">
@@ -19,7 +19,7 @@
 				<div class="section-2 user-page main-padding">
 					<div class="login-sec">
 						<div class="login-box">
-							<form action="login" method="post">
+							<form action="http://localhost/se06-5.3/login" method="post">
 								<h4 class="text-light-black fw-600">Sign in with your account</h4>
 								<div class="row">
 									<div class="col-12">

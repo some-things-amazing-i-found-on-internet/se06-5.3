@@ -471,27 +471,27 @@
                             </div>
                             <div class="card-body no-padding" id="scrollstyle-4">
                                 <div class="cat-product-box">
-                                    <?php 
+                                    <?php
                                     $i = 1;
-                                    foreach($orders as $order) {
+                                    foreach ($orders as $order) {
                                     ?>
-                                    <div class="cat-product">
-                                        <div class="cat-name">
-                                            <a href="#">
-                                                <p class="text-light-green fw-700"><span class="text-dark-white"><?php echo $i ?></span><?php echo $order['name'] ?></p> <span class="text-light-white fw-700"><?php echo "Số lượng: ". $order['quantity'] ?></span>
-                                            </a>
-                                        </div>
-                                        <!-- <div class="delete-btn">
+                                        <div class="cat-product">
+                                            <div class="cat-name">
+                                                <a href="#">
+                                                    <p class="text-light-green fw-700"><span class="text-dark-white"><?php echo $i ?></span><?php echo $order['name'] ?></p> <span class="text-light-white fw-700"><?php echo "Số lượng: " . $order['quantity'] ?></span>
+                                                </a>
+                                            </div>
+                                            <!-- <div class="delete-btn">
                                             <a href="#" class="text-dark-white"> <i class="far fa-trash-alt"></i>
                                             </a>
                                         </div> -->
-                                        <div class="price"> <a href="#" class="text-dark-white fw-500">
-                                                <?php echo $order['price_value']/1000 . ".000đ" ?>
-                                            </a>
+                                            <div class="price"> <a href="#" class="text-dark-white fw-500">
+                                                    <?php echo $order['price_value'] / 1000 . ".000đ" ?>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
                                     <?php
-                                    $i++;
+                                        $i++;
                                     }
                                     ?>
                                 </div>
@@ -516,7 +516,7 @@
                             <div class="card-footer p-0 modify-order">
                                 <!-- <button class="text-custom-white full-width fw-500 bg-light-green"><i class="fas fa-chevron-left mr-2"></i> Modify Your Order</button> -->
                                 <a href="#" class="total-amount"> <span class="text-custom-white fw-700">Tổng cộng</span>
-                                    <span class="text-custom-white fw-700"><?php echo $total/1000 . ".000đ" ?></span>
+                                    <span class="text-custom-white fw-700"><?php echo $total / 1000 . ".000đ" ?></span>
                                 </a>
                             </div>
                         </div>
