@@ -92,7 +92,6 @@ class RestaurantController extends Model
         };
         // Array of strings
         session_start();
-        $_SESSION['customer'] = 3;
         $_SESSION['order_status'] = 1;
         // $insertFood = $this->insertFood();
         // print(gettype($params));
