@@ -44,10 +44,10 @@ class LoginController extends Model
     public function index($params): void
     {
         session_start();
-        // $_SESSION['customer'] = 1;
         if (isset($_SESSION['customer'])) {
             header("Location: home");
         }
+
         if (isset($_POST['cust_email']) && isset($_POST['cust_password'])) {
             $cust_email = $_POST['cust_email'];
             $cust_password = $_POST['cust_password'];
@@ -62,10 +62,7 @@ class LoginController extends Model
             $result = $query->fetchAll(\PDO::FETCH_ASSOC);
             if ($total > 0) {
                 $_SESSION['customer'] = $result[0];
-                // View::render("home", compact([]));
                 header("Location: home");
-                // var_dump($_SESSION['customer']);
-                // echo $result;
             } else {
                 View::render("login", compact([]));
             }

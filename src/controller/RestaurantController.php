@@ -70,7 +70,7 @@ class RestaurantController extends Model
         $query3->execute(array($id));
         $restaurants = $query3->fetchAll(\PDO::FETCH_ASSOC);
 
-        // lấy dữ liệu từ database 
+        // lấy dữ liệu từ database
         $query_orders = "SELECT *, COUNT(user_orders.food_id) as quantity FROM `user_orders`
                             JOIN dish_orderes
                             ON dish_orderes.id = user_orders.food_id
