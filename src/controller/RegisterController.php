@@ -59,6 +59,7 @@ class RegisterController extends Model
                 $insert = $this->DB()->prepare($insert_sql);
                 $insert->execute([":email"=>$register_email, ":user_password"=>md5($register_password), ":fname"=>$register_fname, ":lname"=>$register_lname]);
                 // thiếu: thông báo đkí thành công + chuyển đến trang login!
+                header("Location: login");
             }
             else {
                 //thiếu: Xuất thông báo email đã tồn tại!
