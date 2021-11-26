@@ -94,7 +94,7 @@ class CheckOutController extends Model
             for ($i = 0; $i < count($orders); $i++) {
                 $insert_sql = "INSERT INTO user_orders (customer_id, food_id, quantity) VALUES (:val_1, :val_2, :val_3)";
                 $insert = $this->DB()->prepare($insert_sql);
-                $insert->execute([":val_1" => $user_id, ":val_2" => $orders[$i]['id'], ":val_3" => $orders[$i]['quantity']]);
+                $insert->execute([":val_1" => $user_id['id'], ":val_2" => $orders[$i]['id'], ":val_3" => $orders[$i]['quantity']]);
             }
             $_SESSION['order_status'] = 0;
         }
