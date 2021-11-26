@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -259,7 +258,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="card-footer padding-15"> <a href="checkout.html" class="btn-first green-btn text-custom-white full-width fw-500">Proceed to Checkout</a>
+                                            <div class="card-footer padding-15"> <a href="checkout" class="btn-first green-btn text-custom-white full-width fw-500">Proceed to Checkout</a>
                                             </div>
                                         </div>
                                     </div>

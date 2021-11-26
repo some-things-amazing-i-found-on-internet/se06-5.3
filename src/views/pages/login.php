@@ -1,7 +1,7 @@
 <?php
 // $logincontroll = new LoginController();
 // $logincontroll->loginAction(isset($_POST['form1']),$_POST['cust_email'],$_POST['cust_password'], $error_message);
-
+// var_dump($_SESSION['customer']);
 ?>
 <div class="inner-wrapper">
 	<div class="container-fluid no-padding">
