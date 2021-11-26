@@ -43,7 +43,9 @@ class LoginController extends Model
     }
     public function index($params): void
     {
-        session_start();
+        if (session_status() === PHP_SESSION_DISABLED) {
+            session_start();
+        }
         if (isset($_SESSION['customer'])) {
             header("Location: home");
         }
