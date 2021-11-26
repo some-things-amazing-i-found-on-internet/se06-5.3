@@ -11,13 +11,13 @@
                             <h6 class="text-light-black fw-700 fs-14">Review address, payments, and tip to complete your purchase</h6>
                             <h6 class="text-light-black fw-700 mb-2">Your order setting</h6>
                             <p class="text-light-green fw-600">Delivery, ASAP (60-70m)</p>
-                            <p class="text-light-white title2 mb-1">Jhon Deo <span><a href="#">Change Details</a></span>
+                            <p class="text-light-white title2 mb-1"><?php echo $user_id['fname'] . " " . $user_id['lname'] ?> <span><a href="#">Change Details</a></span>
                             </p>
                             <p class="text-light-black fw-600 mb-1">Home</p>
-                            <p class="text-light-white mb-1">314 79th st 70 Brooklyn, NY 11209
-                                <br>Cross Street, Rite Aid
+                            <p class="text-light-white mb-1"><?php echo $user_id['address'] ?>
+                                <br><?php echo $user_id['road'] ?>
                             </p>
-                            <p class="text-light-white">(347) 1234567890</p>
+                            <p class="text-light-white"><?php echo $user_id['phone'] ?></p>
                         </div>
                         <div class="col-md-6">
                             <div class="advertisement-img">
@@ -92,7 +92,9 @@
                                                     <div class="tab-pane active" id="savecreditcard">
                                                         <div class="form-group">
                                                             <div class="credit-card p-relative">
-                                                                <input type="text" name="#" class="form-control form-control-submit" value="VISA....1877,exp 12/21">
+                                                                <?php foreach ($result as $card) { ?>
+                                                                    <input type="text" name="#" class="form-control form-control-submit" value="<?php echo $card['type'] . " " . $card['number'] . ", exp: " . $card['vaild']; ?>">
+                                                                <?php } ?>
                                                             </div>
                                                         </div>
                                                         <div class="section-header-left">

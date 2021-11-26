@@ -58,10 +58,10 @@ class HomeController extends Model
     // }
     public function index($params_request): void
     {
-
-        // if (!isset($_SESSION['customer'])) {
-        //     header("Location: login");
-        // }
+        session_start();
+        if (!isset($_SESSION['customer'])) {
+            header("Location: login");
+        }
 
         $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
         parse_str($req_param, $param);

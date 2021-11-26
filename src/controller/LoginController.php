@@ -43,7 +43,7 @@ class LoginController extends Model
     }
     public function index($params): void
     {
-        // session_start();
+        session_start();
         // $_SESSION['customer'] = 1;
         if (isset($_SESSION['customer'])) {
             header("Location: home");
@@ -61,10 +61,10 @@ class LoginController extends Model
             $total = $query->rowCount();
             $result = $query->fetchAll(\PDO::FETCH_ASSOC);
             if ($total > 0) {
-                session_start();
                 $_SESSION['customer'] = $result[0];
                 // View::render("home", compact([]));
                 header("Location: home");
+                // var_dump($_SESSION['customer']);
                 // echo $result;
             } else {
                 View::render("login", compact([]));
