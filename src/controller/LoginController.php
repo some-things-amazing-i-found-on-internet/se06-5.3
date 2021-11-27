@@ -43,10 +43,14 @@ class LoginController extends Model
     }
     public function index($params): void
     {
+        session_start();
+        if (isset($_SESSION['customer'])) {
+            header("Location: home");
+        }
 
         if (isset($_POST['cust_email']) && isset($_POST['cust_password'])) {
-            $cust_email = strip_tags($_POST['cust_email']);
-            $cust_password = strip_tags($_POST['cust_password']);
+            $cust_email = $_POST['cust_email'];
+            $cust_password = $_POST['cust_password'];
 
             $query_sql = "SELECT * FROM users WHERE email=:email AND user_password=:pass";
             // $result = $this->DB()->query($query_sql);
@@ -57,9 +61,8 @@ class LoginController extends Model
             $total = $query->rowCount();
             $result = $query->fetchAll(\PDO::FETCH_ASSOC);
             if ($total > 0) {
-                session_start();
-                $_SESSION['customer'] = $result;
-                View::render("home", compact([]));
+                $_SESSION['customer'] = $result[0];
+                header("Location: home");
             } else {
                 View::render("login", compact([]));
             }

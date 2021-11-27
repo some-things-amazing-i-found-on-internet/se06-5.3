@@ -186,7 +186,7 @@
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6">
-                <div class="row">
+                <form action="?action=add" class="row">
                     <div class="col-lg-12 restaurent-meal-head mb-md-40">
                         <?php
                         $i = -1;
@@ -205,32 +205,28 @@
                                 </div>
                                 <div id="collapseOne<?php echo $i; ?>" class="collapse show">
                                     <div class="card-body no-padding">
-                                        <div class="row">
+                                        <form class="row" action="action">
                                             <?php
                                             $j = -1;
                                             foreach ($dish_orders as $food) {
                                                 $j++;
                                                 if ($food["dish_type_id"] == $type["dish_type_id"]) {
                                             ?>
-                                                    <!-- <script>
-                                                        let <?php echo $j ?> = document.getElementById("product-detail-<?php echo $j ?>")
-                                                        restaurant_test <?php echo $j ?>.onclick(e => {
-                                                            console.log("dayyyyyy")
-                                                        })
-                                                    </script> -->
                                                     <div class="col-lg-12">
                                                         <div class="restaurent-product-list">
-                                                            <div class="restaurent-product-detail" id="product-detail-<?php echo $j ?>" onclick='test(<?php echo $food["id"] ?>)'>
+                                                            <div class="restaurent-product-detail" id="product-detail-<?php echo $j ?>">
+                                                                <div class="restaurent-product-img">
+                                                                    <img src=<?php echo $food["photos"] ?> class="img-fluid" alt="#">
+                                                                </div>
                                                                 <div class="restaurent-product-left">
                                                                     <div class="restaurent-product-title-box">
                                                                         <div class="restaurent-product-box">
                                                                             <div class="restaurent-product-title">
-                                                                                <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup"><a href="javascript:void(0)" class="text-light-black fw-600"><?php echo $food['name'] ?></a></h6>
+                                                                                <h6 class="mb-2" data-toggle="modal" data-target="#restaurent-popup">
+                                                                                    <div class="text-light-black fw-600"><?php echo $food['name'] ?></div>
+                                                                                </h6>
                                                                                 <p class="text-light-white"><?php echo "Tổng số lần đặt: " . $food['display_total_order'] ?></p>
                                                                             </div>
-                                                                            <!-- <div class="restaurent-product-label"> <span class="rectangle-tag bg-gradient-red text-custom-white">Label</span>
-                                                                    <span class="rectangle-tag bg-dark text-custom-white">Combo</span>
-                                                                </div> -->
                                                                         </div>
                                                                         <div class="restaurent-product-rating">
                                                                             <div class="ratings"> <span class="text-yellow"><i class="fas fa-star"></i></span>
@@ -244,8 +240,6 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <!-- <div class="restaurent-product-caption-box"> <span class="text-light-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...</span>
-                                                        </div> -->
                                                                     <div class="restaurent-tags-price">
                                                                         <div class="restaurent-tags">
                                                                             <span class="text-custom-white square-tag">
@@ -264,25 +258,30 @@
                                                                                 <img src="assets/img/svg/009-lemon.svg" alt="tag">
                                                                             </span>
                                                                         </div>
-                                                                        <span class="circle-tag">
+                                                                        <!-- <span class="circle-tag">
                                                                             <img src="assets/img/svg/010-heart.svg" alt="tag">
-                                                                        </span>
+                                                                        </span> -->
                                                                         <div class="restaurent-product-price">
                                                                             <h6 class="text-success fw-600 no-margin"><?php echo $food['price_text'] ?></h6>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="restaurent-product-img">
-                                                                    <img src=<?php echo $food["photos"] ?> class="img-fluid" alt="#">
+                                                                <div class="restaurent-product-right d-flex justify-content-center align-items-center">
+                                                                    <button type="button" id="plus" onclick='insert_order(<?php echo json_encode($food) ?>); return false'>
+                                                                        <span class="text-custom-white square-tag">
+                                                                            <img src="assets/img/plus-svgrepo-com.svg" alt="tag">
+                                                                        </span>
+                                                                    </button>
                                                                 </div>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                             <?php
                                                 }
                                             }
                                             ?>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -290,7 +289,7 @@
                         }
                         ?>
                     </div>
-                </div>
+                </form>
             </div>
             <div class="col-xl-3 col-lg-3">
                 <div class="sidebar">
@@ -298,32 +297,10 @@
                         <div class="card">
                             <div class="card-header padding-15 fw-700">Your Order</div>
                             <div class="card-body no-padding" id="scrollstyle-4">
-                                <div class="cat-product-box">
-                                    <div class="cat-product">
-                                        <div class="cat-name">
-                                            <a href="#">
-                                                <p class="text-light-green fw-700" id="dat"><span class="text-dark-white">1</span> Chilli Chicken Pizza</p> <span class="text-light-white fw-700">small, chilli chicken</span>
-                                            </a>
-                                        </div>
-                                        <div class="delete-btn">
-                                            <a href="#" class="text-dark-white"> <i class="far fa-trash-alt"></i>
-                                            </a>
-                                        </div>
-                                        <div class="price"> <a href="#" class="text-dark-white fw-500">
-                                                $2.25
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-total">
-                                    <div class="total-price border-0"> <span class="text-dark-white fw-700">Items subtotal:</span>
-                                        <span class="text-dark-white fw-700">$9.00</span>
-                                    </div>
-                                    <div class="empty-bag padding-15 fw-700"> <a href="#">Empty bag</a>
-                                    </div>
-                                </div>
+
+
                             </div>
-                            <div class="card-footer padding-15"> <a href="checkout.html" class="btn-first green-btn text-custom-white full-width fw-500">Proceed to Checkout</a>
+                            <div class="card-footer padding-15" id="proceed-checkout"> <a href="checkout" class="btn-first green-btn text-custom-white full-width fw-500">Proceed to Checkout</a>
                             </div>
                         </div>
                     </div>
@@ -332,32 +309,139 @@
         </div>
     </div>
 </section>
+
 <script>
-    function createElement(id) {
+    function createElement(x) {
+        let order = x['food']
         let div1 = document.createElement("div") // <div> </div>
-        div1.className = "cat-product-box" // <div class="cat-product-box"> </div>
-        let div2 = document.createElement("div") // <div> </div>
-        div2.className = "cat-product" // <div class="cat-product"> </div>
-        div1.appendChild(div2) // <div class="cat-product-box"> <div class="cat-product"> </div></div>
-        div2.innerHTML += id
-        return div1
+        div1.className = "cat-product-box"
+        let price = x['quantity'] * parseInt(order['price_text'].replace(',', ''));
+        let price_result = new Intl.NumberFormat('vi-VN', {
+            style: 'currency',
+            currency: 'VND'
+        }).format(price)
+        // console.log();
+        div1.innerHTML = `
+                        <div class="cat-product">
+                            <div class="cat-name">
+                                <a href="#">
+                                    <p class="text-light-green fw-700" id="dat">${order['name']}</p> <span class="text-light-white fw-700">Số lượng: ${x['quantity']};</span>
+                                </a>
+                            </div>
+                            <div class="price"> <a href="#" class="text-light-green fw-500">
+                            ${price_result}
+                                </a>
+                            </div>
+                            
+                            <div class="delete-btn" onclick='delete_item(${order['id']})'>
+                                <div class="text-dark-white"> <i class="far fa-trash-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        `
+        return div1;
     }
 
-    function test(id) {
-        console.log(id)
-        let ele1 = createElement(id);
-        let root = document.getElementById("scrollstyle-4")
-        root.appendChild(ele1)
-        <?php
-        // insert vao database 
-        // $insertFood()
-        $string_array = array(123345, "GFG", "Article");
-
-        // // Callable closure
-        array_map($print_function, $string_array);
-
-        ?>
+    function show(result) {
+        let btn = document.getElementById('proceed-checkout')
+        if (result.length === 0) {
+            btn.className = 'd-none'
+        } else {
+            btn.className = 'd-block'
+        }
+            let root = document.getElementById("scrollstyle-4");
+            root.innerHTML = ''
+            let total_generate = 0
+            result.reverse().map((x) => {
+                root.appendChild(createElement(x))
+            })
+            result.forEach(element => {
+                let price = element['quantity'] * parseInt(element['food']['price_text'].replace(',', ''));
+                total_generate += price
+            });
+            let price_result = new Intl.NumberFormat('vi-VN', {
+                style: 'currency',
+                currency: 'VND'
+            }).format(total_generate)
+            let total = document.createElement('div')
+            total.className = 'item-total'
+            total.innerHTML = `
+            <div class="item-total">
+                <div class="total-price border-0 pb-0"> <span class="text-dark-white fw-700">Tổng tiền:</span>
+                    <span class="text-dark-white fw-700">${price_result}</span>
+                </div>
+            </div>`
+            root.appendChild(total)
     }
+
+    function delete_item(id) {
+        let cookie = document.cookie;
+        let splitD = cookie.split(';')
+        let res1 = splitD.find(row => row.trim().startsWith('id=')).split('=')[1]
+        let result = JSON.parse(res1)
+        let filterIndex = result.findIndex(x => x['food'].id == id)
+        let final = result.splice(filterIndex, 1)
+        document.cookie = "id=" + JSON.stringify(result)
+        show(result)
+    }
+
+    function insert_order(id) {
+        let cookie = document.cookie;
+        let splitD = cookie.split(';')
+        let res1 = splitD.find(row => row.trim().startsWith('id='))
+        if (res1) {
+            let res = res1.split('=')[1]
+            let result = JSON.parse(res)
+            let filter = result.filter(x => x['food'].id === id['id'])
+            if (filter.length === 0) {
+                let order = {
+                    quantity: 1,
+                    food: id
+                }
+                result.push(order)
+                document.cookie = "id=" + JSON.stringify(result)
+                show(result)
+
+            } else {
+                let filterIndex = result.findIndex(x => x['food'].id === id['id'])
+                let order = {
+                    quantity: filter[0]['quantity'] + 1,
+                    food: id
+                }
+                result[filterIndex] = order
+                document.cookie = "id=" + JSON.stringify(result)
+                show(result)
+            }
+        } else {
+            document.cookie = "id=" + JSON.stringify([{
+                quantity: 1,
+                food: id
+            }])
+            show([{
+                quantity: 1,
+                food: id
+            }])
+
+        }
+
+    }
+
+    function fetch() {
+        let cookie = document.cookie;
+        let splitD = cookie.split(';')
+        let res1 = splitD.find(row => row.trim().startsWith('id='))
+        let btn = document.getElementById('proceed-checkout')
+        if (res1) {
+            btn.className = 'd-block'
+            let res = res1.split('=')[1]
+            let result = JSON.parse(res)
+            show(result)
+        } else {
+            btn.className='d-none'
+            // show([])
+        }
+    }
+    fetch()
 </script>
 <!-- restaurent meals -->
 <!-- restaurent about -->

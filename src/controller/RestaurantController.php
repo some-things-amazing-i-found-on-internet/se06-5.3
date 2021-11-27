@@ -70,15 +70,31 @@ class RestaurantController extends Model
         $query3->execute(array($id));
         $restaurants = $query3->fetchAll(\PDO::FETCH_ASSOC);
 
-        
-        $print_function = function($string) {
-            // insert vào database 
+        // lấy dữ liệu từ database
+        $query_orders = "SELECT *, COUNT(user_orders.food_id) as quantity FROM `user_orders`
+                            JOIN dish_orderes
+                            ON dish_orderes.id = user_orders.food_id
+                            WHERE user_orders.customer_id = 3
+                            GROUP BY(user_orders.food_id);";
+        $query4 = $this->DB()->prepare($query_orders);
+        $query4->execute(array());
+        $orders = $query4->fetchAll(\PDO::FETCH_ASSOC);
+        // echo var_dump($_COOKIE['id']);
+        $insert_data_function = function ($food_id) {
+            // insert vào database
+            if (isset($food_id)) {
+                $insert_sql = "INSERT INTO user_orders (customer_id, food_id) VALUES (:val_1, :val_2)";
+                $insert = $this->DB()->prepare($insert_sql);
+                $insert->execute([":val_1" => 3, ":val_2" => $food_id]);
+            } else {
+                // echo "<script>console.log('dcmmm')</script>";
+            }
         };
-          
         // Array of strings
-    
+        session_start();
+        $_SESSION['order_status'] = 1;
         // $insertFood = $this->insertFood();
         // print(gettype($params));
-        View::render("restaurant", compact(["dish_types", "dish_orders", "restaurants", "print_function"]));
+        View::render("restaurant", compact(["dish_types", "dish_orders", "restaurants", "insert_data_function", "orders"]));
     }
 }

@@ -58,6 +58,13 @@ class HomeController extends Model
     // }
     public function index($params_request): void
     {
+        session_start();
+        if (!isset($_SESSION['customer'])) {
+            header("Location: login");
+        }
+
+        $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+        parse_str($req_param, $param);
         // print($params);
         // echo var_dump($params_request) ;
         $query_sql = "SELECT *
@@ -66,6 +73,9 @@ class HomeController extends Model
                         ON restaurants._id = restaurant_photos._id
                         WHERE restaurant_photos.width = 1242";
         // limit 27";
+        if (isset($param['category'])) {
+            $query_sql .= " AND restaurants.category_id = " . $param['category'];
+        }
         $query = $this->DB()->prepare($query_sql);
         $query->execute();
 

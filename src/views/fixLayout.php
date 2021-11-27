@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +62,7 @@
                         <div class="col-12 mainNavCol">
                             <!-- logo -->
                             <div class="logo mainNavCol">
-                                <a href="index.html">
+                                <a href="/se06-5.3">
                                     <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
                                 </a>
                             </div>
@@ -259,7 +258,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="card-footer padding-15"> <a href="checkout.html" class="btn-first green-btn text-custom-white full-width fw-500">Proceed to Checkout</a>
+                                            <div class="card-footer padding-15"> <a href="checkout" class="btn-first green-btn text-custom-white full-width fw-500">Proceed to Checkout</a>
                                             </div>
                                         </div>
                                     </div>
