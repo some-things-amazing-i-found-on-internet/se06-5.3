@@ -24,38 +24,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `payment_method`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `payment_method` (
   `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `user_password` varchar(255) NOT NULL,
-  `fname` varchar(255) NOT NULL,
-  `lname` varchar(255) NOT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `road` varchar(255) DEFAULT NULL,
-  `phone` varchar(255) DEFAULT NULL,
-  `role` int(1) NOT NULL DEFAULT 0,
-  `payment_default` int(1) NOT NULL DEFAULT 2
+  `name` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `payment_method`
 --
 
-INSERT INTO `users` (`id`, `email`, `user_password`, `fname`, `lname`, `address`, `road`, `phone`, `role`, `payment_default`) VALUES
-(6, '123@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'pham', 'hfgh', '12 379th st 70 Brooklyn, NY 11209\n', 'Vy Street, Rite Aid', '(347) 1234564239', 0, 2),
-(7, 'lthnh15032001@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'Lê', 'Đạt', NULL, NULL, NULL, 0, 2);
+INSERT INTO `payment_method` (`id`, `name`, `type`) VALUES
+(1, 'Ví ShopeePay', 'wallet_shopee'),
+(2, 'Tiền mặt', 'cash'),
+(3, 'Thẻ Tín dụng/ Ghi nợ', 'debit'),
+(4, 'ShopeeFood Credits', 'credit'),
+(5, 'ATM/ Internet Banking', 'ie_banking');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `users`
+-- Indexes for table `payment_method`
 --
-ALTER TABLE `users`
+ALTER TABLE `payment_method`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -63,10 +59,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `payment_method`
 --
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `payment_method`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -84,7 +84,7 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param[
                             <div class="swiper-slide">
                                 <a href="home?category=<?php echo $row2['id'] ?>" class="categories">
                                     <div class="icon text-custom-white <?php
-                                         if($row2['id'] === $param['category'] && isset($param['category'])) {
+                                         if( isset($param['category']) && $row2['id'] === $param['category']) {
                                              echo 'bg-danger';
                                          }else{ 
                                             echo 'bg-light';
