@@ -49,20 +49,17 @@ class View
     {
         session_start();
         // echo var_dump($_SESSION['admin']) ;
-        if(!isset($_SESSION['admin'])) {
-            header("Location: /se06-5.3/admin/login");
-        }
+        // if(isset($_SESSION['admin'])) {
+        //     header("Location: /se06-5.3/admin/");
+        // }
         // session_destroy();
         extract($params, EXTR_SKIP);
         extract($scripts, EXTR_SKIP);
         // Page template path.
         $prefixPath = "../src/views/adminViews/";
         $admin_prefixPath = "/se06-5.3/admin/";
-        // $_SESSION['admin'] = 'test';
         $content = APPLICATION_PATH . "/src/views/adminViews/pages/$view.php";
-        // echo is_readable($content);
         if (is_readable($content)) {
-            // Include global template
             require_once APPLICATION_PATH . "/src/views/adminViews/pages/fixLayout.php";
         } else {
             throw new \Exception("View $view not found");
