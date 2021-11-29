@@ -43,26 +43,29 @@ class LoginController extends Model
     }
     public function index($params): void
     {
-        if (session_status() === PHP_SESSION_DISABLED) {
+        if (session_status() === PHP_SESSION_DISABLED || session_status() === PHP_SESSION_NONE) {
             session_start();
         }
         if (isset($_SESSION['customer'])) {
             header("Location: home");
         }
-
         if (isset($_POST['cust_email']) && isset($_POST['cust_password'])) {
             $cust_email = $_POST['cust_email'];
             $cust_password = $_POST['cust_password'];
-
+            // echo $cust_email."<br/>";
+            // echo $cust_password."<br/>" ;
             $query_sql = "SELECT * FROM users WHERE email=:email AND user_password=:pass";
-            // $result = $this->DB()->query($query_sql);
-            // $query->execute(array($register_email));
+            // echo $query_sql."<br/>" ;
 
             $query = $this->DB()->prepare($query_sql);
-            $query->execute([":email" => $cust_email, ":pass" => $cust_password]);
+            $query->execute([":email" => $cust_email, ":pass" => md5($cust_password)]);
+            // echo md5($cust_password)."<br/>";
             $total = $query->rowCount();
             $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+            // echo gettype($total)."<br/>";
+            // echo $total."<br/>";
             if ($total > 0) {
+                // echo var_dump($result[0]) ;
                 $_SESSION['customer'] = $result[0];
                 header("Location: home");
             } else {
@@ -71,29 +74,5 @@ class LoginController extends Model
         } else {
             View::render("login", compact([]));
         }
-        // Request params
-        // $from = Request::getParam("from", date("Y-m-01"));
-        // $to = Request::getParam("to", date("Y-m-t"));
-        // $month = Request::getParam("month", date("Y-m"));
-
-        // // Statistic counters
-        // $modelStatistic = new \App\Models\Statistic();
-        // $rows = $modelStatistic->getForDashboard($from, $to);
-
-        // // Remove 0 index
-        // $statistic = $rows[0];
-
-        // // Format revenue
-        // $statistic['total_revenue'] = number_format(
-        //         $statistic['total_revenue'], 2, ".", ",");
-
-        // // Graphic data
-        // $graphic = $modelStatistic->getMountlyGraphicData($month);
-
-        // $mdlOrders = new \App\Models\Order();
-        // $orders = $mdlOrders->getLastTen();
-
-        // Render view
-
     }
 }

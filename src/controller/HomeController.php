@@ -58,7 +58,7 @@ class HomeController extends Model
     // }
     public function index($params_request): void
     {
-        if (session_status() === PHP_SESSION_DISABLED) {
+        if (session_status() === PHP_SESSION_DISABLED || session_status() === PHP_SESSION_NONE) {
             session_start();
         }
         if (!isset($_SESSION['customer'])) {

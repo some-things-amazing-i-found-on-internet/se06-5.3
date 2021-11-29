@@ -51,7 +51,7 @@
 										<div class="form-group text-center"> <span>or</span>
 										</div>
 
-										<div class="form-group text-center mb-0"> <a href="register.html">Create your account</a>
+										<div class="form-group text-center mb-0"> <a href="/se06-5.3/register">Create your account</a>
 										</div>
 									</div>
 								</div>

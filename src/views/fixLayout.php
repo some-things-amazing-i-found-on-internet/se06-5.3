@@ -51,7 +51,7 @@
     $cur_uri_compose = $_SERVER["REQUEST_URI"];
     $cur_uri = explode("/", $cur_uri_compose);
     $path = $cur_uri[2];
-    if ($path == 'login') {
+    if ($path == 'login' || $path == 'register') {
     } else {
     ?>
 
@@ -107,7 +107,9 @@
                                 <!-- user account -->
                                 <div class="user-details p-relative">
                                     <a href="#" class="text-light-white fw-500">
-                                        <img src="assets/img/user-1.png" class="rounded-circle" alt="userimg"> <span>Hi, <?php echo $_SESSION['customer']['lname']; ?></span>
+                                        <img src="assets/img/user-1.png" class="rounded-circle" alt="userimg"> <span>Hi, <?php if (isset($_SESSION['customer'])) {
+                                                                                                                                echo $_SESSION['customer']['lname'];
+                                                                                                                            } ?></span>
                                     </a>
                                     <div class="user-dropdown">
                                         <ul>

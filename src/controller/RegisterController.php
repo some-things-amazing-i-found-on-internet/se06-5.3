@@ -58,7 +58,6 @@ class RegisterController extends Model
                 $insert_sql = "INSERT INTO users (email, user_password, fname, lname) VALUES (:email, :user_password, :fname, :lname)";
                 $insert = $this->DB()->prepare($insert_sql);
                 $insert->execute([":email"=>$register_email, ":user_password"=>md5($register_password), ":fname"=>$register_fname, ":lname"=>$register_lname]);
-                // thiếu: thông báo đkí thành công + chuyển đến trang login!
                 header("Location: login");
             }
             else {
@@ -66,29 +65,6 @@ class RegisterController extends Model
             }
         }
 
-        // Request params
-        // $from = Request::getParam("from", date("Y-m-01"));
-        // $to = Request::getParam("to", date("Y-m-t"));
-        // $month = Request::getParam("month", date("Y-m"));
-
-        // // Statistic counters
-        // $modelStatistic = new \App\Models\Statistic();
-        // $rows = $modelStatistic->getForDashboard($from, $to);
-
-        // // Remove 0 index
-        // $statistic = $rows[0];
-
-        // // Format revenue
-        // $statistic['total_revenue'] = number_format(
-        //         $statistic['total_revenue'], 2, ".", ",");
-
-        // // Graphic data
-        // $graphic = $modelStatistic->getMountlyGraphicData($month);
-
-        // $mdlOrders = new \App\Models\Order();
-        // $orders = $mdlOrders->getLastTen();
-
-        // Render view
         View::render("register", compact([]));
     }
 }

@@ -2,7 +2,9 @@
 <?php
 $req_param_check = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
 parse_str($req_param_check, $param_check);
-if ($params_request[0] !== false || isset($param_check['page'])) {
+$req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+parse_str($req_param, $param);
+if ($params_request[0] !== false || isset($param_check['page']) || isset($param['category'])) {
 } else { ?>
     <section class="about-us-slider swiper-container p-relative">
         <div class="swiper-wrapper">
@@ -81,7 +83,13 @@ if ($params_request[0] !== false || isset($param_check['page'])) {
                         ?>
                             <div class="swiper-slide">
                                 <a href="home?category=<?php echo $row2['id'] ?>" class="categories">
-                                    <div class="icon text-custom-white bg-light ">
+                                    <div class="icon text-custom-white <?php
+                                         if($row2['id'] === $param['category'] && isset($param['category'])) {
+                                             echo 'bg-danger';
+                                         }else{ 
+                                            echo 'bg-light';
+                                         }
+                                     ?> ">
                                         <img src=<?php echo $row2['icon'] ?> class="rounded-circle" alt="categories">
                                     </div> <span class="text-light-black cat-name"><?php echo $row2['name'] ?> </span>
                                 </a>
@@ -100,7 +108,7 @@ if ($params_request[0] !== false || isset($param_check['page'])) {
 <!-- Browse by category -->
 <!-- your previous order -->
 <?php
-if ($params_request[0] !== false || isset($param_check['page'])) {
+if ($params_request[0] !== false || isset($param_check['page']) || isset($param['category'])) {
 } else {
 ?>
     <section class="recent-order section-padding">
