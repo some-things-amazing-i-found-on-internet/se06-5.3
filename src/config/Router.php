@@ -5,18 +5,18 @@ namespace Core\config;
 use Core\config\Request;
 
 /**
- * 
+ *
  * Class Route
- * 
+ *
  */
 class Router
 {
 
     /**
-     * 
+     *
      * - Mảng lưu trữ route của ứng dụng
      * - Mỗi route sẽ gôm url, method, action và params
-     * 
+     *
      */
     private $__routes;
     private $__admin_routes;
@@ -30,7 +30,8 @@ class Router
             "register" => "RegisterController@index",
             "restaurant" => "RestaurantController@index",
             "about" => "About@index",
-            "checkout" => "CheckOutController@index"
+            "checkout" => "CheckOutController@index",
+            "profile" => "ProfileController@index"
         ];
         $this->__admin_routes = [
             "admin\/home" => "DashBoardController@index",
@@ -43,14 +44,14 @@ class Router
         ];
     }
     /**
-     * 
+     *
      * Hàm xử lý khi một URL được gọi
-     * 
+     *
      * @param string $url URL được gọi đến server
      * @param string $method Phương thức url được gọi. GET | POST
-     * 
+     *
      * @return void
-     * 
+     *
      */
     public function map(string $url, string $method)
     {

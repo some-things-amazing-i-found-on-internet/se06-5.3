@@ -44,6 +44,9 @@
 
 <body>
     <?php
+    if (session_status() === PHP_SESSION_DISABLED) {
+        session_start();
+    }
     $cur_page = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
     $cur_uri_compose = $_SERVER["REQUEST_URI"];
     $cur_uri = explode("/", $cur_uri_compose);
@@ -104,7 +107,7 @@
                                 <!-- user account -->
                                 <div class="user-details p-relative">
                                     <a href="#" class="text-light-white fw-500">
-                                        <img src="assets/img/user-1.png" class="rounded-circle" alt="userimg"> <span>Hi, Kate</span>
+                                        <img src="assets/img/user-1.png" class="rounded-circle" alt="userimg"> <span>Hi, <?php echo $_SESSION['customer']['lname']; ?></span>
                                     </a>
                                     <div class="user-dropdown">
                                         <ul>
