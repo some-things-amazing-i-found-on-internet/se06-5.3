@@ -52,20 +52,15 @@ class LoginController extends Model
         if (isset($_POST['cust_email']) && isset($_POST['cust_password'])) {
             $cust_email = $_POST['cust_email'];
             $cust_password = $_POST['cust_password'];
-            // echo $cust_email."<br/>";
-            // echo $cust_password."<br/>" ;
             $query_sql = "SELECT * FROM users WHERE email=:email AND user_password=:pass";
-            // echo $query_sql."<br/>" ;
 
             $query = $this->DB()->prepare($query_sql);
             $query->execute([":email" => $cust_email, ":pass" => md5($cust_password)]);
-            // echo md5($cust_password)."<br/>";
+
             $total = $query->rowCount();
             $result = $query->fetchAll(\PDO::FETCH_ASSOC);
-            // echo gettype($total)."<br/>";
-            // echo $total."<br/>";
+
             if ($total > 0) {
-                // echo var_dump($result[0]) ;
                 $_SESSION['customer'] = $result[0];
                 header("Location: home");
             } else {
