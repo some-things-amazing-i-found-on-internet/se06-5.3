@@ -92,7 +92,7 @@
                                                     <div class="tab-pane active" id="savecreditcard">
                                                         <div class="form-group">
                                                             <div class="credit-card p-relative">
-                                                                <?php foreach ($result as $card) { ?>
+                                                                <?php foreach ($credit as $card) { ?>
                                                                     <input type="text" name="#" class="form-control form-control-submit" value="<?php echo $card['type'] . " " . $card['number'] . ", exp: " . $card['vaild']; ?>">
                                                                 <?php } ?>
                                                             </div>
