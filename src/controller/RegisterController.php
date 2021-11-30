@@ -24,8 +24,8 @@ class RegisterController extends Model
 
     /**
      * The index controller action
-     * 
-     * It displays the statistics: 
+     *
+     * It displays the statistics:
      *  - The total number of orders, customers and revenue.
      *  - Monthly chart
      *  - Latest 10 orders.
@@ -42,6 +42,13 @@ class RegisterController extends Model
     }
     public function index($params): void
     {
+        if (session_status() === PHP_SESSION_DISABLED || session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (isset($_SESSION['customer'])) {
+            header("Location: home");
+        }
+
         if (isset($_POST['register_fname']) && isset($_POST['register_lname']) && isset($_POST['register_email']) && isset($_POST['register_password'])) {
             $register_fname = strip_tags($_POST['register_fname']);
             $register_lname = strip_tags($_POST['register_lname']);
@@ -51,16 +58,15 @@ class RegisterController extends Model
             $query_sql = "SELECT * FROM users WHERE email=?";
             $query = $this->DB()->prepare($query_sql);
             $query->execute(array($register_email));
-            
+
             $total = $query->rowCount();
 
             if ($total === 0) {
                 $insert_sql = "INSERT INTO users (email, user_password, fname, lname) VALUES (:email, :user_password, :fname, :lname)";
                 $insert = $this->DB()->prepare($insert_sql);
-                $insert->execute([":email"=>$register_email, ":user_password"=>md5($register_password), ":fname"=>$register_fname, ":lname"=>$register_lname]);
+                $insert->execute([":email" => $register_email, ":user_password" => md5($register_password), ":fname" => $register_fname, ":lname" => $register_lname]);
                 header("Location: login");
-            }
-            else {
+            } else {
                 //thiếu: Xuất thông báo email đã tồn tại!
             }
         }

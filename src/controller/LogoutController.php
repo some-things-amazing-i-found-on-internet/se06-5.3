@@ -2,7 +2,6 @@
 
 namespace Core\controller;
 
-use Core\config\Database;
 use Core\config\Model;
 use Core\config\Request;
 use Core\config\View;
@@ -20,7 +19,7 @@ use Core\config\View;
  * @link       http://pear.php.net/package/PackageName
  * @since      Class available since Release 1.0.0
  */
-class ProfileController extends Model
+class LogoutController extends Model
 {
 
     /**
@@ -37,7 +36,6 @@ class ProfileController extends Model
      */
     public function getAll(): iterable
     {
-        // $this->insert(compact(['']));
         return $this->DB()
             ->query('SELECT id, first_name FROM customers')
             ->fetchAll(\PDO::FETCH_ASSOC);
@@ -50,10 +48,9 @@ class ProfileController extends Model
         if (!isset($_SESSION['customer'])) {
             header("Location: login");
         }
-        $user = $_SESSION['customer'];
 
-        // $insertFood = $this->insertFood();
-        // print(gettype($params));
-        View::render("profile", compact(["user"]));
+        session_destroy();
+        unset($_SESSION['customer']);
+        header("Location: login");
     }
 }

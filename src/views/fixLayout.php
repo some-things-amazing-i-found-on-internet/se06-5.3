@@ -150,7 +150,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="profile">
                                                     <div class="icon"><i class="flaticon-user"></i>
                                                     </div> <span class="details">Account</span>
                                                 </a>
@@ -162,7 +162,7 @@
                                                 </a>
                                             </li>
                                         </ul>
-                                        <div class="user-footer"> <span class="text-light-black">Not Jhon?</span> <a href="logout.php">Sign Out</a>
+                                        <div class="user-footer"> <span class="text-light-black">Not <?php echo $_SESSION['customer']['lname'] ?> ?</span> <a href="logout">Sign Out</a>
                                         </div>
                                     </div>
                                 </div>
