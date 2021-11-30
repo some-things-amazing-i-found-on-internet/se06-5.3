@@ -480,7 +480,7 @@
                                         <div class="cat-product">
                                             <div class="cat-name">
                                                 <a href="#">
-                                                    <p class="text-light-green fw-700"><span class="text-dark-white"><?php echo $i ?></span><?php echo $order['name'] ?></p> <span class="text-light-white fw-700"><?php echo "Số lượng: " . $order['quantity'] ?></span>
+                                                    <p class="text-light-green fw-700"><span class="text-dark-white"><?php echo $i ?></span><?php echo $order['name'] ?></p> <span class="text-light-white fw-700"><?php echo "Số lượng: " . $order['quantity_order'] ?></span>
                                                 </a>
                                             </div>
                                             <!-- <div class="delete-btn">
