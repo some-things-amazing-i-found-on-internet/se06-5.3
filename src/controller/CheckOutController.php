@@ -54,7 +54,7 @@ class CheckOutController extends Model
         $payment_sql = "SELECT * FROM payment WHERE id_user = " . $user_id['id'];
         $payment = $this->DB()->prepare($payment_sql);
         $payment->execute();
-        $credit = $payment->fetchAll(\PDO::FETCH_ASSOC);
+        $result = $payment->fetchAll(\PDO::FETCH_ASSOC);
 
 
         // Xử lý data lấy từ cookie:
@@ -104,6 +104,6 @@ class CheckOutController extends Model
             $_SESSION['order_status'] = 0;
         }
 
-        View::render("checkout", compact(['total', 'orders', 'user_id', 'credit']));
+        View::render("checkout", compact(['total', 'orders', 'user_id', 'result']));
     }
 }
