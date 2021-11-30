@@ -2,7 +2,6 @@
 
 namespace Core\controller;
 
-use Core\config\Database;
 use Core\config\Model;
 use Core\config\Request;
 use Core\config\View;
@@ -20,7 +19,7 @@ use Core\config\View;
  * @link       http://pear.php.net/package/PackageName
  * @since      Class available since Release 1.0.0
  */
-class LoginController extends Model
+class LogoutController extends Model
 {
 
     /**
@@ -46,28 +45,12 @@ class LoginController extends Model
         if (session_status() === PHP_SESSION_DISABLED || session_status() === PHP_SESSION_NONE) {
             session_start();
         }
-        if (isset($_SESSION['customer'])) {
-            header("Location: home");
+        if (!isset($_SESSION['customer'])) {
+            header("Location: login");
         }
-        if (isset($_POST['cust_email']) && isset($_POST['cust_password'])) {
-            $cust_email = $_POST['cust_email'];
-            $cust_password = $_POST['cust_password'];
-            $query_sql = "SELECT * FROM users WHERE email=:email AND user_password=:pass";
 
-            $query = $this->DB()->prepare($query_sql);
-            $query->execute([":email" => $cust_email, ":pass" => md5($cust_password)]);
-
-            $total = $query->rowCount();
-            $result = $query->fetchAll(\PDO::FETCH_ASSOC);
-
-            if ($total > 0) {
-                $_SESSION['customer'] = $result[0];
-                header("Location: home");
-            } else {
-                View::render("login", compact([]));
-            }
-        } else {
-            View::render("login", compact([]));
-        }
+        session_destroy();
+        unset($_SESSION['customer']);
+        header("Location: login");
     }
 }

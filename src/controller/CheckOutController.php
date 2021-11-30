@@ -43,7 +43,12 @@ class CheckOutController extends Model
 
     public function index($params): void
     {
-        session_start();
+        if (session_status() === PHP_SESSION_DISABLED || session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (!isset($_SESSION['customer'])) {
+            header("Location: login");
+        }
         $user_id = $_SESSION['customer'];
         //lấy payment từ customer
         $payment_sql = "SELECT * FROM payment WHERE id_user = " . $user_id['id'];

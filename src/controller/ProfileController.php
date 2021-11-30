@@ -44,11 +44,38 @@ class ProfileController extends Model
     }
     public function index($params): void
     {
-        session_start();
+        if (session_status() === PHP_SESSION_DISABLED || session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         if (!isset($_SESSION['customer'])) {
             header("Location: login");
         }
         $user = $_SESSION['customer'];
+
+        $id = $user['id'];
+
+        if (isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['address']) && isset($_POST['road']) && isset($_POST['phone'])) {
+            $fname = $_POST['fname'];
+            $lname = $_POST['lname'];
+            $address = $_POST['address'];
+            $road = $_POST['road'];
+            $phone = $_POST['phone'];
+
+            $update_sql = "UPDATE users SET fname=:fname, lname=:lname, address=:address, road=:road, phone=:phone WHERE id=:id";
+            $query = $this->DB()->prepare($update_sql);
+            $query->execute([":fname" => $fname, ":lname" => $lname, ":address" => $address, ":road" => $road, ":phone" => $phone, "id" => $id]);
+
+            $user_sql = "SELECT * FROM users WHERE id=:id";
+            $query = $this->DB()->prepare($user_sql);
+            $query->execute([":id" => $id]);
+
+            $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+            $_SESSION['customer'] = $result[0];
+            $user = $_SESSION['customer'];
+        }
+
+
+
 
         // $insertFood = $this->insertFood();
         // print(gettype($params));
