@@ -87,23 +87,24 @@ class CheckOutController extends Model
             $query = $this->DB()->prepare($sql);
             $query->execute();
             $total = $query->rowCount();
-
             // Đẩy lên csdl:
             for ($i = 0; $i < count($orders); $i++) {
                 $insert_sql = "INSERT INTO pre_orders (order_id, customer_id, food_id, quantity_order) VALUES (:val_0, :val_1, :val_2, :val_3)";
                 $insert = $this->DB()->prepare($insert_sql);
                 $insert->execute([":val_0" => $total, ":val_1" => $user_id['id'], ":val_2" => $orders[$i]['id'], ":val_3" => $orders[$i]['quantity']]);
             }
+            //Xóa trạng thái đặt đơn để F5 ko đẩy dữ liệu lên csdl:
             $_SESSION['order_status'] = 0;
+            //Xóa cookie:
             setcookie('id', '', time()-3600);
         }
-        
+
         $order_sql = "SELECT * FROM `pre_orders`
         JOIN dish_orderes
         ON dish_orderes.id = pre_orders.food_id
         WHERE pre_orders.status = 0 and pre_orders.customer_id = ?  and pre_orders.order_id >= ALL (SELECT order_id FROM pre_orders WHERE customer_id = ?)";
         $query = $this->DB()->prepare($order_sql);
-        $query->execute(array($user_id['id'], $user_id['id']));
+        $query->execute(array($_SESSION['customer']['id'], $_SESSION['customer']['id']));
         $orders = $query->fetchAll(\PDO::FETCH_ASSOC);
 
         $total = 0;
