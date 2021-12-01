@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2021 at 08:16 PM
+-- Generation Time: Dec 01, 2021 at 03:19 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -45,7 +45,16 @@ INSERT INTO `payment` (`id`, `id_user`, `type`, `number`, `vaild`, `method`) VAL
 (2, 8, 'MASTER', '5315136541239547', '10/02/2025', 3),
 (3, 8, 'BIDV', '22210003863607', '', 5),
 (4, 8, 'Ví ShopeePay', '0823544435', '', 1),
-(5, 8, 'Tiền mặt', '', '', 2);
+(5, 8, 'Tiền mặt', '', '', 2),
+(8, 8, 'Ví ShopeePay', '0123456789', '', 1),
+(9, 8, 'Ví ShopeePay', '0123456712', '', 1),
+(10, 8, 'Ví ShopeePay', '0123456123', '', 1),
+(11, 8, 'VISA', '4929094122143244', '6/2021', 3),
+(12, 8, 'TECHCOMBANK', '0823544435', '', 5),
+(14, 7, 'Tiền mặt', '', '', 2),
+(15, 8, 'Ví ShopeePay', '0123236712', '', 1),
+(16, 8, 'Ví ShopeePay', '0175356712', '', 1),
+(17, 8, 'AGRIBANK', '9704325145697413', '', 5);
 
 --
 -- Indexes for dumped tables
@@ -65,7 +74,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

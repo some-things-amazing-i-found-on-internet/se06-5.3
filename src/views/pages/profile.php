@@ -42,7 +42,7 @@
                                     <div class=" padding-15 fw-500"> Ảnh đại diện </div>
                                     <img src="assets/img/user/user-2.png" class="img-fluid" alt="logo">
                                 </div>
-                                <form action="profile" method="POST">
+                                <form method="POST">
                                     <div class=" padding-15 fw-500"> Thay đổi thông tin </div>
                                     <div class="row">
                                         <div class="col-1"></div>

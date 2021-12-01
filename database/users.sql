@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2021 at 04:40 PM
+-- Generation Time: Dec 01, 2021 at 03:19 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `email`, `user_password`, `fname`, `lname`, `address`, `road`, `phone`, `role`, `payment_default`) VALUES
 (6, '123@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'pham', 'hfgh', '12 379th st 70 Brooklyn, NY 11209\n', 'Vy Street, Rite Aid', '(347) 1234564239', 0, 2),
-(7, 'lthnh15032001@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'Lê', 'Đạt', NULL, NULL, NULL, 0, 2);
+(7, 'lthnh15032001@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'Lê', 'Đạt', NULL, NULL, NULL, 0, 14),
+(8, 'duchuyvp123@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'Nguyễn', 'Đức Huy', '334 Nguyễn Trãi', 'Vy Street, Brook Lyn', '+84823544435', 0, 17);
 
 --
 -- Indexes for dumped tables
@@ -66,7 +67,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
