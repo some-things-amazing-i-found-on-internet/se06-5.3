@@ -32,62 +32,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-xl-8 col-lg-6">
-                <div class="">
-                    <div class="cart-detail-box">
-                        <div class="card">
-                            <div class="card-header padding-15 fw-700">Thông tin cá nhân</div>
-                            <div class="card-body no-padding" id="scrollstyle-4">
-                                <div class="d-flex mt-4">
-                                    <div class=" padding-15 fw-500"> Ảnh đại diện </div>
-                                    <img src="assets/img/user/user-2.png" class="img-fluid" alt="logo">
-                                </div>
-                                <form action="profile" method="POST">
-                                    <div class=" padding-15 fw-500"> Thay đổi thông tin </div>
-                                    <div class="row">
-                                        <div class="col-1"></div>
-                                        <label class="col-4 font-weight-bold " for="exampleInputEmail1">Email address</label>
-                                        <input value="<?php echo $user['email'] ?>" disabled type="text" class="form-control col-6" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                    </div>
 
-                                    <div class="row mt-3">
-                                        <div class="col-1"></div>
-                                        <label class="col-4 font-weight-bold" for="exampleInputPassword1">Họ</label>
-                                        <input required value="<?php echo $user['lname'] ?>" name="lname" type="text" class="form-control col-6" id="lname_feild">
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col-1"></div>
-                                        <label class="col-4 font-weight-bold" for="exampleInputPassword1">Tên</label>
-                                        <input required value="<?php echo $user['fname'] ?>" name="fname" type="text" class="form-control col-6" id="fname_feild">
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col-1"></div>
-                                        <label class="col-4 font-weight-bold" for="exampleInputPassword1">Địa chỉ</label>
-                                        <input required value="<?php echo $user['address'] ?>" name="address" type="text" class="form-control col-6" id="address_feild">
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col-1"></div>
-                                        <label class="col-4 font-weight-bold" for="exampleInputPassword1">Đường</label>
-                                        <input required value="<?php echo $user['road'] ?>" name="road" type="text" class="form-control col-6" id="road_feild">
-                                    </div>
-                                    <div class=" padding-15 fw-500"> Cập nhật số điện thoại </div>
-                                    <div class="row mt-3">
-                                        <div class="col-1"></div>
-                                        <label class="col-4 font-weight-bold" for="exampleInputPassword1">Số điện thoại</label>
-                                        <input required value="<?php echo $user['phone'] ?>" name="phone" type="text" class="form-control col-6" id="phone_feild">
-                                    </div>
-                                    <div class=" padding-15 fw-500"> </div>
-                                    <div class="padding-15" id="proceed-checkout">
-                                        <button class="btn-first green-btn text-custom-white full-width fw-500">Update</button>
-                                    </div>
-                                </form>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div> -->
             <div class="col-xl-8 col-lg-6">
                 <div class="payment-sec">
 
@@ -97,37 +42,6 @@
                     <div class="row">
                         <div class="col-12">
                             <div id="accordion">
-                                <!-- <div class="card">
-                                    <div class="card-header"> <a class="collapsed card-link fw-500 fs-14" data-toggle="collapse" href="#collapseOne">
-                                            Pay with a Gift Card
-                                        </a>
-                                    </div>
-                                    <div id="collapseOne" class="collapse" data-parent="#accordion">
-                                        <div class="card-body no-padding payment-option-tab">
-                                            <div class="form-group">
-                                                <div class="credit-card gift-card p-relative">
-                                                    <input type="text" name="#" class="form-control-submit fs-16" value="AC2B76">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- <div class="card">
-                                    <div class="card-header"> <a class="collapsed card-link fw-500 fs-14" data-toggle="collapse" href="#collapseTwo">
-                                            Add a promo code
-                                        </a>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                                        <div class="card-body no-padding payment-option-tab">
-                                            <div class="form-group">
-                                                <div class="credit-card promocode p-relative input-group">
-                                                    <input type="text" name="#" class="form-control-submit fs-16" placeholder="AC2B76">
-                                                    <button type="submit" class="btn-second btn-submit ml-1">Apply</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
                                 <div class="payment-option-tab">
                                     <ul class="nav nav-tabs">
                                         <li class="nav-item"> <a class="nav-link fw-600 active" data-toggle="tab" href="#shopee">Ví ShopeePay</a>
@@ -172,27 +86,28 @@
                                                 </div>
                                                 <div id="newwallet" class="collapse" data-parent="#accordion">
                                                     <div class="card-body no-padding payment-option-tab">
-                                                        <div class="row">
-                                                            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label class="text-light-white fw-700">Wallet Number</label>
-                                                                    <div class="credit-card amex-card-front p-relative">
-                                                                        <input type="text" name="#" class="form-control form-control-submit">
+                                                        <form method="POST">
+                                                            <div class="row">
+                                                                <div class="col-xl-6 col-lg-6 col-md-4 col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label class="text-light-white fw-700">Wallet Number</label>
+                                                                        <div class="credit-card amex-card-front p-relative">
+                                                                            <input type="text" name="newwalletnumber" class="form-control form-control-submit">
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-
-                                                            <div class="col-12">
-                                                                <div class="form-group">
-                                                                    <label class="custom-checkbox">
-                                                                        <input type="checkbox" name="#"> <span class="checkmark"></span>
-                                                                        Make it default</label>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label class="custom-checkbox">
+                                                                            <input type="checkbox" name="newwalletdefault"> <span class="checkmark"></span>
+                                                                            Make it default</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-xl-6 col-lg-6 col-md-4 col-sm-6">
+                                                                    <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Add new Wallet</button>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group col-xl-6 col-lg-6 col-md-4 col-sm-6">
-                                                                <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Add new Wallet</button>
-                                                            </div>
-                                                        </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -242,47 +157,51 @@
                                                 </div>
                                                 <div id="newcard" class="collapse" data-parent="#accordion">
                                                     <div class="card-body no-padding payment-option-tab">
-                                                        <div class="row">
-                                                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label class="text-light-white fw-700">Card Number</label>
-                                                                    <div class="credit-card amex-card-front p-relative">
-                                                                        <input type="text" name="#" class="form-control form-control-submit">
+                                                        <form method="POST">
+                                                            <div class="row">
+                                                                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label class="text-light-white fw-700">Card Number</label>
+                                                                        <div class="credit-card amex-card-front p-relative">
+                                                                            <input type="text" name="newcardnumber" class="form-control form-control-submit">
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-xl-2 col-lg-6 col-md-2 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label class="text-light-white fw-700">Expires on</label>
-                                                                    <input type="text" name="#" class="form-control form-control-submit">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-3 col-lg-6 col-md-3 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label class="text-light-white fw-700">Security Code</label>
-                                                                    <div class="credit-card amex-card-back p-relative">
-                                                                        <input type="text" name="#" class="form-control form-control-submit">
+                                                                <div class="col-xl-2 col-lg-6 col-md-2 col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label class="text-light-white fw-700">Expires on</label>
+                                                                        <input type="text" name="newcardvaild" class="form-control form-control-submit">
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-xl-3 col-lg-6 col-md-3 col-sm-6">
+                                                                <div class="col-xl-3 col-lg-6 col-md-3 col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label class="text-light-white fw-700">Security Code</label>
+                                                                        <div class="credit-card amex-card-back p-relative">
+                                                                            <input type="text" name="newcardcvc" class="form-control form-control-submit">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-xl-3 col-lg-6 col-md-3 col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label class="text-light-white fw-700">ZIP Code</label>
+                                                                        <input type="text" name="newcardzip" class="form-control form-control-submit">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label class="custom-checkbox">
+                                                                            <input type="checkbox" name="newcarddefault"> <span class="checkmark"></span>
+                                                                            Make this default</label>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="form-group">
-                                                                    <label class="text-light-white fw-700">ZIP Code</label>
-                                                                    <input type="text" name="#" class="form-control form-control-submit">
+                                                                    <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Add new card</button>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-12">
-                                                                <div class="form-group">
-                                                                    <label class="custom-checkbox">
-                                                                        <input type="checkbox" name="#"> <span class="checkmark"></span>
-                                                                        Make this default</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+
+                                                        </form>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Add new card</button>
-                                                    </div>
+
                                                 </div>
                                             </div>
 
@@ -359,38 +278,40 @@
                                                 </div>
                                             </div>
                                             <div class="card">
-                                                <div class="card-header"> <a class="collapsed card-link fw-500 fs-14" data-toggle="collapse" href="#newcardamex">
+                                                <div class="card-header"> <a class="collapsed card-link fw-500 fs-14" data-toggle="collapse" href="#newatm">
                                                         Add New ATM
                                                     </a>
                                                 </div>
-                                                <div id="newcardamex" class="collapse" data-parent="#accordion">
+                                                <div id="newatm" class="collapse" data-parent="#accordion">
                                                     <div class="card-body no-padding payment-option-tab">
-                                                        <div class="row">
-                                                            <div class="col-xl-4 col-lg-6 col-md-2 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label class="text-light-white fw-700">Bank</label>
-                                                                    <input type="text" name="#" class="form-control form-control-submit">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xl-8 col-lg-6 col-md-4 col-sm-6">
-                                                                <div class="form-group">
-                                                                    <label class="text-light-white fw-700">Số thẻ hoặc số tài khoản</label>
-                                                                    <div class="credit-card amex-card-front p-relative">
-                                                                        <input type="text" name="#" class="form-control form-control-submit">
+                                                        <form method="POST">
+                                                            <div class="row">
+                                                                <div class="col-xl-4 col-lg-6 col-md-2 col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label class="text-light-white fw-700">Bank</label>
+                                                                        <input type="text" name="newatmbank" class="form-control form-control-submit">
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="form-group">
-                                                                    <label class="custom-checkbox">
-                                                                        <input type="checkbox" name="#"> <span class="checkmark"></span>
-                                                                        Make it default</label>
+                                                                <div class="col-xl-8 col-lg-6 col-md-4 col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label class="text-light-white fw-700">Số thẻ hoặc số tài khoản</label>
+                                                                        <div class="credit-card amex-card-front p-relative">
+                                                                            <input type="text" name="newatmnumber" class="form-control form-control-submit">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label class="custom-checkbox">
+                                                                            <input type="checkbox" name="newatmdefault"> <span class="checkmark"></span>
+                                                                            Make it default</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-12">
+                                                                    <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Add new ATM</button>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group col-12">
-                                                                <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Add new ATM</button>
-                                                            </div>
-                                                        </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
