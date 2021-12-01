@@ -19,7 +19,7 @@
 				<div class="section-2 user-page main-padding">
 					<div class="login-sec">
 						<div class="login-box">
-							<form action="login" method="post">
+							<form method="post">
 								<h4 class="text-light-black fw-600">Sign in with your account</h4>
 								<div class="row">
 									<div class="col-12">
