@@ -32,7 +32,7 @@
                                     <h3 class="text-light-black header-title">Delivery Instructions</h3>
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control form-control-submit" rows="4" placeholder="Delivery Details"></textarea>
+                                    <textarea name="order_description" class="form-control form-control-submit" rows="4" placeholder="Delivery Details"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label class="custom-checkbox">
@@ -151,7 +151,7 @@
                                                             </label>
                                                         </div>
                                                         <div class="form-group">
-                                                            <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Place Your Order</button>
+                                                            <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500"><a href="order-details"> Place Your Order</a></button>
                                                         </div>
                                                         <p class="text-center text-light-black no-margin">By placing your order, you agree to Quickmunch's <a href="#">terms of use</a> and <a href="#">privacy agreement</a>
                                                         </p>
@@ -248,7 +248,7 @@
                                                             </label>
                                                         </div>
                                                         <div class="form-group">
-                                                            <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Place Your Order</button>
+                                                            <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500"><a href="order-details"> Place Your Order</a></button>
                                                         </div>
                                                         <p class="text-center text-light-black no-margin">By placing your order, you agree to Quickmunch's <a href="#">terms of use</a> and <a href="#">privacy agreement</a>
                                                         </p>
@@ -264,7 +264,7 @@
                                                                 Apologies, but you can't donate with the selected payment type</label>
                                                         </div>
                                                         <div class="form-group">
-                                                            <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Place Your Order</button>
+                                                            <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500"><a href="order-details"> Place Your Order</a></button>
                                                         </div>
                                                         <p class="text-center text-light-black no-margin">By placing your order, you agree to Quickmunch's <a href="#">terms of use</a> and <a href="#">privacy agreement</a>
                                                         </p>
@@ -449,7 +449,7 @@
                                                             </label>
                                                         </div>
                                                         <div class="form-group">
-                                                            <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Place Your Order</button>
+                                                            <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500"><a href="order-details"> Place Your Order</a></button>
                                                         </div>
                                                         <p class="text-center text-light-black no-margin">By placing your order, you agree to Quickmunch's <a href="#">terms of use</a> and <a href="#">privacy agreement</a>
                                                         </p>
