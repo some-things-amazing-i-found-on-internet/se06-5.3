@@ -45,6 +45,8 @@ class OrderDetailController extends Model
     public function index($params): void
     {
         session_start();
+        $param = explode("=", $params[0])[1];
+        // echo var_dump($param) ;
         $order_sql = "SELECT * FROM `pre_orders`
                     JOIN dish_orderes
                     ON dish_orderes.id = pre_orders.food_id
@@ -71,6 +73,6 @@ class OrderDetailController extends Model
         $query3->execute(array($orders[0]['order_id']));
         $post_order = $query3->fetchAll(\PDO::FETCH_ASSOC);
 
-        View::render("order-details", compact(['user', 'orders', 'post_order']));
+        View::render("order-details", compact(['user', 'orders', 'post_order','param']));
     }
 }

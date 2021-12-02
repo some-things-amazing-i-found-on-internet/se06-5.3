@@ -58,16 +58,16 @@
                             <div class="col-lg-4">
                                 <div class="recipt-name full-width padding-tb-10 pt-0">
                                     <h5 class="text-light-black fw-600">Thông tin khách hàng:</h5>
-                                    <span class="text-light-white "><?php echo "Tên: ". $user[0]['fname'] ." ". $user[0]['lname'] ?></span>
-                                    <span class="text-light-white "><?php echo "Đường: " . $user[0]['road']?></span>
-                                    <span class="text-light-white "><?php echo "Địa chỉ: " . $user[0]['address']?></span>
-                                    <p class="text-light-white "><?php echo "SĐT: " . $user[0]['phone']?></p>
+                                    <span class="text-light-white "><?php echo "Tên: " . $user[0]['fname'] . " " . $user[0]['lname'] ?></span>
+                                    <span class="text-light-white "><?php echo "Đường: " . $user[0]['road'] ?></span>
+                                    <span class="text-light-white "><?php echo "Địa chỉ: " . $user[0]['address'] ?></span>
+                                    <p class="text-light-white "><?php echo "SĐT: " . $user[0]['phone'] ?></p>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="recipt-name full-width padding-tb-10 pt-0">
                                     <h5 class="text-light-black fw-600">Miêu tả đơn hàng:</h5>
-                                    <p class="text-light-white ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit.</p>
+                                    <p class="text-light-white "><?php echo urldecode(utf8_decode($param)); ?></p>
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -85,23 +85,21 @@
                                 </p>
                             </div>
                             <div class="col-lg-12">
-                                <?php foreach($orders as $order) { ?>    
-                                <div class="checkout-product">
-                                    <div class="img-name-value">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="assets/img/details/dish-1.jpg" alt="#">
-                                            </a>
+                                <?php foreach ($orders as $order) { ?>
+                                    <div class="checkout-product">
+                                        <div class="img-name-value">
+                                            <div class="product-img">
+                                                <img style="width: 130px; height: 130px;" src=<?php echo $order['photos'] ?> class="img-fluid" alt="#">
+                                            </div>
+                                            <div class="product-value"> <span class="text-light-white"><?php echo "Số lượng: " . $order['quantity_order'] ?></span>
+                                            </div>
+                                            <div class="product-name"> <span><a href="#" class="text-light-black"><?php echo $order['name'] ?></a></span>
+                                            </div>
                                         </div>
-                                        <div class="product-value"> <span class="text-light-white"><?php echo "Số lượng: " . $order['quantity_order'] ?></span>
-                                        </div>
-                                        <div class="product-name"> <span><a href="#" class="text-light-black"><?php echo $order['name'] ?></a></span>
+                                        <div class="price"> <span class="text-light-white"><?php echo "Đơn giá: " . $order['price_value'] / 1000 . ".000đ" ?></span>
                                         </div>
                                     </div>
-                                    <div class="price"> <span class="text-light-white"><?php echo "Đơn giá: " . $order['price_value']/1000 . ".000đ" ?></span>
-                                    </div>
-                                </div>
-                                <?php } ?>  
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

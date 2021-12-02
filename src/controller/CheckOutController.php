@@ -116,6 +116,17 @@ class CheckOutController extends Model
         foreach ($orders as $order) {
             $total += (int)$order['quantity_order'] * (int)$order['price_value'];
         }
-        View::render("checkout", compact(['total', 'orders', 'user_id', 'result']));
+
+        $user = $_SESSION['customer'];
+
+        $id = $user['id'];
+
+        $payment_sql = "SELECT * FROM payment WHERE id_user = " . $user['id'];
+        $payment = $this->DB()->prepare($payment_sql);
+        $payment->execute();
+        $credit = $payment->fetchAll(\PDO::FETCH_ASSOC);
+
+
+        View::render("checkout", compact(['total', 'orders', 'user_id', 'result', 'credit']));
     }
 }
