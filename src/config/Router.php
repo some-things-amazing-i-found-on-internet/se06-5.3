@@ -33,7 +33,8 @@ class Router
             "checkout" => "CheckOutController@index",
             "profile" => "ProfileController@index",
             "logout" => "LogoutController@index",
-            "payment" => "PaymentController@index"
+            "payment" => "PaymentController@index",
+            "order-details" => "OrderDetailController@index"
         ];
         $this->__admin_routes = [
             "admin\/home" => "DashBoardController@index",
