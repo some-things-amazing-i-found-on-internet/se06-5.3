@@ -64,6 +64,9 @@ class PaymentController extends Model
                 $update_sql = "UPDATE users SET payment_default = :default WHERE id = :id";
                 $payment = $this->DB()->prepare($update_sql);
                 $payment->execute([":default" => $default[0]["LAST_INSERT_ID()"], ":id" => $user["id"]]);
+
+                $user['payment_default'] = $default[0]['LAST_INSERT_ID()'];
+                $_SESSION['customer']['payment_default'] = $default[0]['LAST_INSERT_ID()'];
             }
         }
 
@@ -92,6 +95,9 @@ class PaymentController extends Model
                 $update_sql = "UPDATE users SET payment_default = :default WHERE id = :id";
                 $payment = $this->DB()->prepare($update_sql);
                 $payment->execute([":default" => $default[0]["LAST_INSERT_ID()"], ":id" => $user["id"]]);
+
+                $user['payment_default'] = $default[0]['LAST_INSERT_ID()'];
+                $_SESSION['customer']['payment_default'] = $default[0]['LAST_INSERT_ID()'];
             }
         }
 
@@ -108,7 +114,24 @@ class PaymentController extends Model
                 $update_sql = "UPDATE users SET payment_default = :default WHERE id = :id";
                 $payment = $this->DB()->prepare($update_sql);
                 $payment->execute([":default" => $default[0]["LAST_INSERT_ID()"], ":id" => $user["id"]]);
+
+                $user['payment_default'] = $default[0]['LAST_INSERT_ID()'];
+                $_SESSION['customer']['payment_default'] = $default[0]['LAST_INSERT_ID()'];
             }
+        }
+
+        if (isset($_POST['cashdefault'])) {
+            $cash_sql = "SELECT * FROM payment WHERE id_user=:id AND method=2";
+            $payment = $this->DB()->prepare($cash_sql);
+            $payment->execute([":id" => $user['id']]);
+
+            $default = $payment->fetchAll(\PDO::FETCH_ASSOC);
+            $update_sql = "UPDATE users SET payment_default = :default WHERE id = :id";
+            $payment = $this->DB()->prepare($update_sql);
+            $payment->execute([":default" => $default[0]['id'], ":id" => $user["id"]]);
+
+            $user['payment_default'] = $default[0]['id'];
+            $_SESSION['customer']['payment_default'] = $default[0]['id'];
         }
 
 
@@ -117,9 +140,18 @@ class PaymentController extends Model
         $payment->execute();
         $credit = $payment->fetchAll(\PDO::FETCH_ASSOC);
 
+        $type_sql = "SELECT * FROM `payment_method` JOIN payment ON payment_method.id=payment.method WHERE payment.id = " . $user['payment_default'];
+        $payment = $this->DB()->prepare($type_sql);
+        $payment->execute();
+        $type = $payment->fetchAll(\PDO::FETCH_ASSOC);
+        $default_type = $type[0]['name'];
 
+        $cash_sql = "SELECT * FROM payment WHERE id_user=:id AND method=2";
+        $payment = $this->DB()->prepare($cash_sql);
+        $payment->execute([":id" => $user['id']]);
+        $cashid = $payment->fetchAll(\PDO::FETCH_ASSOC);
+        $cash_id = $cashid[0]['id'];
         // echo $_POST['newwalletdefault'];
-
-        View::render("payment", compact(["user", "credit"]));
+        View::render("payment", compact(["user", "credit", "cash_id", "default_type"]));
     }
 }
