@@ -67,7 +67,7 @@
                             <div class="col-lg-4">
                                 <div class="recipt-name full-width padding-tb-10 pt-0">
                                     <h5 class="text-light-black fw-600">Miêu tả đơn hàng:</h5>
-                                    <p class="text-light-white "><?php echo urldecode(utf8_decode($param)); ?></p>
+                                    <p class="text-light-white "><?php echo $post_order[0]['description_order']; ?></p>
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -106,7 +106,7 @@
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="payment-method mb-md-40">
-                                <h5 class="text-light-black fw-600">Payment Method</h5>
+                                <h5 class="text-light-black fw-600">Phương thức thanh toán:</h5>
                                 <div class="method-type"> <i class="far fa-credit-card text-dark-white"></i>
                                     <span class="text-light-white">Credit Card</span>
                                 </div>
@@ -114,21 +114,15 @@
                         </div>
                         <div class="col-lg-5">
                             <div class="price-table u-line">
-                                <div class="item"> <span class="text-light-white">Item subtotal:</span>
-                                    <span class="text-light-white">$30.5</span>
+                                <div class="item"> <span class="text-light-white">Tổng tiền đồ đặt:</span>
+                                    <span class="text-light-white"><?php echo $total/1000 . ".000đ" ?></span>
                                 </div>
-                                <div class="item"> <span class="text-light-white">Delivery fee:</span>
-                                    <span class="text-light-white">$30.5</span>
-                                </div>
-                                <div class="item"> <span class="text-light-white">Tax and fees:</span>
-                                    <span class="text-light-white">$30.5</span>
-                                </div>
-                                <div class="item"> <span class="text-light-white">Driver tip:</span>
-                                    <span class="text-light-white">$30.5</span>
+                                <div class="item"> <span class="text-light-white">Phí vận chuyển:</span>
+                                    <span class="text-light-white"><?php echo $orders[0]['delivery_fee']/1000 . ".000đ" ?></span>
                                 </div>
                             </div>
                             <div class="total-price padding-tb-10">
-                                <h5 class="title text-light-black fw-700">Total: <span>$33.36</span></h5>
+                                <h5 class="title text-light-black fw-700">Tổng cộng: <span><?php echo $post_order[0]['total']/1000 . ".000đ" ?></span></h5>
                             </div>
                         </div>
                         <div class="col-12 d-flex"> <a href="#" class="btn-first white-btn fw-600 help-btn">Need Help?</a>

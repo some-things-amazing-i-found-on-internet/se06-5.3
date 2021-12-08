@@ -6,17 +6,18 @@
                     <div class="row mb-xl-20">
                         <div class="col-md-6">
                             <div class="section-header-left">
-                                <h3 class="text-light-black header-title fw-700">Review and place order</h3>
+                                <h3 class="text-light-black header-title fw-700">Thông tin người nhận hàng:</h3>
                             </div>
-                            <h6 class="text-light-black fw-700 fs-14">Review address, payments, and tip to complete your purchase</h6>
-                            <h6 class="text-light-black fw-700 mb-2">Your order setting</h6>
-                            <p class="text-light-green fw-600">Delivery, ASAP (60-70m)</p>
+                            <h6 class="text-light-black fw-700 fs-14">Kiểm tra thông tin các nhân, địa chỉ, phương thức thanh toán để hoàn thành đặt đơn.</h6>
+                            <h6 class="text-light-black fw-700 mb-2">Thông tin cá nhân:</h6>
+                            <p class="text-light-black fw-600 mb-1">Họ và tên:</p>
                             <p class="text-light-white title2 mb-1"><?php echo $user_id['fname'] . " " . $user_id['lname'] ?> <span><a href="#">Change Details</a></span>
                             </p>
-                            <p class="text-light-black fw-600 mb-1">Home</p>
+                            <p class="text-light-black fw-600 mb-1">Địa chỉ:</p>
                             <p class="text-light-white mb-1"><?php echo $user_id['address'] ?>
                                 <br><?php echo $user_id['road'] ?>
                             </p>
+                            <p class="text-light-black fw-600 mb-1">Số ĐT:</p>
                             <p class="text-light-white"><?php echo $user_id['phone'] ?></p>
                         </div>
                         <div class="col-md-6">
@@ -29,7 +30,7 @@
                         <div class="col-12">
                             <div class="payment-sec">
                                 <div class="section-header-left">
-                                    <h3 class="text-light-black header-title">Delivery Instructions</h3>
+                                    <h3 class="text-light-black header-title">Mô tả thêm:</h3>
                                 </div>
                                 <div class="form-group">
                                     <input name="order_description" class="form-control form-control-submit" rows="4" id="order_description" placeholder="Delivery Details"></input>
@@ -163,7 +164,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div id="accordion">
-                                            <button onclick="checkoutPage()" href="order-details" class="btn-first green-btn text-custom-white full-width fw-500"> Place Your Order</button>
+                                            <button onclick="checkoutPage()" href="order-details" class="btn-first green-btn text-custom-white full-width fw-500"> Đặt đơn</button>
                                         </div>
                                     </div>
                                     <script>
@@ -212,27 +213,18 @@
                                     ?>
                                 </div>
                                 <div class="item-total">
-                                    <div class="total-price border-0 pb-0"> <span class="text-dark-white fw-600">Items subtotal:</span>
-                                        <span class="text-dark-white fw-600">$8.50</span>
+                                    <div class="total-price border-0 pb-0"> <span class="text-dark-white fw-600">Tổng tiền đồ đặt:</span>
+                                        <span class="text-dark-white fw-600"><?php echo $total / 1000 . ".000đ" ?></span>
                                     </div>
-                                    <div class="total-price border-0 pt-0 pb-0"> <span class="text-light-green fw-600">Delivery fee:</span>
-                                        <span class="text-light-green fw-600">Free</span>
-                                    </div>
-                                    <div class="total-price border-0 pt-0 pb-0"> <span class="text-dark-white fw-600">Sales tax:</span>
-                                        <span class="text-dark-white fw-600">$1.50</span>
-                                    </div>
-                                    <div class="total-price border-0 pt-0 pb-0"> <span class="text-dark-white fw-600">Tip:</span>
-                                        <span class="text-dark-white fw-600">$1.50</span>
-                                    </div>
-                                    <div class="total-price border-0 "> <span class="text-light-black fw-700">Total:</span>
-                                        <span class="text-light-black fw-700">$18.50</span>
+                                    <div class="total-price border-0 pt-0 pb-0"> <span class="text-light-green fw-600">Phí vận chuyển:</span>
+                                        <span class="text-light-green fw-600"><?php echo $orders[0]['delivery_fee']/1000 . ".000đ" ?></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer p-0 modify-order">
                                 <!-- <button class="text-custom-white full-width fw-500 bg-light-green"><i class="fas fa-chevron-left mr-2"></i> Modify Your Order</button> -->
                                 <a href="#" class="total-amount"> <span class="text-custom-white fw-700">Tổng cộng</span>
-                                    <span class="text-custom-white fw-700"><?php echo $total / 1000 . ".000đ" ?></span>
+                                    <span class="text-custom-white fw-700"><?php echo $total/1000 + $orders[0]['delivery_fee']/1000 . ".000đ" ?></span>
                                 </a>
                             </div>
                         </div>

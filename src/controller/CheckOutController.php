@@ -87,6 +87,9 @@ class CheckOutController extends Model
                 $orders[$i] = $order;
                 unset($_COOKIE['id']);
             }
+            //Tính phí vận chuyển:
+            $delivery_fee = rand(10,30)*1000;
+
             //Lấy giá trị order_id tiếp theo:
             $sql = "SELECT order_id FROM `pre_orders`";
             $query = $this->DB()->prepare($sql);
@@ -94,9 +97,9 @@ class CheckOutController extends Model
             $total = $query->rowCount();
             // Đẩy lên csdl:
             for ($i = 0; $i < count($orders); $i++) {
-                $insert_sql = "INSERT INTO pre_orders (order_id, customer_id, food_id, quantity_order) VALUES (:val_0, :val_1, :val_2, :val_3)";
+                $insert_sql = "INSERT INTO pre_orders (order_id, customer_id, food_id, quantity_order, delivery_fee) VALUES (:val_0, :val_1, :val_2, :val_3, :val_4)";
                 $insert = $this->DB()->prepare($insert_sql);
-                $insert->execute([":val_0" => $total, ":val_1" => $user_id['id'], ":val_2" => $orders[$i]['id'], ":val_3" => $orders[$i]['quantity']]);
+                $insert->execute([":val_0" => $total, ":val_1" => $user_id['id'], ":val_2" => $orders[$i]['id'], ":val_3" => $orders[$i]['quantity'], ":val_4" => $delivery_fee]);
             }
             //Xóa trạng thái đặt đơn để F5 ko đẩy dữ liệu lên csdl:
             $_SESSION['order_status'] = 0;

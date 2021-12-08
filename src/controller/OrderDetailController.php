@@ -46,7 +46,6 @@ class OrderDetailController extends Model
     {
         session_start();
         $param = explode("=", $params[0])[1];
-        // echo var_dump($param) ;
         $order_sql = "SELECT * FROM `pre_orders`
                     JOIN dish_orderes
                     ON dish_orderes.id = pre_orders.food_id
@@ -55,15 +54,21 @@ class OrderDetailController extends Model
         $query->execute(array($_SESSION['customer']['id'], $_SESSION['customer']['id']));
         $orders = $query->fetchAll(\PDO::FETCH_ASSOC);
 
+        //Tổng tiền đồ ăn:
+        $total = 0;
+        foreach ($orders as $order) {
+            $total += (int)$order['quantity_order'] * (int)$order['price_value'];
+        }
+
         $user_sql = "SELECT * FROM `users` WHERE id = ?";
         $query2 = $this->DB()->prepare($user_sql);
         $query2->execute(array($_SESSION['customer']['id']));
         $user = $query2->fetchAll(\PDO::FETCH_ASSOC);
 
         if (isset($_SESSION['post_order_status']) && $_SESSION['post_order_status'] == 1) {
-            $insert_sql = "INSERT INTO post_orders (pre_orders_id, time_order, description_order) VALUES (:val_0, :val_1, :val_2)";
+            $insert_sql = "INSERT INTO post_orders (pre_orders_id, time_order, description_order, total) VALUES (:val_0, :val_1, :val_2, :val_3)";
             $insert = $this->DB()->prepare($insert_sql);
-            $insert->execute([":val_0" => $orders[0]['order_id'], ":val_1" => date("Y-m-d H:i:s"), ":val_2" => ""]);
+            $insert->execute([":val_0" => $orders[0]['order_id'], ":val_1" => date("Y-m-d H:i:s"), ":val_2" => urldecode(utf8_decode($param)), ":val_3" => $total + $orders[0]['delivery_fee']]);
 
             $_SESSION['post_order_status'] = 0;
         }
@@ -73,6 +78,6 @@ class OrderDetailController extends Model
         $query3->execute(array($orders[0]['order_id']));
         $post_order = $query3->fetchAll(\PDO::FETCH_ASSOC);
 
-        View::render("order-details", compact(['user', 'orders', 'post_order','param']));
+        View::render("order-details", compact(['user', 'orders', 'post_order', 'total','param']));
     }
 }
