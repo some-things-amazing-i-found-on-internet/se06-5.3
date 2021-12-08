@@ -37,7 +37,7 @@
                 <div class="payment-sec">
 
                     <div class="section-header-left">
-                        <h3 class="text-light-black header-title">Thông tin thanh toán</h3>
+                        <h3 class="text-light-black header-title">Thông tin thanh toán (<?php echo $default_type; ?>)</h3>
                     </div>
                     <div class="row">
                         <div class="col-12">
@@ -50,8 +50,8 @@
                                         </li>
                                         <li class="nav-item"> <a class="nav-link fw-600" data-toggle="tab" href="#cash">Tiền mặt</a>
                                         </li>
-                                        <li class="nav-item"> <a class="nav-link fw-600" data-toggle="tab" href="#paypal">PayPal<sup>TM</sup></a>
-                                        </li>
+                                        <!-- <li class="nav-item"> <a class="nav-link fw-600" data-toggle="tab" href="#paypal">PayPal<sup>TM</sup></a>
+                                        </li> -->
                                         <li class="nav-item"> <a class="nav-link fw-600" data-toggle="tab" href="#bank">ATM/Banking</a>
                                         </li>
                                     </ul>
@@ -69,7 +69,7 @@
                                                         ?>
                                                                 <div class="form-group">
                                                                     <div class="credit-card amex-card-front p-relative ">
-                                                                        <input type="text" name="#" class="form-control form-control-submit" value="  <?php echo $wallet['number']; ?>">
+                                                                        <input type="text" name="#" class="form-control form-control-submit" <?php if ($wallet['id'] == $user['payment_default']) echo "style=\"background-color: #3CBC8D\""; ?> value="  <?php echo $wallet['number']; ?>">
                                                                     </div>
                                                                 </div>
                                                         <?php
@@ -112,20 +112,7 @@
                                                 </div>
                                             </div>
 
-                                            <!-- <div class="section-header-left">
-                                                <h3 class="text-light-black header-title">Donate the change</h3>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="custom-checkbox">
-                                                    <input type="checkbox" name="#"> <span class="checkmark"></span>
-                                                    Donate $0.77 to No kid Hungry. By checking this box you agree to the Donate the Change <a href="#">Terms of use</a> <span class="ml-2"><a href="#">Learn More</a></span>
-                                                </label>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Place Your Order</button>
-                                            </div>
-                                            <p class="text-center text-light-black no-margin">By placing your order, you agree to Quickmunch's <a href="#">terms of use</a> and <a href="#">privacy agreement</a>
-                                            </p> -->
+
                                         </div>
                                         <div class="tab-pane fade" id="creditcard">
                                             <div class="card">
@@ -140,7 +127,7 @@
                                                         ?>
                                                                 <div class="form-group">
                                                                     <div class="credit-card amex-card-front p-relative ">
-                                                                        <input type="text" name="#" class="form-control form-control-submit" value="<?php echo $card['type'] . "\t"; ?>  <?php echo $card['number'] . "\t"; ?> exp <?php echo $card['vaild']; ?>">
+                                                                        <input type="text" name="#" class="form-control form-control-submit" <?php if ($card['id'] == $user['payment_default']) echo "style=\"background-color: #3CBC8D\""; ?> value="<?php echo $card['type'] . "\t"; ?>  <?php echo $card['number'] . "\t"; ?> exp <?php echo $card['vaild']; ?>">
                                                                     </div>
                                                                 </div>
                                                         <?php
@@ -205,54 +192,21 @@
                                                 </div>
                                             </div>
 
-                                            <!-- <div class="section-header-left">
-                                                <h3 class="text-light-black header-title">Donate the change</h3>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="custom-checkbox">
-                                                    <input type="checkbox" name="#"> <span class="checkmark"></span>
-                                                    Donate $0.77 to No kid Hungry. By checking this box you agree to the Donate the Change <a href="#">Terms of use</a> <span class="ml-2"><a href="#">Learn More</a></span>
-                                                </label>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Place Your Order</button>
-                                            </div>
-                                            <p class="text-center text-light-black no-margin">By placing your order, you agree to Quickmunch's <a href="#">terms of use</a> and <a href="#">privacy agreement</a>
-                                            </p> -->
+
                                         </div>
                                         <div class="tab-pane fade" id="cash">
-                                            <p class="text-light-black">Have the cash ready when you receive your order.</p>
-                                            <div class="section-header-left">
-                                                <h3 class="text-light-black header-title">Donate the change</h3>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="custom-checkbox">
-                                                    <input type="checkbox" name="#"> <span class="checkmark"></span>
-                                                    Apologies, but you can't donate with the selected payment type</label>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Place Your Order</button>
-                                            </div>
-                                            <p class="text-center text-light-black no-margin">By placing your order, you agree to Quickmunch's <a href="#">terms of use</a> and <a href="#">privacy agreement</a>
-                                            </p>
+                                            <?php if ($user['payment_default'] === $cash_id) { ?>
+                                                <p class="text-light-black">Tiền mặt đang là phương thức thanh toán mặc định.</p>
+                                            <?php } else { ?>
+                                                <form method="POST">
+                                                    <div class="form-group">
+                                                        <input type="submit" name="cashdefault" class="button btn-first green-btn text-custom-white full-width fw-500" value="Chọn tiền mặt là phương thức thanh toán mặc định" />
+                                                    </div>
+                                                </form>
+                                            <?php } ?>
                                         </div>
                                         <div class="tab-pane fade" id="paypal">
                                             <p class="text-light-black">Please review your order and make any necessary changes before checking out with PayPal.</p>
-
-                                            <!-- <div class="section-header-left">
-                                                <h3 class="text-light-black header-title">Donate the change</h3>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="custom-checkbox">
-                                                    <input type="checkbox" name="#"> <span class="checkmark"></span>
-                                                    Donate $0.77 to No kid Hungry. By checking this box you agree to the Donate the Change <a href="#">Terms of use</a> <span class="ml-2"><a href="#">Learn More</a></span>
-                                                </label>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Place Your Order</button>
-                                            </div>
-                                            <p class="text-center text-light-black no-margin">By placing your order, you agree to Quickmunch's <a href="#">terms of use</a> and <a href="#">privacy agreement</a>
-                                            </p> -->
                                         </div>
                                         <div class="tab-pane fade" id="bank">
                                             <div class="card">
@@ -267,7 +221,7 @@
                                                         ?>
                                                                 <div class="form-group">
                                                                     <div class="credit-card amex-card-front p-relative ">
-                                                                        <input type="text" name="#" class="form-control form-control-submit" value="  <?php echo $atm['type'] . "\t"; ?> <?php echo $atm['number']; ?>">
+                                                                        <input type="text" name="#" class="form-control form-control-submit" <?php if ($atm['id'] == $user['payment_default']) echo "style=\"background-color: #3CBC8D\""; ?> value="  <?php echo $atm['type'] . "\t"; ?> <?php echo $atm['number']; ?>">
                                                                     </div>
                                                                 </div>
                                                         <?php
@@ -316,20 +270,7 @@
                                                 </div>
                                             </div>
 
-                                            <!-- <div class="section-header-left">
-                                                <h3 class="text-light-black header-title">Donate the change</h3>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="custom-checkbox">
-                                                    <input type="checkbox" name="#"> <span class="checkmark"></span>
-                                                    Donate $0.77 to No kid Hungry. By checking this box you agree to the Donate the Change <a href="#">Terms of use</a> <span class="ml-2"><a href="#">Learn More</a></span>
-                                                </label>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn-first green-btn text-custom-white full-width fw-500">Place Your Order</button>
-                                            </div>
-                                            <p class="text-center text-light-black no-margin">By placing your order, you agree to Quickmunch's <a href="#">terms of use</a> and <a href="#">privacy agreement</a>
-                                            </p> -->
+
                                         </div>
                                     </div>
                                 </div>
