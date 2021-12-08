@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2021 at 08:18 AM
+-- Generation Time: Dec 08, 2021 at 06:28 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -32,6 +32,7 @@ CREATE TABLE `post_orders` (
   `pre_orders_id` int(11) NOT NULL,
   `time_order` datetime NOT NULL,
   `description_order` varchar(500) NOT NULL,
+  `total` int(11) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,10 +40,9 @@ CREATE TABLE `post_orders` (
 -- Dumping data for table `post_orders`
 --
 
-INSERT INTO `post_orders` (`id`, `pre_orders_id`, `time_order`, `description_order`, `status`) VALUES
-(3, 37, '2021-12-02 05:57:50', '', 0),
-(5, 41, '2021-12-02 08:12:28', '', 0),
-(6, 44, '2021-12-02 08:14:56', '', 0);
+INSERT INTO `post_orders` (`id`, `pre_orders_id`, `time_order`, `description_order`, `total`, `status`) VALUES
+(15, 0, '2021-12-08 06:04:23', 'như cc', 505000, 0),
+(16, 3, '2021-12-08 06:19:35', 'ccc', 88000, 0);
 
 --
 -- Indexes for dumped tables
@@ -62,7 +62,7 @@ ALTER TABLE `post_orders`
 -- AUTO_INCREMENT for table `post_orders`
 --
 ALTER TABLE `post_orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
