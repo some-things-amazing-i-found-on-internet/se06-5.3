@@ -114,39 +114,15 @@
                                     <div class="user-dropdown">
                                         <ul>
                                             <li>
-                                                <a href="order-details.html">
+                                                <a href="history">
                                                     <div class="icon"><i class="flaticon-rewind"></i>
-                                                    </div> <span class="details">Past Orders</span>
+                                                    </div> <span class="details">History</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="order-details.html">
-                                                    <div class="icon"><i class="flaticon-takeaway"></i>
-                                                    </div> <span class="details">Upcoming Orders</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
+                                                <a href="payment">
                                                     <div class="icon"><i class="flaticon-breadbox"></i>
-                                                    </div> <span class="details">Saved</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <div class="icon"><i class="flaticon-gift"></i>
-                                                    </div> <span class="details">Gift cards</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <div class="icon"><i class="flaticon-refer"></i>
-                                                    </div> <span class="details">Refer a friend</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <div class="icon"><i class="flaticon-diamond"></i>
-                                                    </div> <span class="details">Perks</span>
+                                                    </div> <span class="details">Payment</span>
                                                 </a>
                                             </li>
                                             <li>

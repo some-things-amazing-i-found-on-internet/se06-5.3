@@ -32,6 +32,7 @@ class Router
             "about" => "About@index",
             "checkout" => "CheckOutController@index",
             "profile" => "ProfileController@index",
+            "history" => "HistoryController@index",
             "logout" => "LogoutController@index",
             "payment" => "PaymentController@index",
             "order-details" => "OrderDetailController@index"
