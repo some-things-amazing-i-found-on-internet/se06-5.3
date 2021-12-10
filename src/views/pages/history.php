@@ -66,7 +66,7 @@
                                 <th scope="row">11348132121</th>
                                 <td>10-02-2020</td>
                                 <td>Trà sữa</td>
-                                <td>Bánh kem</td>
+                                <td>Bánh kem, hghghghhhhhhhhhhhhhhhhhhhhhh</td>
                                 <td>20,000đ</td>
                                 <td>Chờ thanh toán</td>
                             </tr>
