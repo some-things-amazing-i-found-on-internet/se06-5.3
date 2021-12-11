@@ -39,69 +39,36 @@
                             <tr>
                                 <th scope="col">Mã đơn hàng</th>
                                 <th scope="col">Ngày giờ</th>
-                                <th scope="col">Quán</th>
                                 <th scope="col">Món ăn</th>
                                 <th scope="col">Thành tiền</th>
                                 <th scope="col">Trạng thái</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach($post_orders as $row) { ?>
                             <tr>
-                                <th scope="row">11348132121</th>
-                                <td>10-02-2020</td>
-                                <td>Trà sữa</td>
-                                <td>Bánh kem</td>
-                                <td>20,000đ</td>
-                                <td>Đang giao</td>
+                                <th scope="row"><?php echo $row['pre_orders_id'] ?></th>
+                                <td><?php echo $row['time_order'] ?></td>
+                                <td><?php foreach($pre_orders as $row_2) {
+                                    if ($row_2['order_id'] == $row['pre_orders_id']) {
+                                        echo "- ". $row_2['name'] . " x" . $row_2['quantity_order'] . "<br>";
+                                    }
+                                } ?></td>
+                                <td><?php echo $row['total']/1000 . ",000đ" ?></td>
+                                <td><?php 
+                                if ($row['status'] == 0) {
+                                    echo "Đang giao";
+                                }
+                                else if ($row['status'] == 1) {
+                                    echo "Đã giao";
+                                }
+                                else {
+                                    echo "Đã hủy";
+                                }
+                                ?>
+                                </td>
                             </tr>
-                            <tr>
-                                <th scope="row">11348132121</th>
-                                <td>10-02-2020</td>
-                                <td>Trà sữa</td>
-                                <td>Bánh kem</td>
-                                <td>20,000đ</td>
-                                <td>Đã giao</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">11348132121</th>
-                                <td>10-02-2020</td>
-                                <td>Trà sữa</td>
-                                <td>Bánh kem, hghghghhhhhhhhhhhhhhhhhhhhhh</td>
-                                <td>20,000đ</td>
-                                <td>Chờ thanh toán</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">11348132121</th>
-                                <td>10-02-2020</td>
-                                <td>Trà sữa</td>
-                                <td>Bánh kem</td>
-                                <td>20,000đ</td>
-                                <td>Đã hủy</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">11348132121</th>
-                                <td>10-02-2020</td>
-                                <td>Trà sữa</td>
-                                <td>Bánh kem</td>
-                                <td>20,000đ</td>
-                                <td>Đã giao</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">11348132121</th>
-                                <td>10-02-2020</td>
-                                <td>Trà sữa</td>
-                                <td>Bánh kem</td>
-                                <td>20,000đ</td>
-                                <td>Đã giao</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">11348132121</th>
-                                <td>10-02-2020</td>
-                                <td>Trà sữa</td>
-                                <td>Bánh kem</td>
-                                <td>20,000đ</td>
-                                <td>Đã giao</td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
