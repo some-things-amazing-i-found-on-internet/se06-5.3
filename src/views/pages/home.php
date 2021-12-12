@@ -84,12 +84,12 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param[
                             <div class="swiper-slide">
                                 <a href="home?category=<?php echo $row2['id'] ?>" class="categories">
                                     <div class="icon text-custom-white <?php
-                                         if( isset($param['category']) && $row2['id'] === $param['category']) {
-                                             echo 'bg-danger';
-                                         }else{ 
-                                            echo 'bg-light';
-                                         }
-                                     ?> ">
+                                                                        if (isset($param['category']) && $row2['id'] === $param['category']) {
+                                                                            echo 'bg-danger';
+                                                                        } else {
+                                                                            echo 'bg-light';
+                                                                        }
+                                                                        ?> ">
                                         <img src=<?php echo $row2['icon'] ?> class="rounded-circle" alt="categories">
                                     </div> <span class="text-light-black cat-name"><?php echo $row2['name'] ?> </span>
                                 </a>
@@ -217,11 +217,17 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param[
             <?php
             $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
             parse_str($req_param, $param);
-            if (isset($param['category'])) {
-                $str_param = "category=" . $param['category'] . "&page=";
-            } else {
-                $str_param = "page=";
+
+            $str_param = "";
+            if (isset($param['str'])) {
+                $str_param .= "str=" . $param['str'] . "&";
             }
+            if (isset($param['category'])) {
+                $str_param .= "category=" . $param['category'] . "&page=";
+            } else {
+                $str_param .= "page=";
+            }
+
             if (!isset($param['page'])) {
                 $page = 1;
             } else {
@@ -232,7 +238,6 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param[
             $total_pages = ceil($total_records / $per_page_record);
 
             $start_from = ($page - 1) * $per_page_record;
-
 
             for ($i = $start_from; $i < min($start_from + $per_page_record, $total_records); $i++) {
                 $row = $result[$i];
