@@ -239,7 +239,6 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param[
 
             $start_from = ($page - 1) * $per_page_record;
 
-
             for ($i = $start_from; $i < min($start_from + $per_page_record, $total_records); $i++) {
                 $row = $result[$i];
                 // }
