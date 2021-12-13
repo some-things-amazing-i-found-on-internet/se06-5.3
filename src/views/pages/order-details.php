@@ -8,7 +8,11 @@
                         <h5 class="text-light-black fw-600"><?php echo $restaurant[0]['address'] ?></h5>
                         <span class="text-light-white fw-600"><?php echo "Thời gian bán hàng: " . $restaurant[0]['open_time'] . " - " . $restaurant[0]['close_time'] ."<br>" ?></span>
                         <span class="text-light-white">Ước lượng thời gian giao hàng:</span>
+                        <?php if($post_order[0]['status'] == '2') { ?>
+                            <h2 class="text-light-green fw-700 no-margin">Đơn hàng đã bị hủy</h2>
+                        <?php } else {?>
                         <h2 class="text-light-black fw-700 no-margin">19 phút</h2>
+                        <?php } ?>
                         <!-- <div id="add-listing-tab" class="step-app">
                             <ul class="step-steps">
                                 <li class="done">
@@ -127,7 +131,9 @@
                                 <h5 class="title text-light-black fw-700">Tổng cộng: <span><?php echo $post_order[0]['total']/1000 . ".000đ" ?></span></h5>
                             </div>
                         </div>
-                        <div class="col-12 d-flex"> <a href="#" class="btn-first white-btn fw-600 help-btn">Need Help?</a>
+                        <?php if($post_order[0]['status'] != '2') { ?>
+                        <div class="col-12 d-flex"> <a href="order-details&status=2" class="btn-first white-btn fw-600 help-btn">Hủy đơn hàng</a>
+                        <?php } ?>
                         </div>
                     </div>
                 </div>
