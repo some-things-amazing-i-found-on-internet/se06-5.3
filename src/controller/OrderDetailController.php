@@ -78,6 +78,19 @@ class OrderDetailController extends Model
         $query3->execute(array($orders[0]['order_id']));
         $post_order = $query3->fetchAll(\PDO::FETCH_ASSOC);
 
-        View::render("order-details", compact(['user', 'orders', 'post_order', 'total','param']));
+         $restaurant_sql = "SELECT *
+                        FROM dish_orderes
+                        JOIN dish_types
+                        ON dish_orderes._id = dish_types._id
+                        JOIN restaurants
+                        ON restaurants.id = dish_types.id_restaurant
+                        JOIN operating
+                        ON operating._id = restaurants._id
+                        WHERE dish_orderes.id = ?";
+        $query4 = $this->DB()->prepare($restaurant_sql);
+        $query4->execute(array($orders[0]['food_id']));
+        $restaurant = $query4->fetchAll(\PDO::FETCH_ASSOC);
+
+        View::render("order-details", compact(['user', 'orders', 'post_order', 'total','param', 'restaurant']));
     }
 }
