@@ -78,8 +78,8 @@ class HomeController extends Model
         if (isset($param['category'])) {
             $query_sql .= " AND restaurants.category_id = " . $param['category'];
         }
-        if (isset($param['str'])) {
-            $query_sql .= " AND (restaurants.name LIKE \"%" . $param['str'] . "%\" OR restaurants.restaurant_url LIKE \"%" . $param['str'] . "%\" OR restaurants.address LIKE \"%" . $param['str'] . "%\")";
+        if (isset($param['search'])) {
+            $query_sql .= " AND (restaurants.name LIKE \"%" . $param['search'] . "%\" OR restaurants.restaurant_url LIKE \"%" . $param['search'] . "%\" OR restaurants.address LIKE \"%" . $param['search'] . "%\")";
         }
         $query = $this->DB()->prepare($query_sql);
         $query->execute();

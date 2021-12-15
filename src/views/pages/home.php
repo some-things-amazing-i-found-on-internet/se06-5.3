@@ -4,7 +4,7 @@ $req_param_check = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
 parse_str($req_param_check, $param_check);
 $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
 parse_str($req_param, $param);
-if ($params_request[0] !== false || isset($param_check['page']) || isset($param['category'])) {
+if ($params_request[0] !== false || isset($param_check['page']) || isset($param_check['search']) || isset($param['category'])) {
 } else { ?>
     <section class="about-us-slider swiper-container p-relative">
         <div class="swiper-wrapper">
@@ -108,7 +108,7 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param[
 <!-- Browse by category -->
 <!-- your previous order -->
 <?php
-if ($params_request[0] !== false || isset($param_check['page']) || isset($param['category'])) {
+if ($params_request[0] !== false || isset($param_check['page']) || isset($param_check['search']) || isset($param['category'])) {
 } else {
 ?>
     <section class="recent-order section-padding">
@@ -198,7 +198,8 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param[
         <div class="row">
             <div class="col-12">
                 <div class="section-header-left">
-                    <h3 class="text-light-black header-title title">Explore our collections</h3>
+                    <h3 class="text-light-black header-title title"> <?php if (isset($param['search'])) echo "Search by \"" . $param['search'] . "\"";
+                                                                        else echo "Tất cả"; ?> </h3>
                 </div>
             </div>
         </div>
@@ -215,12 +216,10 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param[
         ?>
         <div class="row">
             <?php
-            $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
-            parse_str($req_param, $param);
 
             $str_param = "";
-            if (isset($param['str'])) {
-                $str_param .= "str=" . $param['str'] . "&";
+            if (isset($param['search'])) {
+                $str_param .= "search=" . $param['search'] . "&";
             }
             if (isset($param['category'])) {
                 $str_param .= "category=" . $param['category'] . "&page=";
