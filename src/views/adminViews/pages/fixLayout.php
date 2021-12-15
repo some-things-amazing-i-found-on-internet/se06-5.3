@@ -74,6 +74,10 @@
                     <a href="<?php echo $admin_prefixPath ?>restaurant"> <span><i class="fa fa-tasks fs-16"></i>Restaurants List</span>
                     </a>
                 </li>
+                <li class="menu-item">
+                    <a href="<?php echo $admin_prefixPath ?>new-restaurant"> <span><i class="fas fa-clipboard-list fs-16"></i>New restaurants</span>
+                    </a>
+                </li>
                 <!-- restaurants end -->
                 <!-- orders -->
                 <li class="menu-item">

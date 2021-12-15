@@ -74,7 +74,6 @@ class HomeController extends Model
                         JOIN restaurant_photos
                         ON restaurants._id = restaurant_photos._id
                         WHERE restaurant_photos.width = 1242";
-        // limit 27";
         if (isset($param['category'])) {
             $query_sql .= " AND restaurants.category_id = " . $param['category'];
         }
@@ -90,10 +89,18 @@ class HomeController extends Model
                         FROM  category_groups";
         $query2 = $this->DB()->prepare($query_sql2);
         $query2->execute();
-
         $result2 = $query2->fetchAll(\PDO::FETCH_ASSOC);
 
+        $previous_order_sql = "SELECT * 
+                                FROM pre_orders
+                                JOIN dish_orderes
+                                ON pre_orders.food_id = dish_orderes.id
+                                WHERE customer_id = ? AND pre_orders.order_id >= ALL(SELECT order_id
+                                                                                FROM pre_orders);";
+        $query3 = $this->DB()->prepare($previous_order_sql);
+        $query3->execute(array($_SESSION['customer']['id']));
+        $result3 = $query3->fetchAll(\PDO::FETCH_ASSOC);
 
-        View::render("home", compact(["result", "result2", "params_request"]));
+        View::render("home", compact(["result", "result2", "params_request", "result3"]));
     }
 }
