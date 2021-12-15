@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2021 at 01:20 PM
+-- Generation Time: Dec 15, 2021 at 05:33 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -36,16 +36,19 @@ CREATE TABLE `new_restaurants` (
   `restaurant_email` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL,
   `district` varchar(255) NOT NULL,
-  `restaurant_address` varchar(255) NOT NULL
+  `restaurant_address` varchar(255) NOT NULL,
+  `restaurant_status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `new_restaurants`
 --
 
-INSERT INTO `new_restaurants` (`restaurant_id`, `restaurant_name`, `restaurant_phone`, `manager`, `manager_phone`, `restaurant_email`, `city`, `district`, `restaurant_address`) VALUES
-(2, 'jhgj', 'jghj', 'jghj', 'jghj', 'dfdf@hghg', 'gdf', 'gdfg', 'gdfg'),
-(3, 'fsdfsd', '0132234564', 'fsdfsd', '01321324564', 'mnvhgmghm@gmail.com', 'dasda', 'gdfgdf', 'dsadasdasd');
+INSERT INTO `new_restaurants` (`restaurant_id`, `restaurant_name`, `restaurant_phone`, `manager`, `manager_phone`, `restaurant_email`, `city`, `district`, `restaurant_address`, `restaurant_status`) VALUES
+(2, 'jhgj', 'jghj', 'jghj', 'jghj', 'dfdf@hghg', 'gdf', 'gdfg', 'gdfg', 2),
+(3, 'fsdfsd', '0132234564', 'fsdfsd', '01321324564', 'mnvhgmghm@gmail.com', 'dasda', 'gdfgdf', 'dsadasdasd', 2),
+(4, 'bla', '0123456789', 'hieu', '0987654321', 'xyz@gmail', 'ha loi', 'thanh xuan', '334.5 Nguyen Trai', 2),
+(5, 'hfg', 'hfgh', 'h', 'kjkj', 'hfgh@jhg', 'khj', 'khj', 'khj', 2);
 
 --
 -- Indexes for dumped tables
@@ -65,7 +68,7 @@ ALTER TABLE `new_restaurants`
 -- AUTO_INCREMENT for table `new_restaurants`
 --
 ALTER TABLE `new_restaurants`
-  MODIFY `restaurant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `restaurant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
