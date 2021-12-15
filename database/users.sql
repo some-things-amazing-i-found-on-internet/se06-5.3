@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2021 at 03:19 PM
+-- Generation Time: Dec 15, 2021 at 04:06 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -37,17 +37,18 @@ CREATE TABLE `users` (
   `road` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
   `role` int(1) NOT NULL DEFAULT 0,
-  `payment_default` int(1) NOT NULL DEFAULT 2
+  `payment_default` int(1) NOT NULL DEFAULT 2,
+  `Status` int(10) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `user_password`, `fname`, `lname`, `address`, `road`, `phone`, `role`, `payment_default`) VALUES
-(6, '123@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'pham', 'hfgh', '12 379th st 70 Brooklyn, NY 11209\n', 'Vy Street, Rite Aid', '(347) 1234564239', 0, 2),
-(7, 'lthnh15032001@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'Lê', 'Đạt', NULL, NULL, NULL, 0, 14),
-(8, 'duchuyvp123@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'Nguyễn', 'Đức Huy', '334 Nguyễn Trãi', 'Vy Street, Brook Lyn', '+84823544435', 0, 17);
+INSERT INTO `users` (`id`, `email`, `user_password`, `fname`, `lname`, `address`, `road`, `phone`, `role`, `payment_default`, `Status`) VALUES
+(6, '123@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'pham', 'hfgh', '12 379th st 70 Brooklyn, NY 11209\n', 'Vy Street, Rite Aid', '(347) 1234564239', 0, 2, 1),
+(7, 'lthnh15032001@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'Lê', 'Đạt', NULL, NULL, NULL, 0, 14, 1),
+(8, 'duchuyvp123@gmail.com', '25f9e794323b453885f5181f1b624d0b', 'Nguyễn', 'Huy', '334 Nguyễn Trãi', 'Vy Street, Brook Lyn', '+84823544435', 2, 5, 1);
 
 --
 -- Indexes for dumped tables
