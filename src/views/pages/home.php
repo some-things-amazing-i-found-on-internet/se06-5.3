@@ -2,8 +2,8 @@
 <?php
 $req_param_check = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
 parse_str($req_param_check, $param_check);
-$req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
-parse_str($req_param, $param);
+// $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+// parse_str($req_param, $param);
 if ($params_request[0] !== false || isset($param_check['page']) || isset($param_check['search']) || isset($param['category'])) {
 } else { ?>
     <section class="about-us-slider swiper-container p-relative">
@@ -180,7 +180,7 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
                                                     <div class="card-body">
                                                         <form>
                                                             <label class="custom-checkbox">
-                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Cửa hàng đã đặt trước đó  <span class="text-light-white">(3)</span>
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Cửa hàng đã đặt trước đó <span class="text-light-white">(3)</span>
                                                             </label>
                                                             <label class="custom-checkbox">
                                                                 <input type="checkbox" name="#"> <span class="checkmark"></span> Free Ship <span class="text-light-white">(6)</span>
@@ -219,7 +219,7 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
                                             </div>
                                             <div class="card">
                                                 <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#deliverycollapseFour">
-                                                Price
+                                                        Price
                                                     </a>
                                                 </div>
                                                 <div id="deliverycollapseFour" class="collapse show">
@@ -400,7 +400,7 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
                         </div>
                     </div>
                 </div>
-              
+
             </aside>
             <div class="col-9">
                 <div class="row">

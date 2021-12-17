@@ -67,8 +67,9 @@ class HomeController extends Model
 
         $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
         parse_str($req_param, $param);
-        // print($params);
-        // echo var_dump($params_request) ;
+        if (isset($_POST['search'])) {
+            $param['search'] = $_POST['search'];
+        }
         $query_sql = "SELECT *
                         FROM restaurants
                         JOIN restaurant_photos
@@ -91,7 +92,7 @@ class HomeController extends Model
         $query2->execute();
         $result2 = $query2->fetchAll(\PDO::FETCH_ASSOC);
 
-        $previous_order_sql = "SELECT * 
+        $previous_order_sql = "SELECT *
                                 FROM pre_orders
                                 JOIN dish_orderes
                                 ON pre_orders.food_id = dish_orderes.id
@@ -101,6 +102,6 @@ class HomeController extends Model
         $query3->execute(array($_SESSION['customer']['id']));
         $result3 = $query3->fetchAll(\PDO::FETCH_ASSOC);
 
-        View::render("home", compact(["result", "result2", "params_request", "result3"]));
+        View::render("home", compact(["result", "result2", "params_request", "result3", "param"]));
     }
 }
