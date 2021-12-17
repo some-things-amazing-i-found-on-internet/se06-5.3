@@ -69,7 +69,9 @@
                                                         ?>
                                                                 <div class="form-group">
                                                                     <div class="credit-card amex-card-front p-relative ">
-                                                                        <input type="text" name="#" class="form-control form-control-submit" <?php if ($wallet['id'] == $user['payment_default']) echo "style=\"background-color: #3CBC8D\""; ?> value="  <?php echo $wallet['number']; ?>">
+                                                                        <form method="POST">
+                                                                            <button type="submit" name="newdefaultid" class="form-control form-control-submit" <?php if ($wallet['id'] == $user['payment_default']) echo "style=\"background-color: #3CBC8D\""; ?> value="<?php echo $wallet['id']; ?>"><?php echo $wallet['number']; ?></button>
+                                                                        </form>
                                                                     </div>
                                                                 </div>
                                                         <?php
@@ -127,7 +129,9 @@
                                                         ?>
                                                                 <div class="form-group">
                                                                     <div class="credit-card amex-card-front p-relative ">
-                                                                        <input type="text" name="#" class="form-control form-control-submit" <?php if ($card['id'] == $user['payment_default']) echo "style=\"background-color: #3CBC8D\""; ?> value="<?php echo $card['type'] . "\t"; ?>  <?php echo $card['number'] . "\t"; ?> exp <?php echo $card['vaild']; ?>">
+                                                                        <form method="POST">
+                                                                            <button type="submit" name="newdefaultid" class="form-control form-control-submit" <?php if ($card['id'] == $user['payment_default']) echo "style=\"background-color: #3CBC8D\""; ?> value="<?php echo $card['id']; ?>"><?php echo $card['type'] . "\t"; ?> <?php echo $card['number'] . "\t"; ?> exp <?php echo $card['vaild']; ?></button>
+                                                                        </form>
                                                                     </div>
                                                                 </div>
                                                         <?php
@@ -221,7 +225,9 @@
                                                         ?>
                                                                 <div class="form-group">
                                                                     <div class="credit-card amex-card-front p-relative ">
-                                                                        <input type="text" name="#" class="form-control form-control-submit" <?php if ($atm['id'] == $user['payment_default']) echo "style=\"background-color: #3CBC8D\""; ?> value="  <?php echo $atm['type'] . "\t"; ?> <?php echo $atm['number']; ?>">
+                                                                        <form method="POST">
+                                                                            <button type="submit" name="newdefaultid" class="form-control form-control-submit" <?php if ($atm['id'] == $user['payment_default']) echo "style=\"background-color: #3CBC8D\""; ?> value="<?php echo $atm['id']; ?>"><?php echo $atm['type'] . "\t"; ?> <?php echo $atm['number']; ?></button>
+                                                                        </form>
                                                                     </div>
                                                                 </div>
                                                         <?php

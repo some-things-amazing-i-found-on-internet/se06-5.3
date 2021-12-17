@@ -50,6 +50,14 @@ class PaymentController extends Model
         }
         $user = $_SESSION['customer'];
 
+        if (isset($_POST['newdefaultid'])) {
+            $update_sql = "UPDATE users SET payment_default=" . $_POST['newdefaultid'] . " WHERE id=" . $user['id'];
+            $payment = $this->DB()->prepare($update_sql);
+            $payment->execute();
+
+            $user['payment_default'] = $_POST['newdefaultid'];
+            $_SESSION['customer']['payment_default'] = $_POST['newdefaultid'];
+        }
 
         if (isset($_POST['newwalletnumber'])) {
             $wallet_sql = "INSERT INTO payment(`id_user`, `type`, `number`, `vaild`, `method`) VALUES (:id, 'Ví ShopeePay', :num, '', 1)";
