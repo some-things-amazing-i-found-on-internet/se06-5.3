@@ -47,15 +47,14 @@ class NewRestaurantController extends Model
         if($params_request[0]) {
             $id = str_replace("id=", "", $params_request[0]);
             $update_sql = "UPDATE new_restaurants
-                            SET restaurant_status = 2
+                            SET restaurant_status = 1
                             WHERE restaurant_id = ?";
             $update = $this->DB()->prepare($update_sql);
             $update->execute(array($id));
         }
 
         $query_sql = "SELECT *
-                        FROM new_restaurants
-                        WHERE restaurant_status = 0";
+                        FROM new_restaurants";
         $query = $this->DB()->prepare($query_sql);
         $query->execute();
         $result = $query->fetchAll(\PDO::FETCH_ASSOC);

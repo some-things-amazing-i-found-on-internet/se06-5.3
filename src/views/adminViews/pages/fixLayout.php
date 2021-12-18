@@ -87,17 +87,6 @@
                 <!-- orders end -->
 
                 <!-- product -->
-                <li class="menu-item">
-                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#product" aria-expanded="false" aria-controls="product"> <span><i class="fa fa-archive fs-16"></i>Menus </span>
-                    </a>
-                    <ul id="product" class="collapse" aria-labelledby="product" data-parent="#side-nav-accordion">
-                        <li> <a href="<?php echo $admin_prefixPath ?>menu-list">Menu List</a>
-                        </li>
-                        <li> <a href="<?php echo $admin_prefixPath ?>add-menu">Add Product</a>
-                        </li>
-
-                    </ul>
-                </li>
                 <!-- product end -->
 
                 <!-- Invoice -->

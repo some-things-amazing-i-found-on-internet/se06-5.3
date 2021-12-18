@@ -44,7 +44,15 @@ class MenuListController extends Model
 
     public function index($params_request): void
     {
+        $id = str_replace("id=", "", $params_request[0]);
+        
+        $query_sql = "SELECT *
+                        FROM new_food
+                        WHERE restaurant_id = ?";
+        $query = $this->DB()->prepare($query_sql);
+        $query->execute(array($id));
+        $result = $query->fetchAll(\PDO::FETCH_ASSOC);
 
-        View::render_admin("product\/productlist", compact(["params_request"]), array("datatables.min.js","data-tables.js"));
+        View::render_admin("product\/productlist", compact(["params_request", "id", "result"]), array("datatables.min.js","data-tables.js"));
     }
 }

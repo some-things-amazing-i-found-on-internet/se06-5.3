@@ -73,7 +73,7 @@
                                               <th scope="col">Location</th>
                                               <th scope="col">Phone</th>
 
-                                              <th scope="col">Food Link</th>
+                                              <th scope="col">Menu</th>
                                               <th scope="col">Lock</th>
 
                                           </tr>
@@ -92,11 +92,20 @@
                                                   </ul>
                                               </td>
                                               <td>
-                                                  <a target="__blank" href=""><i class='fas fa-paper-plane text-secondary text-success'></i></a>
+                                                  <a target="__blank" href="<?php echo "menu-list&id=" . $row['restaurant_id'] ?>"><i class='fas fa-paper-plane text-secondary text-success'></i></a>
                                               </td>
                                               <td>
-                                                  <a href="<?php echo "new-restaurant&id=" . $row['restaurant_id'] ?>"><i class='fas fa-lock text-secondary'></i></a>
-                                                  <!-- <a href='a.html'><i class='far fa-trash-alt ms-text-danger'></i></a> -->
+                                                <?php
+                                                if ($row['restaurant_status'] == "0") {
+                                                ?>
+                                                  <a href="<?php echo "new-restaurant&id=" . $row['restaurant_id'] ?>"><i class='fa fa-lock text-secondary'></i></a>
+                                                <?php
+                                                } else {
+                                                ?>
+                                                  <a href=""><i class='fa fa-unlock-alt text-secondary'></i></a>
+                                                <?php 
+                                                }  
+                                                ?>
                                               </td>
                                           </tr>
                                       </tbody>
