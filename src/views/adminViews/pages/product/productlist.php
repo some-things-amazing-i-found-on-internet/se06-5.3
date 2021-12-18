@@ -21,7 +21,7 @@
             <div class="ms-card-body">
               <div class="new">
                 <h6 class="mb-0"><?php echo $row['food_name'] ?> </h6>
-                <h6 class="ms-text-primary mb-0"><?php echo $row['food_price']/1000 . ".000" . $row['food_unit'] ?></h6>
+                <h6 class="ms-text-primary mb-0"><?php echo number_format($row['food_price']) . $row['food_unit'] ?></h6>
               </div>
               <p><?php echo "Mô tả: " . $row['food_description'] ?></p>
               <div class="new mb-0">
