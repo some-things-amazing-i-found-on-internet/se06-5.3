@@ -71,18 +71,19 @@
                             </div>
                             <!-- logo -->
                             <div class="main-search mainNavCol">
-                                <form class="main-search search-form full-width">
+                                <form class="main-search search-form full-width" method="POST" action="home">
                                     <div class="row">
+                                        <!-- search -->
+                                        <div class="col-lg-6 col-md-7">
+                                            <div class="search-box padding-10">
+                                                <input type="text" name="search" class="form-control" placeholder="Pizza, Burger, Chinese">
+                                            </div>
+                                        </div>
+
                                         <!-- location picker -->
                                         <div class="col-lg-6 col-md-5">
                                         </div>
                                         <!-- location picker -->
-                                        <!-- search -->
-                                        <div class="col-lg-6 col-md-7">
-                                            <div class="search-box padding-10">
-                                                <input type="text" class="form-control" placeholder="Pizza, Burger, Chinese">
-                                            </div>
-                                        </div>
                                         <!-- search -->
                                     </div>
                                 </form>

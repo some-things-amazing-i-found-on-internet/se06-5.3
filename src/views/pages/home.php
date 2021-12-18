@@ -2,9 +2,9 @@
 <?php
 $req_param_check = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
 parse_str($req_param_check, $param_check);
-$req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
-parse_str($req_param, $param);
-if ($params_request[0] !== false || isset($param_check['page']) || isset($param['category'])) {
+// $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+// parse_str($req_param, $param);
+if ($params_request[0] !== false || isset($param_check['page']) || isset($param_check['search']) || isset($param['category'])) {
 } else { ?>
     <section class="about-us-slider swiper-container p-relative">
         <div class="swiper-wrapper">
@@ -108,7 +108,7 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param[
 <!-- Browse by category -->
 <!-- your previous order -->
 <?php
-if ($params_request[0] !== false || isset($param_check['page']) || isset($param['category'])) {
+if ($params_request[0] !== false || isset($param_check['page']) || isset($param_check['search']) || isset($param['category'])) {
 } else {
 ?>
     <section class="recent-order section-padding">
@@ -119,19 +119,19 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param[
                         <h3 class="text-light-black header-title title">Đơn hàng mới đặt gần đây<span class="fs-14"><a href="history">Xem lịch sử đơn hàng</a></span></h3>
                     </div>
                 </div>
-                <?php foreach($result3 as $row) { ?>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="product-box mb-md-20">
-                        <div class="product-img">
-                            <img style="width: 260px; height: 235px;" src= <?php echo $row['photos'] ?> class="img-fluid full-width" alt="product-img">
-                        </div>
-                        <div class="product-caption">
-                            <h6 class="product-title"><a class="text-light-black"> <?php echo $row['name'] ?></a></h6>
-                            <p class="text-light-white"><?php echo "Số lượng: ". $row['quantity_order'] ?></p>
-                            <p class="text-light-white"><?php echo "Đơn giá: ". $row['price_text'] ?></p>
+                <?php foreach ($result3 as $row) { ?>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="product-box mb-md-20">
+                            <div class="product-img">
+                                <img style="width: 260px; height: 235px;" src=<?php echo $row['photos'] ?> class="img-fluid full-width" alt="product-img">
+                            </div>
+                            <div class="product-caption">
+                                <h6 class="product-title"><a class="text-light-black"> <?php echo $row['name'] ?></a></h6>
+                                <p class="text-light-white"><?php echo "Số lượng: " . $row['quantity_order'] ?></p>
+                                <p class="text-light-white"><?php echo "Đơn giá: " . $row['price_text'] ?></p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php } ?>
             </div>
         </div>
@@ -146,98 +146,344 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param[
 <section class="ex-collection section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="section-header-left">
-                    <h3 class="text-light-black header-title title">Explore our collections</h3>
-                </div>
-            </div>
-        </div>
-        <?php
-        // $statement = $pdo->prepare("SELECT * FROM tbl_product WHERE p_is_active=? ORDER BY p_id DESC");
-        // $statement->execute(array(1));
-        // $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-        // foreach ($result as $row) {
-        //     echo '<script>';
-        //     echo 'console.log('. json_encode($row, JSON_HEX_TAG) .')';
-        //     echo '</script>';
-        //     print $row['p_id'] . "</br>";
-        // }
-        ?>
-        <div class="row">
-            <?php
-            $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
-            parse_str($req_param, $param);
-
-            $str_param = "";
-            if (isset($param['str'])) {
-                $str_param .= "str=" . $param['str'] . "&";
-            }
-            if (isset($param['category'])) {
-                $str_param .= "category=" . $param['category'] . "&page=";
-            } else {
-                $str_param .= "page=";
-            }
-
-            if (!isset($param['page'])) {
-                $page = 1;
-            } else {
-                $page = $param['page'];
-            }
-            $per_page_record = 27;
-            $total_records = count($result);
-            $total_pages = ceil($total_records / $per_page_record);
-
-            $start_from = ($page - 1) * $per_page_record;
-
-            for ($i = $start_from; $i < min($start_from + $per_page_record, $total_records); $i++) {
-                $row = $result[$i];
-                // }
-                // foreach ($result as $row) {
-            ?>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="product-box mb-xl-20">
-                        <div class="product-img">
-                            <a href="<?php echo 'restaurant&' . $row['id'] ?>">
-                                <img src=<?php echo $row['value'] ?> class="img-fluid full-width" alt="product-img">
-                            </a>
-                            <div class="overlay">
-                                <div class="product-tags padding-10"> <span class="circle-tag">
-                                        <img src="assets/img/svg/013-heart-1.svg" alt="tag">
-                                    </span>
-                                    <div class="custom-tag"> <span class="text-custom-white rectangle-tag bg-gradient-red">
-                                            10%
-                                        </span>
+            <aside class="col-lg-3 mb-md-40">
+                <div class="filter-sidebar mb-5">
+                    <h4 class="text-light-black fw-600 title-2">Filters<small class="fs-12"><a href="#" class="text-light-black fw-500">Clear all</a></small></h4>
+                    <div class="sidebar-tab">
+                        <ul class="nav nav-pills mb-xl-20">
+                            <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#restaurents">Restaurants</a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" data-toggle="pill" href="#caterings">Caterings</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="restaurents">
+                                <div class="siderbar-innertab">
+                                    <ul class="nav nav-pills">
+                                        <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#delivery-restaurents">Delivery</a>
+                                        </li>
+                                        <li class="nav-item"> <a class="nav-link" data-toggle="pill" href="#pickup-restaurents">Pickup</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="delivery-restaurents">
+                                        <p class="text-light-black delivery-type p-relative">Delivery my food <a href="#">Today, ASAP</a>
+                                        </p>
+                                        <div class="filters">
+                                            <div class="card">
+                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#deliverycollapseOne">
+                                                        Feature
+                                                    </a>
+                                                </div>
+                                                <div id="deliverycollapseOne" class="collapse show">
+                                                    <div class="card-body">
+                                                        <form>
+                                                            <label class="custom-checkbox">
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Cửa hàng đã đặt trước đó <span class="text-light-white">(3)</span>
+                                                            </label>
+                                                            <label class="custom-checkbox">
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Free Ship <span class="text-light-white">(6)</span>
+                                                            </label>
+                                                            <label class="custom-checkbox">
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Open Now [6:05am] <span class="text-light-white">(10)</span>
+                                                            </label>
+                                                            <!-- <label class="custom-checkbox">
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Free Delivery <span class="text-light-white">(6)</span>
+                                                            </label> -->
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#deliverycollapseTwo">
+                                                        Rating
+                                                    </a>
+                                                </div>
+                                                <div id="deliverycollapseTwo" class="collapse show">
+                                                    <div class="card-body">
+                                                        <div class="rating">
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#deliverycollapseFour">
+                                                        Price
+                                                    </a>
+                                                </div>
+                                                <div id="deliverycollapseFour" class="collapse show">
+                                                    <div class="card-body">
+                                                        <div class="delivery-slider">
+                                                            <input type="text" class="delivery-range-slider" value="" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pickup-restaurents">
+                                        <p class="text-light-black delivery-type p-relative">Pick my food <a href="#">Today, ASAP</a>
+                                        </p>
+                                        <div class="filters">
+                                            <div class="card">
+                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#pickupcollapseOne">
+                                                        Feature
+                                                    </a>
+                                                </div>
+                                                <div id="pickupcollapseOne" class="collapse show">
+                                                    <div class="card-body">
+                                                        <form>
+                                                            <label class="custom-checkbox">
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Coupons <span class="text-light-white">(1)</span>
+                                                            </label>
+                                                            <label class="custom-checkbox">
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> New <span class="text-light-white">(26)</span>
+                                                            </label>
+                                                            <label class="custom-checkbox">
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Open Now [7:08am] <span class="text-light-white">(236)</span>
+                                                            </label>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#pickupcollapseTwo">
+                                                        Rating
+                                                    </a>
+                                                </div>
+                                                <div id="pickupcollapseTwo" class="collapse show">
+                                                    <div class="card-body">
+                                                        <div class="rating">
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#pickupcollapseThree">
+                                                        Price
+                                                    </a>
+                                                </div>
+                                                <div id="pickupcollapseThree" class="collapse show">
+                                                    <div class="card-body">
+                                                        <div class="rating">
+                                                            <button class="text-success">$</button>
+                                                            <button class="text-success">$$</button>
+                                                            <button class="text-success">$$$</button>
+                                                            <button class="text-success">$$$$</button>
+                                                            <button class="text-success">$$$$$</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#pickupcollapseFour">
+                                                        Distance
+                                                    </a>
+                                                </div>
+                                                <div id="pickupcollapseFour" class="collapse show">
+                                                    <div class="card-body">
+                                                        <div class="delivery-slider">
+                                                            <input type="text" class="distance-range-slider" value="" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="caterings">
+                                <div class="siderbar-innertab">
+                                    <ul class="nav nav-pills">
+                                        <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#delivery-caterings">Delivery</a>
+                                        </li>
+                                        <li class="nav-item"> <a class="nav-link disabled" data-toggle="pill" href="#pickup-caterings">Pickup</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="delivery-caterings">
+                                        <p class="text-light-black delivery-type p-relative">Delivery my food <a href="#">Today, ASAP</a>
+                                        </p>
+                                        <div class="filters">
+                                            <div class="card">
+                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#delivery-cateringscollapseOne">
+                                                        Feature
+                                                    </a>
+                                                </div>
+                                                <div id="delivery-cateringscollapseOne" class="collapse show">
+                                                    <div class="card-body">
+                                                        <form>
+                                                            <label class="custom-checkbox">
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Coupons <span class="text-light-white">(2)</span>
+                                                            </label>
+                                                            <label class="custom-checkbox">
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> New <span class="text-light-white">(3)</span>
+                                                            </label>
+                                                            <label class="custom-checkbox">
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Order Tracking <span class="text-light-white">(6)</span>
+                                                            </label>
+                                                            <label class="custom-checkbox">
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Open Now [6:05am] <span class="text-light-white">(10)</span>
+                                                            </label>
+                                                            <label class="custom-checkbox">
+                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Free Delivery <span class="text-light-white">(6)</span>
+                                                            </label>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#delivery-cateringscollapseTwo">
+                                                        Rating
+                                                    </a>
+                                                </div>
+                                                <div id="delivery-cateringscollapseTwo" class="collapse show">
+                                                    <div class="card-body">
+                                                        <div class="rating">
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                            <button class="text-yellow"><i class="fas fa-star"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#delivery-cateringscollapseThree">
+                                                        Price
+                                                    </a>
+                                                </div>
+                                                <div id="delivery-cateringscollapseThree" class="collapse show">
+                                                    <div class="card-body">
+                                                        <div class="rating">
+                                                            <button class="text-success">$</button>
+                                                            <button class="text-success">$$</button>
+                                                            <button class="text-success">$$$</button>
+                                                            <button class="text-success">$$$$</button>
+                                                            <button class="text-success">$$$$$</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="product-caption">
-                            <div class="title-box">
-                                <h6 class="product-title"><a href="<?php echo 'restaurant&id=' . $row['id'] ?>" class="text-light-black "><?php echo $row['name'] ?></a></h6>
-                                <div class="tags"> <span class="text-custom-white rectangle-tag bg-yellow">
-                                        <?php
-                                        echo $row['rating_avg'];
-                                        ?>
-                                        <i class="fas fa-star"></i>
-                                    </span>
+                    </div>
+                </div>
+
+            </aside>
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-header-left">
+                            <h3 class="text-light-black header-title title"> <?php if (isset($param['search'])) echo "Search by \"" . $param['search'] . "\"";
+                                                                                else echo "Tất cả"; ?> </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php
+
+                    $str_param = "";
+                    if (isset($param['search'])) {
+                        $str_param .= "search=" . $param['search'] . "&";
+                    }
+                    if (isset($param['category'])) {
+                        $str_param .= "category=" . $param['category'] . "&page=";
+                    } else {
+                        $str_param .= "page=";
+                    }
+
+                    if (!isset($param['page'])) {
+                        $page = 1;
+                    } else {
+                        $page = $param['page'];
+                    }
+                    $per_page_record = 27;
+                    $total_records = count($result);
+                    $total_pages = ceil($total_records / $per_page_record);
+
+                    $start_from = ($page - 1) * $per_page_record;
+
+                    for ($i = $start_from; $i < min($start_from + $per_page_record, $total_records); $i++) {
+                        $row = $result[$i];
+                        // }
+                        // foreach ($result as $row) {
+                    ?>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product-box mb-xl-20">
+                                <div class="product-img">
+                                    <a href="<?php echo 'restaurant&' . $row['id'] ?>">
+                                        <img src=<?php echo $row['value'] ?> class="img-fluid full-width" alt="product-img">
+                                    </a>
+                                    <div class="overlay">
+                                        <div class="product-tags padding-10"> <span class="circle-tag">
+                                                <img src="assets/img/svg/013-heart-1.svg" alt="tag">
+                                            </span>
+                                            <div class="custom-tag"> <span class="text-custom-white rectangle-tag bg-gradient-red">
+                                                    10%
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <p class="text-light-white"><?php echo $row['address'] ?></p>
-                            <div class="product-details">
-                                <div class="price-time"> <span class="text-light-black time"><?php echo "Giới hạn khoảng cách: " . ((int)$row["limit_distance"]) / 1000 . "km" ?></span>
-                                    <span class="text-light-white price"><?php echo "Giá trung bình: " . str_replace("k", ".000đ", $row["price_range"]) ?></span>
-                                </div>
-                                <div class="rating"> <span>
-                                        <i class="fas fa-star text-yellow"></i>
-                                        <i class="fas fa-star text-yellow"></i>
-                                        <i class="fas fa-star text-yellow"></i>
-                                        <i class="fas fa-star text-yellow"></i>
-                                        <i class="fas fa-star text-yellow"></i>
-                                    </span>
-                                    <span class="text-light-white text-right"><?php echo $row["rating_display_total_review"] . " " . "ratings" ?></span>
-                                </div>
-                            </div>
-                            <!-- <div class="product-footer"> <span class="text-custom-white square-tag">
+                                <div class="product-caption">
+                                    <div class="title-box">
+                                        <h6 class="product-title"><a href="<?php echo 'restaurant&id=' . $row['id'] ?>" class="text-light-black "><?php echo $row['name'] ?></a></h6>
+                                        <div class="tags"> <span class="text-custom-white rectangle-tag bg-yellow">
+                                                <?php
+                                                echo $row['rating_avg'];
+                                                ?>
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="text-light-white"><?php echo $row['address'] ?></p>
+                                    <div class="product-details">
+                                        <div class="price-time"> <span class="text-light-black time"><?php echo "Giới hạn khoảng cách: " . ((int)$row["limit_distance"]) / 1000 . "km" ?></span>
+                                            <span class="text-light-white price"><?php echo "Giá trung bình: " . str_replace("k", ".000đ", $row["price_range"]) ?></span>
+                                        </div>
+                                        <div class="rating"> <span>
+                                                <i class="fas fa-star text-yellow"></i>
+                                                <i class="fas fa-star text-yellow"></i>
+                                                <i class="fas fa-star text-yellow"></i>
+                                                <i class="fas fa-star text-yellow"></i>
+                                                <i class="fas fa-star text-yellow"></i>
+                                            </span>
+                                            <span class="text-light-white text-right"><?php echo $row["rating_display_total_review"] . " " . "ratings" ?></span>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="product-footer"> <span class="text-custom-white square-tag">
                                     <img src="assets/img/svg/004-leaf.svg" alt="tag">
                                 </span>
                                 <span class="text-custom-white square-tag">
@@ -253,46 +499,49 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param[
                                     <img src="assets/img/svg/009-lemon.svg" alt="tag">
                                 </span>
                             </div> -->
+                                </div>
+                            </div>
                         </div>
-                    </div>
+
+                    <?php
+                    }
+
+                    echo '<div class="col-lg-12 d-flex justify-content-center mt-3"><nav aria-label="Page navigation example"><ul class="pagination">';
+                    $pagLink = "";
+
+                    if ($page >= 2) {
+                        echo "<li class='page-item'><a class='page-link' href='home?" . $str_param . ($page - 1) . "'>  Prev </a></li>";
+                        $pagLink .= "<a class='page-link' href='home?" . $str_param . "1'>1</a>";
+                    }
+
+                    if ($page > 3) {
+                        $pagLink .= "<b>......</b>";
+                    }
+                    if ($page > 2) {
+                        $pagLink .= "<li class='page-item'><a class='page-link' href='home?" . $str_param . (intval($page) - 1) . "'>" . (intval($page) - 1) . " </a></li>";
+                    }
+
+                    $pagLink .= "<li class='page-item active'><a class = 'page-link' href='home?" . $str_param . $page . "'>" . $page  . " </a></li>";
+                    if ($page < intval($total_pages) - 1) {
+                        // print $page + 1;
+                        $pagLink .= "<li class='page-item'><a class='page-link' href='home?" . $str_param . (intval($page) + 1) . "'>" . (intval($page) + 1) . " </a></li>";
+                    }
+                    if ($page < $total_pages - 2) {
+                        $pagLink .= "<b>......</b>";
+                    }
+
+                    if ($page < $total_pages) {
+                        $pagLink .= "<li class='page-item'><a class='page-link' href='home?" . $str_param . $total_pages . "'>" . $total_pages . " </a></li>";
+                        $pagLink .= "<li class='page-item'><a class='page-link' href='home?" . $str_param . (intval($page) + 1) . "'>  Next </a></li>";
+                    }
+
+                    echo $pagLink;
+                    echo '</ul></nav></div>';
+                    // cho Hiếu làm mấy cái nút cho đẹp nhá
+                    ?>
                 </div>
-
-            <?php
-            }
-
-            echo '<div class="col-lg-12 d-flex justify-content-center mt-3"><nav aria-label="Page navigation example"><ul class="pagination">';
-            $pagLink = "";
-
-            if ($page >= 2) {
-                echo "<li class='page-item'><a class='page-link' href='home?" . $str_param . ($page - 1) . "'>  Prev </a></li>";
-                $pagLink .= "<a class='page-link' href='home?" . $str_param . "1'>1</a>";
-            }
-
-            if ($page > 3) {
-                $pagLink .= "<b>......</b>";
-            }
-            if ($page > 2) {
-                $pagLink .= "<li class='page-item'><a class='page-link' href='home?" . $str_param . (intval($page) - 1) . "'>" . (intval($page) - 1) . " </a></li>";
-            }
-
-            $pagLink .= "<li class='page-item active'><a class = 'page-link' href='home?" . $str_param . $page . "'>" . $page  . " </a></li>";
-            if ($page < intval($total_pages) - 1) {
-                // print $page + 1;
-                $pagLink .= "<li class='page-item'><a class='page-link' href='home?" . $str_param . (intval($page) + 1) . "'>" . (intval($page) + 1) . " </a></li>";
-            }
-            if ($page < $total_pages - 2) {
-                $pagLink .= "<b>......</b>";
-            }
-
-            if ($page < $total_pages) {
-                $pagLink .= "<li class='page-item'><a class='page-link' href='home?" . $str_param . $total_pages . "'>" . $total_pages . " </a></li>";
-                $pagLink .= "<li class='page-item'><a class='page-link' href='home?" . $str_param . (intval($page) + 1) . "'>  Next </a></li>";
-            }
-
-            echo $pagLink;
-            echo '</ul></nav></div>';
-            // cho Hiếu làm mấy cái nút cho đẹp nhá
-            ?>
+            </div>
         </div>
+
 </section>
 <!-- Explore collection -->
