@@ -71,7 +71,7 @@
                             </div>
                             <!-- logo -->
                             <div class="main-search mainNavCol">
-                                <form class="main-search search-form full-width" method="POST" action="home">
+                                <form class="main-search search-form full-width" method="GET" action="">
                                     <div class="row">
                                         <!-- search -->
                                         <div class="col-lg-6 col-md-7">

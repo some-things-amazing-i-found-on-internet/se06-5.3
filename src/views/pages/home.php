@@ -82,7 +82,7 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
                         foreach ($result2 as $row2) {
                         ?>
                             <div class="swiper-slide">
-                                <a href="home?category=<?php echo $row2['id'] ?>" class="categories">
+                                <a href="home?search=<?php echo $param['search'] ?>&category=<?php echo $row2['id'] ?>" class="categories">
                                     <div class="icon text-custom-white <?php
                                                                         if (isset($param['category']) && $row2['id'] === $param['category']) {
                                                                             echo 'bg-danger';
@@ -406,7 +406,7 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
                 <div class="row">
                     <div class="col-12">
                         <div class="section-header-left">
-                            <h3 class="text-light-black header-title title"> <?php if (isset($param['search'])) echo "Search by \"" . $param['search'] . "\"";
+                            <h3 class="text-light-black header-title title"> <?php if ($param['search'] != '') echo "Search by \"" . $param['search'] . "\"";
                                                                                 else echo "Tất cả"; ?> </h3>
                         </div>
                     </div>
