@@ -67,11 +67,9 @@ class HomeController extends Model
 
         $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
         parse_str($req_param, $param);
-        // if (isset($_GET['search'])) {
-        //     $param['search'] = $_GET['search'];
-        // } else {
-        //     $param['search'] = '';
-        // }
+        if (!isset($param['search'])) {
+            $param['search'] = '';
+        }
         $query_sql = "SELECT *
                         FROM restaurants
                         JOIN restaurant_photos
