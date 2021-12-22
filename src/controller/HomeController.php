@@ -81,6 +81,23 @@ class HomeController extends Model
         if (isset($param['search'])) {
             $query_sql .= " AND (restaurants.name LIKE \"%" . $param['search'] . "%\" OR restaurants.restaurant_url LIKE \"%" . $param['search'] . "%\" OR restaurants.address LIKE \"%" . $param['search'] . "%\")";
         }
+
+        if (isset($param['opennow'])) {
+            $query_sql .= " AND restaurants.is_open = \"True\"";
+        }
+
+        if (isset($param['freeship'])) {
+            $query_sql .= " AND restaurants.is_foody_delivery = \"True\"";
+        }
+
+        if (isset($param['pricemax']) && $param['pricemax'] != "Any") {
+            $query_sql .= " AND SUBSTRING(restaurants.price_range, 1, LENGTH(restaurants.price_range)-1) < SUBSTRING(\"" . $param['pricemax'] . "\", 1, LENGTH(\"" . $param['pricemax'] . "\")-1)";
+        }
+
+        if (isset($param['rating'])) {
+            $query_sql .= " AND restaurants.rating_avg >=" . $param['rating'];
+        }
+
         $query = $this->DB()->prepare($query_sql);
         $query->execute();
 
