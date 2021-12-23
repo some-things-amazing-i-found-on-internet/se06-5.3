@@ -47,6 +47,7 @@ class Router
             "admin\/add-menu" => "AddMenuController@index",
             "admin\/login" => "LoginController@index",
             "admin\/new-restaurant" => "NewRestaurantController@index",
+            "admin\/invoice" => "InvoiceController@index",
             "admin\/customerlist" => "CustomerListController@index"
         ];
     }
