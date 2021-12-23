@@ -40,7 +40,7 @@
 						<table class="table table-hover text-right thead-light">
 							<thead>
 								<tr class="text-capitalize">
-									<th class="text-center w-5">id</th>
+									<th class="text-center w-5">STT</th>
 									<th class="text-left">Tên món</th>
 									<th>Số lượng</th>
 									<th>Đơn giá</th>
