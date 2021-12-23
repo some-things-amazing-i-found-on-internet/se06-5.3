@@ -84,11 +84,7 @@
 								<tbody>
 									<?php foreach ($data as $row) { ?>
 										<tr>
-											<form method="GET" action="">
-												<input type="sumbit" name="id">
-												<th scope="row"><?php echo $row['pre_orders_id']; ?></th>
-												</input>
-											</form>
+											<th scope="row"><a href="invoice?id=<?php echo $row['pre_orders_id']; ?>"> <?php echo $row['pre_orders_id']; ?></a></th>
 											<td><?php echo $row['fname'] . " " . $row['lname']; ?></td>
 											<td><?php echo $row['name']; ?></td>
 											<td>

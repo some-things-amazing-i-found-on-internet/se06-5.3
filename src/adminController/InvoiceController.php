@@ -44,8 +44,10 @@ class InvoiceController extends Model
 
 	public function index($params_request): void
 	{
-		echo $_GET['id'];
-		if (!isset($_GET['id'])) {
+		$req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+		parse_str($req_param, $param);
+
+		if (!isset($param['id'])) {
 			header('Location: orders');
 		}
 
@@ -55,7 +57,7 @@ class InvoiceController extends Model
 		JOIN dish_orderes ON dish_orderes.id = pre_orders.food_id
 		JOIN dish_types ON dish_types._id = dish_orderes._id
 		JOIN restaurants ON restaurants.id = dish_types.id_restaurant
-		WHERE pre_orders_id = " . $_GET['id'];
+		WHERE pre_orders_id = " . $param['id'];
 		$query = $this->DB()->prepare($sql);
 		$query->execute();
 		$data = $query->fetchAll(\PDO::FETCH_ASSOC);

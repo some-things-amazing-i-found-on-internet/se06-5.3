@@ -14,7 +14,7 @@
 				<div class="ms-panel-header header-mini">
 					<div class="d-flex justify-content-between">
 						<h6>Invoice</h6>
-						<h6><?php echo "#" . $_GET['id']; ?></h6>
+						<h6><?php echo "#" . $data[0]['pre_orders_id']; ?></h6>
 					</div>
 				</div>
 				<div class="ms-panel-body">
@@ -63,7 +63,7 @@
 							</tbody>
 							<tfoot>
 								<tr>
-									<td colspan="<?php echo $i - 1; ?>">Thành tiền:</td>
+									<td colspan="4">Thành tiền:</td>
 									<td><?php echo $data[0]['total'] . "đ"; ?></td>
 								</tr>
 							</tfoot>
