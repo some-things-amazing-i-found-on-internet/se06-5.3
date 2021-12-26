@@ -51,13 +51,26 @@ class InvoiceController extends Model
 			header('Location: orders');
 		}
 
-		$sql = "SELECT post_orders.pre_orders_id, users.fname, users.lname, users.email, users.address, users.road, dish_orderes.name, pre_orders.quantity_order, dish_orderes.price_value, post_orders.time_order, post_orders.total, restaurants.name AS rname FROM `post_orders`
-		JOIN pre_orders ON pre_orders.order_id = post_orders.pre_orders_id
-		JOIN users ON users.id = pre_orders.customer_id
-		JOIN dish_orderes ON dish_orderes.id = pre_orders.food_id
-		JOIN dish_types ON dish_types._id = dish_orderes._id
-		JOIN restaurants ON restaurants.id = dish_types.id_restaurant
-		WHERE pre_orders_id = " . $param['id'];
+		$sql = "SELECT
+					post_orders.pre_orders_id,
+					users.fname,
+					users.lname,
+					users.email,
+					users.address,
+					users.road,
+					dish_orderes.name,
+					pre_orders.quantity_order,
+					dish_orderes.price_value,
+					post_orders.time_order,
+					post_orders.total,
+					dish_orderes.restaurant_name AS rname
+				FROM
+					`post_orders`
+				JOIN pre_orders ON pre_orders.order_id = post_orders.pre_orders_id
+				JOIN users ON users.id = pre_orders.customer_id
+				JOIN dish_orderes ON dish_orderes.id = pre_orders.food_id
+				WHERE
+					pre_orders_id = " . $param['id'];
 		$query = $this->DB()->prepare($sql);
 		$query->execute();
 		$data = $query->fetchAll(\PDO::FETCH_ASSOC);
