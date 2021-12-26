@@ -86,7 +86,7 @@
 										<tr>
 											<th scope="row"><a href="invoice?id=<?php echo $row['pre_orders_id']; ?>"> <?php echo $row['pre_orders_id']; ?></a></th>
 											<td><?php echo $row['fname'] . " " . $row['lname']; ?></td>
-											<td><?php echo $row['name']; ?></td>
+											<td><?php echo $row['restaurant_name']; ?></td>
 											<td>
 												<?php
 												if ($row['status'] == 0) {
