@@ -97,16 +97,17 @@ class AddMenuController extends Model
                 die('Error:' . $e->getMessage());
             }
 
-            $insert_sql = "INSERT INTO new_food (food_name, food_price, food_unit, food_description, food_image, restaurant_id)
-                            VALUES (:food_name, :food_price, :food_unit, :food_description, :food_image, :restaurant_id)";
+            $food_id = rand(10000000, 99999999999);
+            $insert_sql = "INSERT INTO dish_orderes (_id, `name`, price_text, price_value, price_unit,`description`, photos, id)
+                            VALUES (:_id, :_name, :price_text, :price_value, :price_unit, :_description, :photos, :id)";
             $insert = $this->DB()->prepare($insert_sql);
-            $insert->execute([":food_name" => $_POST['food_name'], ":food_price" => $_POST['food_price'], ":food_unit" => $_POST['food_unit'], ":food_description" => $_POST['food_description'], ":food_image" => $pathInS3, ":restaurant_id" => $id]);
+            $insert->execute([":_id" => $id,  ":_name" => $_POST['food_name'], ":price_text" => number_format($_POST['food_price']) . $_POST['food_unit'], ":price_value" => $_POST['food_price'], ":price_unit" => $_POST['food_unit'], ":_description" => $_POST['food_description'], ":photos" => $pathInS3, ":id" => $food_id]);
         
-            $update_sql = "UPDATE new_restaurants
-                            SET restaurant_status = 2
-                            WHERE restaurant_id = ?";
-            $update = $this->DB()->prepare($update_sql);            
-            $update->execute(array($id));
+            // $update_sql = "UPDATE new_restaurants
+            //                 SET restaurant_status = 2
+            //                 WHERE restaurant_id = ?";
+            // $update = $this->DB()->prepare($update_sql);            
+            // $update->execute(array($id));
 
             header("Location: menu-list&id=".$id);
             echo 'Done';

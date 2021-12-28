@@ -47,8 +47,8 @@ class MenuListController extends Model
         $id = str_replace("id=", "", $params_request[0]);
         
         $query_sql = "SELECT *
-                        FROM new_food
-                        WHERE restaurant_id = ?";
+                        FROM dish_orderes
+                        WHERE _id = ?";
         $query = $this->DB()->prepare($query_sql);
         $query->execute(array($id));
         $result = $query->fetchAll(\PDO::FETCH_ASSOC);

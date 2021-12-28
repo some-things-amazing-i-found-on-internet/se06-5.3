@@ -102,6 +102,15 @@ class HomeController extends Model
         $query3->execute(array($_SESSION['customer']['id']));
         $result3 = $query3->fetchAll(\PDO::FETCH_ASSOC);
 
-        View::render("home", compact(["result", "result2", "params_request", "result3", "param"]));
+        $new_restaurant_sql = "SELECT *
+                                FROM restaurants
+                                JOIN restaurant_photos
+                                ON restaurants._id = restaurant_photos._id
+                                WHERE restaurant_photos.width = 1242 and restaurants.restaurant_status = 3";
+        $query4 = $this->DB()->prepare($new_restaurant_sql);
+        $query4->execute();
+        $new_restaurants = $query4->fetchAll(\PDO::FETCH_ASSOC);
+
+        View::render("home", compact(["result", "result2", "params_request", "result3", "param", "new_restaurants"]));
     }
 }

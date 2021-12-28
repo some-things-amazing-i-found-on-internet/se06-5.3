@@ -44,10 +44,28 @@ class AddRestaurantController extends Model
     public function index($params): void
     {
         if (isset($_POST['restaurantName'])) {
-            $insert_sql = "INSERT INTO new_restaurants (restaurant_name, restaurant_phone, manager, manager_phone, restaurant_email, city, district, restaurant_address)
-                            VALUES (:restaurant_name, :restaurant_phone, :manager, :manager_phone, :restaurant_email, :city, :district, :restaurant_address)";
-                $insert = $this->DB()->prepare($insert_sql);
-                $insert->execute([":restaurant_name" => $_POST['restaurantName'], ":restaurant_phone" => $_POST['restaurantPhone'], ":manager" => $_POST['restaurantManager'], ":manager_phone" => $_POST['restaurantPhoneManager'], ":restaurant_email" => $_POST['restaurantEmail'], ":city" => $_POST['RestaurantCity'], ":district" => $_POST['RestaurantDistrict'], ":restaurant_address" => $_POST['RestaurantAddress']]);
+            $_id = rand(1, 1000000000);;
+            $id = rand(1000000, 1000000000);
+
+            $insert_sql = "INSERT INTO restaurants (_id, id, `name`, `address`)
+                            VALUES (:_id, :id, :_name, :_address)";
+            $insert = $this->DB()->prepare($insert_sql);
+            $insert->execute([":_id" => $_id, ":id" => $id, ":_name" => $_POST['restaurantName'], ":_address" => $_POST['RestaurantAddress'] . ", " . $_POST['RestaurantDistrict'] . ", " . $_POST['RestaurantCity']]);
+
+            $insert_sql = "INSERT INTO operating (_id)
+                            VALUES (:_id)";
+            $insert = $this->DB()->prepare($insert_sql);
+            $insert->execute([":_id" => $_id]);
+
+            $insert_sql = "INSERT INTO restaurant_photos (_id)
+                            VALUES (:_id)";
+            $insert = $this->DB()->prepare($insert_sql);
+            $insert->execute([":_id" => $_id]);
+
+            $insert_sql = "INSERT INTO dish_types (_id, id_restaurant)
+                            VALUES (:_id, :id_restaurant)";
+            $insert = $this->DB()->prepare($insert_sql);
+            $insert->execute([":_id" => $id, ":id_restaurant" => $id]);
         }
         View::render("add-restaurant", compact([]));
     }

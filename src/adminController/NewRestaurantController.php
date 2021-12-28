@@ -45,16 +45,19 @@ class NewRestaurantController extends Model
     public function index($params_request): void
     {
         if($params_request[0]) {
-            $id = str_replace("id=", "", $params_request[0]);
-            $update_sql = "UPDATE new_restaurants
-                            SET restaurant_status = 1
-                            WHERE restaurant_id = ?";
+            $arr = explode("&", $params_request[0]);
+            $id = str_replace("id=", "", $arr[0]);
+
+            $update_sql = "UPDATE restaurants
+                        SET restaurant_status = ?
+                        WHERE id = ?";
             $update = $this->DB()->prepare($update_sql);
-            $update->execute(array($id));
+            $update->execute(array($arr[1], $id));
         }
 
         $query_sql = "SELECT *
-                        FROM new_restaurants";
+                        FROM restaurants
+                        WHERE restaurants.restaurant_status in (3, 4)";
         $query = $this->DB()->prepare($query_sql);
         $query->execute();
         $result = $query->fetchAll(\PDO::FETCH_ASSOC);
