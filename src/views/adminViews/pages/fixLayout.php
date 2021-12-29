@@ -108,7 +108,7 @@
                     <ul id="customer" class="collapse" aria-labelledby="customer" data-parent="#side-nav-accordion">
                         <li> <a href="<?php echo $prefixPath ?>pages/customer/customersreview.html">Customers Review</a>
                         </li>
-                        <li> <a href="<?php echo $prefixPath ?>pages/customer/customersreview.html">Customers List</a>
+                        <li> <a href="customerlist">Customers List</a>
                         </li>
                         <li> <a href="<?php echo $prefixPath ?>pages/customer/social.html">Social Activity</a>
                         </li>

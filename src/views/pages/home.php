@@ -79,7 +79,7 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
                         foreach ($result2 as $row2) {
                         ?>
                             <div class="swiper-slide">
-                                <a href="home?category=<?php echo $row2['id'] ?>" class="categories">
+                                <a href="home?search=<?php echo $param['search'] ?>&category=<?php echo $row2['id'] ?>" class="categories">
                                     <div class="icon text-custom-white <?php
                                                                         if (isset($param['category']) && $row2['id'] === $param['category']) {
                                                                             echo 'bg-danger';
@@ -218,91 +218,87 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
         <div class="row">
             <aside class="col-lg-3 mb-md-40">
                 <div class="filter-sidebar mb-5">
-                    <h4 class="text-light-black fw-600 title-2">Filters<small class="fs-12"><a href="#" class="text-light-black fw-500">Clear all</a></small></h4>
+                    <h4 class="text-light-black fw-600 title-2">Filters</h4>
                     <div class="sidebar-tab">
-                        <ul class="nav nav-pills mb-xl-20">
-                            <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#restaurents">Restaurants</a>
+                        <!-- <ul class="nav nav-pills mb-xl-20">
+                            <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#restaurants">Restaurants</a>
                             </li>
                             <li class="nav-item"> <a class="nav-link" data-toggle="pill" href="#caterings">Caterings</a>
                             </li>
-                        </ul>
+                        </ul> -->
                         <div class="tab-content">
-                            <div class="tab-pane fade show active" id="restaurents">
-                                <div class="siderbar-innertab">
-                                    <ul class="nav nav-pills">
-                                        <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#delivery-restaurents">Delivery</a>
-                                        </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="pill" href="#pickup-restaurents">Pickup</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="tab-pane fade show active" id="restaurants">
+
                                 <div class="tab-content" id="pills-tabContent">
-                                    <div class="tab-pane fade show active" id="delivery-restaurents">
+                                    <div class="tab-pane fade show active" id="delivery-restaurants">
                                         <p class="text-light-black delivery-type p-relative">Delivery my food <a href="#">Today, ASAP</a>
                                         </p>
                                         <div class="filters">
-                                            <div class="card">
-                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#deliverycollapseOne">
-                                                        Feature
-                                                    </a>
-                                                </div>
-                                                <div id="deliverycollapseOne" class="collapse show">
-                                                    <div class="card-body">
-                                                        <form>
-                                                            <label class="custom-checkbox">
+                                            <form method="GET">
+                                                <div class="card">
+                                                    <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#deliverycollapseOne">
+                                                            Feature
+                                                        </a>
+                                                    </div>
+                                                    <div id="deliverycollapseOne" class="collapse show">
+                                                        <div class="card-body">
+                                                            <!-- <label class="custom-checkbox">
                                                                 <input type="checkbox" name="#"> <span class="checkmark"></span> Cửa hàng đã đặt trước đó <span class="text-light-white">(3)</span>
+                                                            </label> -->
+                                                            <label class="custom-checkbox">
+                                                                <input type="checkbox" name="freeship" <?php if (isset($param['freeship'])) echo "checked"; ?>> <span class="checkmark"></span> Free Ship </span>
                                                             </label>
                                                             <label class="custom-checkbox">
-                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Free Ship <span class="text-light-white">(6)</span>
-                                                            </label>
-                                                            <label class="custom-checkbox">
-                                                                <input type="checkbox" name="#"> <span class="checkmark"></span> Open Now [6:05am] <span class="text-light-white">(10)</span>
+                                                                <input type="checkbox" name="opennow" <?php if (isset($param['opennow'])) echo "checked"; ?>> <span class="checkmark"></span> Open Now </span>
                                                             </label>
                                                             <!-- <label class="custom-checkbox">
                                                                 <input type="checkbox" name="#"> <span class="checkmark"></span> Free Delivery <span class="text-light-white">(6)</span>
                                                             </label> -->
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#deliverycollapseTwo">
-                                                        Rating
-                                                    </a>
-                                                </div>
-                                                <div id="deliverycollapseTwo" class="collapse show">
-                                                    <div class="card-body">
-                                                        <div class="rating">
-                                                            <button class="text-yellow"><i class="fas fa-star"></i>
-                                                            </button>
-                                                            <button class="text-yellow"><i class="fas fa-star"></i>
-                                                            </button>
-                                                            <button class="text-yellow"><i class="fas fa-star"></i>
-                                                            </button>
-                                                            <button class="text-yellow"><i class="fas fa-star"></i>
-                                                            </button>
-                                                            <button class="text-yellow"><i class="fas fa-star"></i>
-                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#deliverycollapseFour">
-                                                        Price
-                                                    </a>
-                                                </div>
-                                                <div id="deliverycollapseFour" class="collapse show">
-                                                    <div class="card-body">
-                                                        <div class="delivery-slider">
-                                                            <input type="text" class="delivery-range-slider" value="" />
+
+                                                <div class="card">
+                                                    <div class="card-header"> <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#pricecollapse">Price </a>
+                                                    </div>
+                                                    <div id="pricecollapse" class="collapse show">
+                                                        <div class="card-body">
+                                                            <div class="delivery-slider">
+                                                                <input name="pricemax" type="text" class="delivery-range-slider" value="" />
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <a class="card-link text-light-black fw-700 fs-16" data-toggle="collapse" href="#ratingcollapse">Rating</a>
+                                                    </div>
+                                                    <div id="ratingcollapse" class="collapse show">
+                                                        <div class="card-body">
+                                                            <div class="rating">
+                                                                <style>
+                                                                </style>
+                                                                <button type="radio" name="rating" value="1" class="checkmark text-yellow"><i class="fas fa-star"></i>
+                                                                </button>
+                                                                <button type="radio" name="rating" value="2" class="checkmark text-yellow"><i class="fas fa-star"></i>
+                                                                </button>
+                                                                <button type="radio" name="rating" value="3" class="checkmark text-yellow"><i class="fas fa-star"></i>
+                                                                </button>
+                                                                <button type="radio" name="rating" value="4" class="checkmark text-yellow"><i class="fas fa-star"></i>
+                                                                </button>
+                                                                <button type="radio" name="rating" value="5" class="checkmark text-yellow"><i class="fas fa-star"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button class="btn-first green-btn text-custom-white">Submit </button>
+
+                                            </form>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="pickup-restaurents">
+
+                                    <!-- <div class="tab-pane fade" id="pickup-restaurants">
                                         <p class="text-light-black delivery-type p-relative">Pick my food <a href="#">Today, ASAP</a>
                                         </p>
                                         <div class="filters">
@@ -380,10 +376,10 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="caterings">
+                            <!-- <div class="tab-pane fade" id="caterings">
                                 <div class="siderbar-innertab">
                                     <ul class="nav nav-pills">
                                         <li class="nav-item"> <a class="nav-link active" data-toggle="pill" href="#delivery-caterings">Delivery</a>
@@ -466,7 +462,7 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -476,7 +472,7 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
                 <div class="row">
                     <div class="col-12">
                         <div class="section-header-left">
-                            <h3 class="text-light-black header-title title"> <?php if (isset($param['search'])) echo "Search by \"" . $param['search'] . "\"";
+                            <h3 class="text-light-black header-title title"> <?php if ($param['search'] != '') echo "Search by \"" . $param['search'] . "\"";
                                                                                 else echo "Tất cả"; ?> </h3>
                         </div>
                     </div>
