@@ -43,6 +43,7 @@ class CheckOutController extends Model
 
     public function index($params): void
     {
+        // var_dump($_COOKIE);
         if (session_status() === PHP_SESSION_DISABLED || session_status() === PHP_SESSION_NONE) {
             session_start();
         }
@@ -128,7 +129,6 @@ class CheckOutController extends Model
         $payment = $this->DB()->prepare($payment_sql);
         $payment->execute();
         $credit = $payment->fetchAll(\PDO::FETCH_ASSOC);
-
 
         View::render("checkout", compact(['total', 'orders', 'user_id', 'result', 'credit']));
     }

@@ -15,9 +15,8 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
                         <div class="row justify-content-start">
                             <div class="col-lg-7 align-self-center">
                                 <div class="right-side-content">
-                                    <h1 class="text-custom-white fw-600"> Increase takeout sales by 50%</h1>
-                                    <h3 class="text-custom-white fw-400">with the largest delivery platform in the U.S. and Canada</h3>
-                                    <a href="restaurant.html" class="btn-second btn-submit">Learn More.</a>
+                                    <h1 class="text-custom-white fw-600"> Đồ ăn đa dạng</h1>
+                                    <h3 class="text-custom-white fw-400">Từ đồ ăn, đồ uống, lẩu, đồ ăn chay,...</h3>
                                 </div>
                             </div>
                         </div>
@@ -32,9 +31,8 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
                         <div class="row justify-content-center">
                             <div class="col-lg-8 align-self-center">
                                 <div class="right-side-content text-center">
-                                    <h1 class="text-custom-white fw-600">Increase takeout sales by 50%</h1>
-                                    <h3 class="text-custom-white fw-400">with the largest delivery platform in the U.S. and Canada</h3>
-                                    <a href="restaurant.html" class="btn-second btn-submit">Learn More.</a>
+                                    <h1 class="text-custom-white fw-600">Nhiều ưu đãi, giảm giá lên tới 50%</h1>
+                                    <h3 class="text-custom-white fw-400">Hỗ trợ free ship cho đơn hàng dưới 2km</h3>
                                 </div>
                             </div>
                         </div>
@@ -49,9 +47,8 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
                         <div class="row justify-content-end">
                             <div class="col-lg-7 align-self-center">
                                 <div class="right-side-content text-right">
-                                    <h1 class="text-custom-white fw-600">Increase takeout sales by 50%</h1>
-                                    <h3 class="text-custom-white fw-400">with the largest delivery platform in the U.S. and Canada</h3>
-                                    <a href="restaurant.html" class="btn-second btn-submit">Learn More.</a>
+                                    <h1 class="text-custom-white fw-600">Trở thành chủ của một nhà hàng nhanh chóng</h1>
+                                    <a href="add-restaurant" class="btn-second btn-submit">Tạo nhà hàng</a>
                                 </div>
                             </div>
                         </div>
@@ -139,8 +136,81 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
     <!-- your previous order -->
 <?php
 }
-
 ?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="section-header-left">
+                <h3 class="text-light-black header-title title">Nhà hàng mới<span class="fs-14"></span></h3>
+            </div>
+        </div>
+        <?php foreach ($new_restaurants as $row) { ?>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product-box mb-xl-20">
+                                <div class="product-img">
+                                    <a href="<?php echo 'restaurant&' . $row['id'] ?>">
+                                        <img src=<?php echo $row['value'] ?> class="img-fluid full-width" alt="product-img">
+                                    </a>
+                                    <div class="overlay">
+                                        <div class="product-tags padding-10"> <span class="circle-tag">
+                                                <img src="assets/img/svg/013-heart-1.svg" alt="tag">
+                                            </span>
+                                            <div class="custom-tag"> <span class="text-custom-white rectangle-tag bg-gradient-red">
+                                                    10%
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-caption">
+                                    <div class="title-box">
+                                        <h6 class="product-title"><a href="<?php echo 'restaurant&id=' . $row['id'] ?>" class="text-light-black "><?php echo $row['name'] ?></a></h6>
+                                        <div class="tags"> <span class="text-custom-white rectangle-tag bg-yellow">
+                                                <?php
+                                                echo $row['rating_avg'];
+                                                ?>
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="text-light-white"><?php echo $row['address'] ?></p>
+                                    <div class="product-details">
+                                        <div class="price-time"> <span class="text-light-black time"><?php echo "Giới hạn khoảng cách: " . ((int)$row["limit_distance"]) / 1000 . "km" ?></span>
+                                            <span class="text-light-white price"><?php echo "Giá trung bình: " . str_replace("k", ".000đ", $row["price_range"]) ?></span>
+                                        </div>
+                                        <div class="rating"> <span>
+                                                <i class="fas fa-star text-yellow"></i>
+                                                <i class="fas fa-star text-yellow"></i>
+                                                <i class="fas fa-star text-yellow"></i>
+                                                <i class="fas fa-star text-yellow"></i>
+                                                <i class="fas fa-star text-yellow"></i>
+                                            </span>
+                                            <span class="text-light-white text-right"><?php echo $row["rating_display_total_review"] . " " . "ratings" ?></span>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="product-footer"> <span class="text-custom-white square-tag">
+                                    <img src="assets/img/svg/004-leaf.svg" alt="tag">
+                                </span>
+                                <span class="text-custom-white square-tag">
+                                    <img src="assets/img/svg/006-chili.svg" alt="tag">
+                                </span>
+                                <span class="text-custom-white square-tag">
+                                    <img src="assets/img/svg/005-chef.svg" alt="tag">
+                                </span>
+                                <span class="text-custom-white square-tag">
+                                    <img src="assets/img/svg/008-protein.svg" alt="tag">
+                                </span>
+                                <span class="text-custom-white square-tag">
+                                    <img src="assets/img/svg/009-lemon.svg" alt="tag">
+                                </span>
+                            </div> -->
+                                </div>
+                            </div>
+                        </div>
+        <?php } ?>
+    </div>
+</div>
 
 <!-- Explore collection -->
 <section class="ex-collection section-padding">

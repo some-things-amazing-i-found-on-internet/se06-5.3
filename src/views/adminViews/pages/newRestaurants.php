@@ -69,40 +69,32 @@
                                       <thead>
                                           <tr>
                                               <th scope="col">ID</th>
-                                              <th scope="col">Restaurant Name</th>
-                                              <th scope="col">Location</th>
-                                              <th scope="col">Phone</th>
-
+                                              <th scope="col">Tên nhà hàng</th>
+                                              <th scope="col">Địa chỉ</th>
                                               <th scope="col">Menu</th>
-                                              <th scope="col">Lock</th>
+                                              <th scope="col">Trạng thái</th>
 
                                           </tr>
                                       </thead>
                                       <?php foreach($result as $row) { ?>
                                       <tbody>
                                           <tr>
-                                              <th style="width: 10%;" scope="row"><?php echo $row['restaurant_id'] ?></th>
-                                              <td style="width: 15%;"><?php echo $row['restaurant_name'] ?></td>
-                                              <td style="width: 30%;"><?php echo $row['restaurant_address'] . ", " . $row['district'] . ", " . $row['city'] ?></td>
+                                              <th style="width: 10%;" scope="row"><?php echo $row['id'] ?></th>
+                                              <td style="width: 15%;"><?php echo $row['name'] ?></td>
+                                              <td style="width: 30%;"><?php echo $row['address'] ?></td>
+
                                               <td>
-                                                  <ul class="ms-star-rating rating-fill rating-circle ratings-new">
-                                                      <li class="ms-rating-item rated d-flex">
-                                                          <div class="mr-2"><?php echo $row['restaurant_phone'] ?></div>
-                                                      </li>
-                                                  </ul>
-                                              </td>
-                                              <td>
-                                                  <a target="__blank" href="<?php echo "menu-list&id=" . $row['restaurant_id'] ?>"><i class='fas fa-paper-plane text-secondary text-success'></i></a>
+                                                  <a target="__blank" href="<?php echo "menu-list&id=" . $row['id'] ?>"><i class='fas fa-paper-plane text-secondary text-success'></i></a>
                                               </td>
                                               <td>
                                                 <?php
-                                                if ($row['restaurant_status'] == "0") {
+                                                if ($row['restaurant_status'] == "4") {
                                                 ?>
-                                                  <a href="<?php echo "new-restaurant&id=" . $row['restaurant_id'] ?>"><i class='fa fa-lock text-secondary'></i></a>
+                                                  <a href="<?php echo "new-restaurant&id=" . $row['id'] . "&3" ?>"><i class='fa fa-lock text-secondary'></i></a>
                                                 <?php
                                                 } else {
                                                 ?>
-                                                  <a href=""><i class='fa fa-unlock-alt text-secondary'></i></a>
+                                                  <a href="<?php echo "new-restaurant&id=" . $row['id'] . "&4" ?>"><i class='fa fa-unlock-alt text-secondary'></i></a>
                                                 <?php 
                                                 }  
                                                 ?>

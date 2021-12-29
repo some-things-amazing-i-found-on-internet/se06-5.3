@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2021 at 06:28 AM
+-- Generation Time: Dec 28, 2021 at 01:40 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -37,14 +37,6 @@ CREATE TABLE `post_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `post_orders`
---
-
-INSERT INTO `post_orders` (`id`, `pre_orders_id`, `time_order`, `description_order`, `total`, `status`) VALUES
-(15, 0, '2021-12-08 06:04:23', 'như cc', 505000, 0),
-(16, 3, '2021-12-08 06:19:35', 'ccc', 88000, 0);
-
---
 -- Indexes for dumped tables
 --
 
@@ -62,7 +54,7 @@ ALTER TABLE `post_orders`
 -- AUTO_INCREMENT for table `post_orders`
 --
 ALTER TABLE `post_orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

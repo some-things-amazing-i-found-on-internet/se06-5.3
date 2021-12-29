@@ -174,7 +174,7 @@
                                 </div>
                                 <!-- user notification -->
                                 <!-- user cart -->
-                                <div class="cart-btn cart-dropdown">
+                                <!-- <div class="cart-btn cart-dropdown">
                                     <a href="#" class="text-light-green fw-700"> <i class="fas fa-shopping-bag"></i>
                                         <span class="user-alert-cart">3</span>
                                     </a>
@@ -245,7 +245,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- user cart -->
                             </div>
                         </div>

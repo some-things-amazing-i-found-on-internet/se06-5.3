@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2021 at 05:06 PM
+-- Generation Time: Dec 28, 2021 at 01:40 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `dish_types` (
   `_id` varchar(24) NOT NULL,
-  `dish_type_id` varchar(12) DEFAULT NULL,
-  `dish_type_name` varchar(78) DEFAULT NULL,
+  `dish_type_id` varchar(12) DEFAULT '-1',
+  `dish_type_name` varchar(78) DEFAULT 'Menu',
   `id_restaurant` varchar(13) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
