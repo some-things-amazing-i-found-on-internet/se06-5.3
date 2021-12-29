@@ -52,10 +52,25 @@ class HistoryController extends Model
         }
         $user = $_SESSION['customer'];
 
+        $sql1 = "SELECT *
+                FROM post_orders
+                JOIN pre_orders
+                ON post_orders.pre_orders_id = pre_orders.order_id
+                WHERE pre_orders.customer_id = ?
+                GROUP BY post_orders.id";
+        $query1 = $this->DB()->prepare($sql1);
+        $query1->execute(array($user['id']));
+        $post_orders = $query1->fetchAll(\PDO::FETCH_ASSOC);
 
+        $sql2 = "SELECT *
+                FROM pre_orders
+                JOIN dish_orderes
+                ON pre_orders.food_id = dish_orderes.id
+                WHERE pre_orders.customer_id = ?";
+        $query2 = $this->DB()->prepare($sql2);
+        $query2->execute(array($user['id']));
+        $pre_orders = $query2->fetchAll(\PDO::FETCH_ASSOC);
 
-        // $insertFood = $this->insertFood();
-        // print(gettype($params));
-        View::render("history", compact(["user"]));
+        View::render("history", compact(["user", "post_orders", "pre_orders"]));
     }
 }

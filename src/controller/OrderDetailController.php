@@ -45,11 +45,10 @@ class OrderDetailController extends Model
     public function index($params): void
     {
         session_start();
-        $param = explode("=", $params[0])[1];
         $order_sql = "SELECT * FROM `pre_orders`
                     JOIN dish_orderes
                     ON dish_orderes.id = pre_orders.food_id
-                    WHERE pre_orders.status = 0 and pre_orders.customer_id = ?  and pre_orders.order_id >= ALL (SELECT order_id FROM pre_orders WHERE customer_id = ?)";
+                    WHERE pre_orders.order_status = 0 and pre_orders.customer_id = ?  and pre_orders.order_id >= ALL (SELECT order_id FROM pre_orders WHERE customer_id = ?)";
         $query = $this->DB()->prepare($order_sql);
         $query->execute(array($_SESSION['customer']['id'], $_SESSION['customer']['id']));
         $orders = $query->fetchAll(\PDO::FETCH_ASSOC);
@@ -66,6 +65,7 @@ class OrderDetailController extends Model
         $user = $query2->fetchAll(\PDO::FETCH_ASSOC);
 
         if (isset($_SESSION['post_order_status']) && $_SESSION['post_order_status'] == 1) {
+            $param = explode("=", $params[0])[1];
             $insert_sql = "INSERT INTO post_orders (pre_orders_id, time_order, description_order, total) VALUES (:val_0, :val_1, :val_2, :val_3)";
             $insert = $this->DB()->prepare($insert_sql);
             $insert->execute([":val_0" => $orders[0]['order_id'], ":val_1" => date("Y-m-d H:i:s"), ":val_2" => urldecode(utf8_decode($param)), ":val_3" => $total + $orders[0]['delivery_fee']]);
@@ -78,6 +78,27 @@ class OrderDetailController extends Model
         $query3->execute(array($orders[0]['order_id']));
         $post_order = $query3->fetchAll(\PDO::FETCH_ASSOC);
 
-        View::render("order-details", compact(['user', 'orders', 'post_order', 'total','param']));
+        if($params[0] == "status=2") {
+            $update_sql = "UPDATE post_orders
+                        SET status = 2
+                        WHERE id = ?";
+            $update = $this->DB()->prepare($update_sql);
+            $update->execute(array($post_order[0]['id']));
+        }
+
+         $restaurant_sql = "SELECT *
+                        FROM dish_orderes
+                        JOIN dish_types
+                        ON dish_orderes._id = dish_types._id
+                        JOIN restaurants
+                        ON restaurants.id = dish_types.id_restaurant
+                        JOIN operating
+                        ON operating._id = restaurants._id
+                        WHERE dish_orderes.id = ?";
+        $query4 = $this->DB()->prepare($restaurant_sql);
+        $query4->execute(array($orders[0]['food_id']));
+        $restaurant = $query4->fetchAll(\PDO::FETCH_ASSOC);
+
+        View::render("order-details", compact(['user', 'orders', 'post_order', 'total', 'restaurant']));
     }
 }

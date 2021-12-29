@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2021 at 05:06 PM
+-- Generation Time: Dec 28, 2021 at 01:40 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -31,8 +31,8 @@ CREATE TABLE `operating` (
   `_id` varchar(24) NOT NULL,
   `status` varchar(6) DEFAULT NULL,
   `color` varchar(7) DEFAULT NULL,
-  `close_time` varchar(10) DEFAULT NULL,
-  `open_time` varchar(9) DEFAULT NULL,
+  `close_time` varchar(10) DEFAULT '23:00:00',
+  `open_time` varchar(9) DEFAULT '08:00:00',
   `next_available_time` varchar(19) DEFAULT NULL,
   `busy_type` varchar(9) DEFAULT NULL,
   `title` varchar(26) DEFAULT NULL,

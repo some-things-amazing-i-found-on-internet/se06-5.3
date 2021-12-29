@@ -40,6 +40,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;display=swap" rel="stylesheet">
     <!-- place -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -71,18 +72,19 @@
                             </div>
                             <!-- logo -->
                             <div class="main-search mainNavCol">
-                                <form class="main-search search-form full-width">
+                                <form class="main-search search-form full-width" method="GET" action="">
                                     <div class="row">
+                                        <!-- search -->
+                                        <div class="col-lg-6 col-md-7">
+                                            <div class="search-box padding-10">
+                                                <input type="text" name="search" class="form-control" placeholder="Pizza, Burger, Chinese">
+                                            </div>
+                                        </div>
+
                                         <!-- location picker -->
                                         <div class="col-lg-6 col-md-5">
                                         </div>
                                         <!-- location picker -->
-                                        <!-- search -->
-                                        <div class="col-lg-6 col-md-7">
-                                            <div class="search-box padding-10">
-                                                <input type="text" class="form-control" placeholder="Pizza, Burger, Chinese">
-                                            </div>
-                                        </div>
                                         <!-- search -->
                                     </div>
                                 </form>
@@ -172,7 +174,7 @@
                                 </div>
                                 <!-- user notification -->
                                 <!-- user cart -->
-                                <div class="cart-btn cart-dropdown">
+                                <!-- <div class="cart-btn cart-dropdown">
                                     <a href="#" class="text-light-green fw-700"> <i class="fas fa-shopping-bag"></i>
                                         <span class="user-alert-cart">3</span>
                                     </a>
@@ -243,7 +245,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- user cart -->
                             </div>
                         </div>

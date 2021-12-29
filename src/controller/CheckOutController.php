@@ -43,6 +43,7 @@ class CheckOutController extends Model
 
     public function index($params): void
     {
+        // var_dump($_COOKIE);
         if (session_status() === PHP_SESSION_DISABLED || session_status() === PHP_SESSION_NONE) {
             session_start();
         }
@@ -110,7 +111,7 @@ class CheckOutController extends Model
         $order_sql = "SELECT * FROM `pre_orders`
         JOIN dish_orderes
         ON dish_orderes.id = pre_orders.food_id
-        WHERE pre_orders.status = 0 and pre_orders.customer_id = ?  and pre_orders.order_id >= ALL (SELECT order_id FROM pre_orders WHERE customer_id = ?)";
+        WHERE pre_orders.order_status = 0 and pre_orders.customer_id = ?  and pre_orders.order_id >= ALL (SELECT order_id FROM pre_orders WHERE customer_id = ?)";
         $query = $this->DB()->prepare($order_sql);
         $query->execute(array($_SESSION['customer']['id'], $_SESSION['customer']['id']));
         $orders = $query->fetchAll(\PDO::FETCH_ASSOC);
@@ -128,7 +129,6 @@ class CheckOutController extends Model
         $payment = $this->DB()->prepare($payment_sql);
         $payment->execute();
         $credit = $payment->fetchAll(\PDO::FETCH_ASSOC);
-
 
         View::render("checkout", compact(['total', 'orders', 'user_id', 'result', 'credit']));
     }

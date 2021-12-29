@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2021 at 06:28 AM
+-- Generation Time: Dec 28, 2021 at 01:41 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -31,22 +31,11 @@ CREATE TABLE `pre_orders` (
   `id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
-  `food_id` int(11) NOT NULL,
+  `food_id` varchar(12) NOT NULL,
   `quantity_order` int(11) NOT NULL,
   `delivery_fee` int(11) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0
+  `order_status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pre_orders`
---
-
-INSERT INTO `pre_orders` (`id`, `order_id`, `customer_id`, `food_id`, `quantity_order`, `delivery_fee`, `status`) VALUES
-(94, 0, 8, 10751832, 5, 27000, 0),
-(95, 0, 8, 10751831, 1, 27000, 0),
-(96, 0, 8, 10751834, 1, 27000, 0),
-(97, 3, 8, 10679993, 1, 13000, 0),
-(98, 3, 8, 10679999, 2, 13000, 0);
 
 --
 -- Indexes for dumped tables
@@ -66,7 +55,7 @@ ALTER TABLE `pre_orders`
 -- AUTO_INCREMENT for table `pre_orders`
 --
 ALTER TABLE `pre_orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

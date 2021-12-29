@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2021 at 05:06 PM
+-- Generation Time: Dec 28, 2021 at 01:41 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `restaurant_photos` (
   `stt` int(11) NOT NULL,
   `_id` varchar(24) DEFAULT NULL,
-  `width` varchar(5) DEFAULT NULL,
-  `value` varchar(129) DEFAULT NULL,
-  `height` varchar(6) DEFAULT NULL
+  `width` varchar(5) DEFAULT '1242',
+  `value` varchar(129) DEFAULT 'https://bukethuy.s3.ap-southeast-1.amazonaws.com/php/restaurant_default.jpg',
+  `height` varchar(6) DEFAULT '600'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -13101,7 +13101,7 @@ ALTER TABLE `restaurant_photos`
 -- AUTO_INCREMENT for table `restaurant_photos`
 --
 ALTER TABLE `restaurant_photos`
-  MODIFY `stt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13002;
+  MODIFY `stt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13006;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

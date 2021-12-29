@@ -4,10 +4,16 @@
             <div class="col-md-12">
                 <div class="tracking-sec">
                     <div class="tracking-details padding-20 p-relative">
-                        <h5 class="text-light-black fw-600">Great Burger</h5>
-                        <span class="text-light-white">Estimated Delivery time</span>
-                        <h2 class="text-light-black fw-700 no-margin">9:00pm-9:10pm</h2>
-                        <div id="add-listing-tab" class="step-app">
+                        <h5 class="text-light-black fw-600"><?php echo $restaurant[0]['name'] ?></h5>
+                        <h5 class="text-light-black fw-600"><?php echo $restaurant[0]['address'] ?></h5>
+                        <span class="text-light-white fw-600"><?php echo "Thời gian bán hàng: " . $restaurant[0]['open_time'] . " - " . $restaurant[0]['close_time'] ."<br>" ?></span>
+                        <span class="text-light-white">Ước lượng thời gian giao hàng:</span>
+                        <?php if($post_order[0]['status'] == '2') { ?>
+                            <h2 class="text-light-green fw-700 no-margin">Đơn hàng đã bị hủy</h2>
+                        <?php } else {?>
+                        <h2 class="text-light-black fw-700 no-margin">19 phút</h2>
+                        <?php } ?>
+                        <!-- <div id="add-listing-tab" class="step-app">
                             <ul class="step-steps">
                                 <li class="done">
                                     <a href="javascript:void(0)"> <span class="number"></span>
@@ -31,7 +37,7 @@
                                 </li>
                             </ul>
                             <button type="button" class="fullpageview text-light-black fw-600" data-modal="modal-12">Full Page View</button>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="tracking-map">
                         <div id="pickupmap"></div>
@@ -39,7 +45,7 @@
                 </div>
                 <!-- recipt -->
                 <div class="recipt-sec padding-20">
-                    <div class="recipt-name title u-line full-width mb-xl-20">
+                    <!-- <div class="recipt-name title u-line full-width mb-xl-20">
                         <div class="recipt-name-box">
                             <h5 class="text-light-black fw-600 mb-2">Great Burger</h5>
                             <p class="text-light-white ">Estimated Delivery time</p>
@@ -52,7 +58,7 @@
                             <div class="time-box"> <span id="mb-seconds"></span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="u-line mb-xl-20">
                         <div class="row">
                             <div class="col-lg-4">
@@ -125,7 +131,9 @@
                                 <h5 class="title text-light-black fw-700">Tổng cộng: <span><?php echo $post_order[0]['total']/1000 . ".000đ" ?></span></h5>
                             </div>
                         </div>
-                        <div class="col-12 d-flex"> <a href="#" class="btn-first white-btn fw-600 help-btn">Need Help?</a>
+                        <?php if($post_order[0]['status'] != '2') { ?>
+                        <div class="col-12 d-flex"> <a href="order-details&status=2" class="btn-first white-btn fw-600 help-btn">Hủy đơn hàng</a>
+                        <?php } ?>
                         </div>
                     </div>
                 </div>

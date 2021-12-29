@@ -67,20 +67,37 @@ class HomeController extends Model
 
         $req_param = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
         parse_str($req_param, $param);
-        // print($params);
-        // echo var_dump($params_request) ;
+        if (!isset($param['search'])) {
+            $param['search'] = '';
+        }
         $query_sql = "SELECT *
                         FROM restaurants
                         JOIN restaurant_photos
                         ON restaurants._id = restaurant_photos._id
                         WHERE restaurant_photos.width = 1242";
-        // limit 27";
         if (isset($param['category'])) {
             $query_sql .= " AND restaurants.category_id = " . $param['category'];
         }
-        if (isset($param['str'])) {
-            $query_sql .= " AND (restaurants.name LIKE \"%" . $param['str'] . "%\" OR restaurants.restaurant_url LIKE \"%" . $param['str'] . "%\" OR restaurants.address LIKE \"%" . $param['str'] . "%\")";
+        if (isset($param['search'])) {
+            $query_sql .= " AND (restaurants.name LIKE \"%" . $param['search'] . "%\" OR restaurants.restaurant_url LIKE \"%" . $param['search'] . "%\" OR restaurants.address LIKE \"%" . $param['search'] . "%\")";
         }
+
+        if (isset($param['opennow'])) {
+            $query_sql .= " AND restaurants.is_open = \"True\"";
+        }
+
+        if (isset($param['freeship'])) {
+            $query_sql .= " AND restaurants.is_foody_delivery = \"True\"";
+        }
+
+        if (isset($param['pricemax']) && $param['pricemax'] != "Any") {
+            $query_sql .= " AND SUBSTRING(restaurants.price_range, 1, LENGTH(restaurants.price_range)-1) < SUBSTRING(\"" . $param['pricemax'] . "\", 1, LENGTH(\"" . $param['pricemax'] . "\")-1)";
+        }
+
+        if (isset($param['rating'])) {
+            $query_sql .= " AND restaurants.rating_avg >=" . $param['rating'];
+        }
+
         $query = $this->DB()->prepare($query_sql);
         $query->execute();
 
@@ -90,10 +107,27 @@ class HomeController extends Model
                         FROM  category_groups";
         $query2 = $this->DB()->prepare($query_sql2);
         $query2->execute();
-
         $result2 = $query2->fetchAll(\PDO::FETCH_ASSOC);
 
+        $previous_order_sql = "SELECT *
+                                FROM pre_orders
+                                JOIN dish_orderes
+                                ON pre_orders.food_id = dish_orderes.id
+                                WHERE customer_id = ? AND pre_orders.order_id >= ALL(SELECT order_id
+                                                                                FROM pre_orders);";
+        $query3 = $this->DB()->prepare($previous_order_sql);
+        $query3->execute(array($_SESSION['customer']['id']));
+        $result3 = $query3->fetchAll(\PDO::FETCH_ASSOC);
 
-        View::render("home", compact(["result", "result2", "params_request"]));
+        $new_restaurant_sql = "SELECT *
+                                FROM restaurants
+                                JOIN restaurant_photos
+                                ON restaurants._id = restaurant_photos._id
+                                WHERE restaurant_photos.width = 1242 and restaurants.restaurant_status = 3";
+        $query4 = $this->DB()->prepare($new_restaurant_sql);
+        $query4->execute();
+        $new_restaurants = $query4->fetchAll(\PDO::FETCH_ASSOC);
+
+        View::render("home", compact(["result", "result2", "params_request", "result3", "param", "new_restaurants"]));
     }
 }

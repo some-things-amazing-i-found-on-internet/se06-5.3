@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2021 at 05:06 PM
+-- Generation Time: Dec 28, 2021 at 01:41 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `restaurants` (
   `_id` varchar(24) NOT NULL,
-  `total_order` varchar(11) DEFAULT NULL,
+  `total_order` varchar(11) DEFAULT '10',
   `is_support_booking` varchar(18) DEFAULT NULL,
   `city_id` varchar(7) DEFAULT NULL,
   `restaurant_id` varchar(13) DEFAULT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE `restaurants` (
   `brand_id` varchar(8) DEFAULT NULL,
   `is_open` varchar(7) DEFAULT NULL,
   `contract_type` varchar(13) DEFAULT NULL,
-  `id` varchar(6) DEFAULT NULL,
+  `id` varchar(10) DEFAULT NULL,
   `location_url` varchar(12) DEFAULT NULL,
   `has_contract` varchar(12) DEFAULT NULL,
   `is_quality_merchant` varchar(19) DEFAULT NULL,
@@ -45,9 +45,9 @@ CREATE TABLE `restaurants` (
   `service_type` varchar(12) DEFAULT NULL,
   `url_rewrite_name` varchar(63) DEFAULT NULL,
   `is_foody_delivery` varchar(17) DEFAULT NULL,
-  `limit_distance` varchar(14) DEFAULT NULL,
+  `limit_distance` varchar(14) DEFAULT '10000',
   `image_name` varchar(67) DEFAULT NULL,
-  `restaurant_status` varchar(17) DEFAULT NULL,
+  `restaurant_status` varchar(17) DEFAULT '3',
   `address` varchar(91) DEFAULT NULL,
   `name_en` varchar(25) DEFAULT NULL,
   `foody_service_id` varchar(16) DEFAULT NULL,
@@ -58,11 +58,11 @@ CREATE TABLE `restaurants` (
   `delivery_id` varchar(11) DEFAULT NULL,
   `district_id` varchar(11) DEFAULT NULL,
   `is_pickup` varchar(9) DEFAULT NULL,
-  `price_range` varchar(11) DEFAULT NULL,
+  `price_range` varchar(11) DEFAULT '47k',
   `category_id` varchar(11) DEFAULT NULL,
-  `rating_total_review` varchar(19) DEFAULT NULL,
-  `rating_avg` varchar(10) DEFAULT NULL,
-  `rating_display_total_review` varchar(27) DEFAULT NULL,
+  `rating_total_review` varchar(19) DEFAULT '0',
+  `rating_avg` varchar(10) DEFAULT '0.0',
+  `rating_display_total_review` varchar(27) DEFAULT '0',
   `rating_app_link` varchar(48) DEFAULT NULL,
   `latitude` varchar(16) DEFAULT NULL,
   `is_verified` varchar(11) DEFAULT NULL,
