@@ -61,7 +61,7 @@
         <!-- Navigation -->
         <div class="header">
             <header class="full-width">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row">
                         <div class="col-12 mainNavCol">
                             <!-- logo -->
@@ -90,7 +90,7 @@
                                 </form>
                             </div>
                             <div class="right-side fw-700 mainNavCol">
-                                <div class="gem-points">
+                                <!-- <div class="gem-points">
                                     <a href="#"> <i class="fas fa-concierge-bell"></i>
                                         <span>Order Now</span>
                                     </a>
@@ -99,7 +99,7 @@
                                     <a href="#"> <span>Pages <i class="fas fa-caret-down"></i></span>
                                         <i class="fas fa-bars"></i>
                                     </a>
-                                </div>
+                                </div> -->
                                 <!-- mobile search -->
                                 <div class="mobile-search">
                                     <a href="#" data-toggle="modal" data-target="#search-box"> <i class="fas fa-search"></i>
@@ -118,19 +118,19 @@
                                             <li>
                                                 <a href="history">
                                                     <div class="icon"><i class="flaticon-rewind"></i>
-                                                    </div> <span class="details">History</span>
+                                                    </div> <span class="details">Lịch sử đặt hàng</span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="payment">
                                                     <div class="icon"><i class="flaticon-breadbox"></i>
-                                                    </div> <span class="details">Payment</span>
+                                                    </div> <span class="details">Phương thức thanh toán</span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="profile">
                                                     <div class="icon"><i class="flaticon-user"></i>
-                                                    </div> <span class="details">Account</span>
+                                                    </div> <span class="details">Tài khoản</span>
                                                 </a>
                                             </li>
                                             <li>
@@ -140,7 +140,7 @@
                                                 </a>
                                             </li>
                                         </ul>
-                                        <div class="user-footer"> <span class="text-light-black">Not <?php echo $_SESSION['customer']['lname'] ?> ?</span> <a href="logout">Sign Out</a>
+                                        <div class="user-footer"> <span class="text-light-black">Không phải <?php echo $_SESSION['customer']['lname'] ?> ?</span> <a href="logout">Đăng xuất</a>
                                         </div>
                                     </div>
                                 </div>

@@ -69,7 +69,7 @@ if ($params_request[0] !== false || isset($param_check['page']) || isset($param_
         <div class="row">
             <div class="col-12">
                 <div class="section-header-left">
-                    <h3 class="text-light-black header-title title">Tìm kiếm theo danh mục<span class="fs-14"><a href="restaurant.html">See all restaurant</a></span></h3>
+                    <h3 class="text-light-black header-title title">Tìm kiếm theo danh mục<span class="fs-14"><a href="restaurant.html"></a></span></h3>
                 </div>
             </div>
             <div class="col-12">
